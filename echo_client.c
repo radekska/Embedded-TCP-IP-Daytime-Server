@@ -172,7 +172,7 @@ int main(int argc, char **argv)
 
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_port   = htons(port_number);	/* daytime server */
+	servaddr.sin_port   = htons(port_number);	
 
 	if ( (err=inet_pton(AF_INET, ip_address, &servaddr.sin_addr)) == -1){
 		fprintf(stderr,"ERROR: inet_pton error for %s : %s \n", ip_address, strerror(errno));
@@ -189,7 +189,7 @@ int main(int argc, char **argv)
 
 
 	
-	str_cli(stdin, sockfd);		/* do it all */
+	str_cli(stdin, sockfd);		/* ECHO PART */
 
 
 	fprintf(stderr,"OK\n");
