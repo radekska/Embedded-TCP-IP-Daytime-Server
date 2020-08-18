@@ -2,11 +2,11 @@ CC=gcc
 
 all: server client
 
-server: daytimeserver.c 
-	gcc -o server daytimeserver.c 
+server: echo_server.c 
+	gcc -o server echo_server.c 
 
-client: daytimeclient.c 
-	gcc -o client daytimeclient.c 
+client: echo_client.c 
+	gcc -o client echo_client.c 
 
 clean:
 	rm server client
