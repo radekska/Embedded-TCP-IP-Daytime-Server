@@ -28,11 +28,9 @@ int main(int argc, char **argv)
 	}
 
 	if (strcmp(argv[1], "-h") == 0){
-		
 		printf("Usage: ./client <IPv4Address> <PortNumber(def.27)>\n");
 		return 0;
 	}
-
 
 	if (argc > 1){
 		strcpy(ip_address, argv[1]);
