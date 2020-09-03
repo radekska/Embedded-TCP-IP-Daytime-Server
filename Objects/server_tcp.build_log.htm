@@ -17,963 +17,51 @@ Library Manager: ArmAr.exe V6.14
 Hex Converter:   FromElf.exe V6.14
 CPU DLL:         SARMCM3.DLL V5.31.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      UL2CM3.DLL V1.163.4.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
 C:\Users\HP\Documents\AMk\project_v3\server_tcp.uvprojx
-Project File Date:  09/02/2020
+Project File Date:  09/03/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'default'
-server.c(1): warning: ISO C requires a translation unit to contain at least one declaration [-Wempty-translation-unit]
-1 warning generated.
-compiling server.c...
-application/main.c(25): warning: no newline at end of file [-Wnewline-eof]
-} /* taskLED */
-               ^
-application/main.c(16): warning: unused parameter 'params' [-Wunused-parameter]
-void taskLED(void* params)
-                   ^
-application/main.c(17): warning: function 'taskLED' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
-3 warnings generated.
-compiling main.c...
-ioLibrary_Driver/Ethernet/socket.c(70): warning: no previous extern declaration for non-static variable 'sock_pack_info' [-Wmissing-variable-declarations]
-uint8_t  sock_pack_info[_WIZCHIP_SOCK_NUM_] = {0,};
-         ^
-ioLibrary_Driver/Ethernet/socket.c(70): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint8_t  sock_pack_info[_WIZCHIP_SOCK_NUM_] = {0,};
-^
-ioLibrary_Driver/Ethernet/socket.c(107): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        CHECK_SOCKNUM();
-                       ^
-ioLibrary_Driver/Ethernet/socket.c(181): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   setSn_PORT(sn,port); 
-                      ^
-ioLibrary_Driver/Ethernet/socket.c(200): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        CHECK_SOCKNUM();
-                       ^
-ioLibrary_Driver/Ethernet/socket.c(243): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        CHECK_SOCKNUM();
-                       ^
-ioLibrary_Driver/Ethernet/socket.c(244): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKMODE(Sn_MR_TCP);
-                            ^
-ioLibrary_Driver/Ethernet/socket.c(245): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        CHECK_SOCKINIT();
-                        ^
-ioLibrary_Driver/Ethernet/socket.c(247): warning: while loop has empty body [-Wempty-body]
-        while(getSn_CR(sn));
-                           ^
-ioLibrary_Driver/Ethernet/socket.c(247): note: put the semicolon on a separate line to silence this warning
-ioLibrary_Driver/Ethernet/socket.c(259): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKNUM();
-                  ^
-ioLibrary_Driver/Ethernet/socket.c(260): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKMODE(Sn_MR_TCP);
-                            ^
-ioLibrary_Driver/Ethernet/socket.c(261): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKINIT();
-                   ^
-ioLibrary_Driver/Ethernet/socket.c(276): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        setSn_DPORT(sn,port);
-                            ^
-ioLibrary_Driver/Ethernet/socket.c(299): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKNUM();
-                  ^
-ioLibrary_Driver/Ethernet/socket.c(300): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKMODE(Sn_MR_TCP);
-                            ^
-ioLibrary_Driver/Ethernet/socket.c(322): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKNUM();
-                  ^
-ioLibrary_Driver/Ethernet/socket.c(323): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKMODE(Sn_MR_TCP);
-                            ^
-ioLibrary_Driver/Ethernet/socket.c(324): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKDATA();
-                   ^
-ioLibrary_Driver/Ethernet/socket.c(352): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-   freesize = getSn_TxMAX(sn);
-            ~ ^~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1774): note: expanded from macro 'getSn_TxMAX'
-                ((uint16_t)(1 << getSn_TXMEM_SIZE(sn)) << 10)
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
-ioLibrary_Driver/Ethernet/socket.c(395): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKNUM();
-                  ^
-ioLibrary_Driver/Ethernet/socket.c(396): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKMODE(Sn_MR_TCP);
-                            ^
-ioLibrary_Driver/Ethernet/socket.c(397): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKDATA();
-                   ^
-ioLibrary_Driver/Ethernet/socket.c(399): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-   recvsize = getSn_RxMAX(sn);
-            ~ ^~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1764): note: expanded from macro 'getSn_RxMAX'
-                ((uint16_t)(1 << getSn_RXMEM_SIZE(sn)) << 10)
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
-ioLibrary_Driver/Ethernet/socket.c(432): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-      };
-       ^
-ioLibrary_Driver/Ethernet/socket.c(496): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKNUM();
-                  ^
-ioLibrary_Driver/Ethernet/socket.c(509): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKDATA();
-                   ^
-ioLibrary_Driver/Ethernet/socket.c(531): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   setSn_DPORT(sn,port);      
-                       ^~
-ioLibrary_Driver/Ethernet/socket.c(532): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-   freesize = getSn_TxMAX(sn);
-            ~ ^~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1774): note: expanded from macro 'getSn_TxMAX'
-                ((uint16_t)(1 << getSn_TXMEM_SIZE(sn)) << 10)
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
-ioLibrary_Driver/Ethernet/socket.c(540): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   };
-    ^
-ioLibrary_Driver/Ethernet/socket.c(560): warning: while loop has empty body [-Wempty-body]
-        while(getSn_CR(sn));
-                           ^
-ioLibrary_Driver/Ethernet/socket.c(560): note: put the semicolon on a separate line to silence this warning
-ioLibrary_Driver/Ethernet/socket.c(607): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKNUM();
-                  ^
-ioLibrary_Driver/Ethernet/socket.c(627): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKDATA();
-                   ^
-ioLibrary_Driver/Ethernet/socket.c(636): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-      };
-       ^
-ioLibrary_Driver/Ethernet/socket.c(670): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-                        *port = (*port << 8) + head[5];
-                              ~ ~~~~~~~~~~~~~^~~~~~~~~
-ioLibrary_Driver/Ethernet/socket.c(672): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-                        sock_remained_size[sn] = (sock_remained_size[sn] << 8) + head[7];
-                                               ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-ioLibrary_Driver/Ethernet/socket.c(647): warning: while loop has empty body [-Wempty-body]
-                        while(getSn_CR(sn));
-                                           ^
-ioLibrary_Driver/Ethernet/socket.c(647): note: put the semicolon on a separate line to silence this warning
-ioLibrary_Driver/Ethernet/socket.c(704): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-                        sock_remained_size[sn] = (sock_remained_size[sn] <<8) + head[1] -2;
-                                               ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
-ioLibrary_Driver/Ethernet/socket.c(701): warning: while loop has empty body [-Wempty-body]
-                        while(getSn_CR(sn));
-                                           ^
-ioLibrary_Driver/Ethernet/socket.c(701): note: put the semicolon on a separate line to silence this warning
-ioLibrary_Driver/Ethernet/socket.c(736): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-                        sock_remained_size[sn] = (sock_remained_size[sn] << 8) + head[5];
-                                               ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-ioLibrary_Driver/Ethernet/socket.c(779): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKNUM();
-                  ^
-ioLibrary_Driver/Ethernet/socket.c(795): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-         *((uint16_t*)arg) = getSn_TxMAX(sn);
-                           ~ ^~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1774): note: expanded from macro 'getSn_TxMAX'
-                ((uint16_t)(1 << getSn_TXMEM_SIZE(sn)) << 10)
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
-ioLibrary_Driver/Ethernet/socket.c(798): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-         *((uint16_t*)arg) = getSn_RxMAX(sn);
-                           ~ ^~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1764): note: expanded from macro 'getSn_RxMAX'
-                ((uint16_t)(1 << getSn_RXMEM_SIZE(sn)) << 10)
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
-ioLibrary_Driver/Ethernet/socket.c(816): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
-      default:
-      ^
-ioLibrary_Driver/Ethernet/socket.c(826): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKNUM();
-                  ^
-ioLibrary_Driver/Ethernet/socket.c(836): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-         setSn_MSSR(sn,*(uint16_t*)arg);
-                                       ^
-ioLibrary_Driver/Ethernet/socket.c(842): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-         setSn_DPORT(sn, *(uint16_t*)arg);
-                                         ^
-ioLibrary_Driver/Ethernet/socket.c(827): warning: 6 enumeration values not explicitly handled in switch: 'SO_FLAG', 'SO_SENDBUF', 'SO_RECVBUF'... [-Wswitch-enum]
-   switch(sotype)
-          ^
-ioLibrary_Driver/Ethernet/socket.c(877): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   CHECK_SOCKNUM();
-                  ^
-ioLibrary_Driver/Ethernet/socket.c(890): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-         *(uint16_t*) arg = getSn_MSSR(sn);
-                          ~ ^~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1538): note: expanded from macro 'getSn_MSSR'
-                (((uint16_t)WIZCHIP_READ(Sn_MSSR(sn)) << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(Sn_MSSR(sn),1)))
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/socket.c(896): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-         *(uint16_t*) arg = getSn_DPORT(sn);
-                          ~ ^~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1516): note: expanded from macro 'getSn_DPORT'
-                (((uint16_t)WIZCHIP_READ(Sn_DPORT(sn)) << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(Sn_DPORT(sn),1)))
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/socket.c(927): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
-      default:
-      ^
-50 warnings generated.
-compiling socket.c...
-ioLibrary_Driver/Ethernet/wizchip_conf.c(67): warning: no previous prototype for function 'wizchip_cris_enter' [-Wmissing-prototypes]
-void      wizchip_cris_enter(void)           {}
-          ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(67): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void      wizchip_cris_enter(void)           {}
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(75): warning: no previous prototype for function 'wizchip_cris_exit' [-Wmissing-prototypes]
-void      wizchip_cris_exit(void)          {}
-          ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(75): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void      wizchip_cris_exit(void)          {}
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(83): warning: no previous prototype for function 'wizchip_cs_select' [-Wmissing-prototypes]
-void    wizchip_cs_select(void)            {}
-        ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(83): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void    wizchip_cs_select(void)            {}
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(91): warning: no previous prototype for function 'wizchip_cs_deselect' [-Wmissing-prototypes]
-void    wizchip_cs_deselect(void)          {}
-        ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(91): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void    wizchip_cs_deselect(void)          {}
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(100): warning: no previous prototype for function 'wizchip_bus_readdata' [-Wmissing-prototypes]
-iodata_t wizchip_bus_readdata(uint32_t AddrSel) { return * ((volatile iodata_t *)((ptrdiff_t) AddrSel)); }
-         ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(100): note: declare 'static' if the function is not intended to be used outside of this translation unit
-iodata_t wizchip_bus_readdata(uint32_t AddrSel) { return * ((volatile iodata_t *)((ptrdiff_t) AddrSel)); }
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(109): warning: no previous prototype for function 'wizchip_bus_writedata' [-Wmissing-prototypes]
-void    wizchip_bus_writedata(uint32_t AddrSel, iodata_t wb)  { *((volatile iodata_t*)((ptrdiff_t)AddrSel)) = wb; }
-        ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(109): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void    wizchip_bus_writedata(uint32_t AddrSel, iodata_t wb)  { *((volatile iodata_t*)((ptrdiff_t)AddrSel)) = wb; }
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(117): warning: no previous prototype for function 'wizchip_spi_readbyte' [-Wmissing-prototypes]
-uint8_t wizchip_spi_readbyte(void)        {return 0;}
-        ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(117): note: declare 'static' if the function is not intended to be used outside of this translation unit
-uint8_t wizchip_spi_readbyte(void)        {return 0;}
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(125): warning: unused parameter 'wb' [-Wunused-parameter]
-void    wizchip_spi_writebyte(uint8_t wb) {}
-                                      ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(125): warning: no previous prototype for function 'wizchip_spi_writebyte' [-Wmissing-prototypes]
-void    wizchip_spi_writebyte(uint8_t wb) {}
-        ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(125): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void    wizchip_spi_writebyte(uint8_t wb) {}
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(133): warning: unused parameter 'pBuf' [-Wunused-parameter]
-void    wizchip_spi_readburst(uint8_t* pBuf, uint16_t len)      {}
-                                       ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(133): warning: unused parameter 'len' [-Wunused-parameter]
-void    wizchip_spi_readburst(uint8_t* pBuf, uint16_t len)      {}
-                                                      ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(133): warning: no previous prototype for function 'wizchip_spi_readburst' [-Wmissing-prototypes]
-void    wizchip_spi_readburst(uint8_t* pBuf, uint16_t len)      {}
-        ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(133): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void    wizchip_spi_readburst(uint8_t* pBuf, uint16_t len)      {}
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(141): warning: unused parameter 'pBuf' [-Wunused-parameter]
-void    wizchip_spi_writeburst(uint8_t* pBuf, uint16_t len) {}
-                                        ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(141): warning: unused parameter 'len' [-Wunused-parameter]
-void    wizchip_spi_writeburst(uint8_t* pBuf, uint16_t len) {}
-                                                       ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(141): warning: no previous prototype for function 'wizchip_spi_writeburst' [-Wmissing-prototypes]
-void    wizchip_spi_writeburst(uint8_t* pBuf, uint16_t len) {}
-        ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(141): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void    wizchip_spi_writeburst(uint8_t* pBuf, uint16_t len) {}
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(55): warning: In file included from...
-./ioLibrary_Driver/Ethernet\wizchip_conf.h(243): warning: padding struct 'struct __WIZCHIP' with 3 bytes to align 'CRIS' [-Wpadded]
-   }CRIS;  
-    ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(290): warning: 9 enumeration values not explicitly handled in switch: 'CW_SET_INTRTIME', 'CW_GET_INTRTIME', 'CW_RESET_PHY'... [-Wswitch-enum]
-   switch(cwtype)
-          ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(55): warning: In file included from...
-./ioLibrary_Driver/Ethernet\wizchip_conf.h(451): warning: padding struct 'struct wiz_NetTimeout_t' with 1 byte to align 'time_100us' [-Wpadded]
-   uint16_t time_100us;    ///< time unit 100us
-            ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(388): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
-      default:
-      ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(455): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                        setSn_TXBUF_SIZE(i, j);
-                        ^~~~~~~~~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1631): note: expanded from macro 'setSn_TXBUF_SIZE'
-#define  setSn_TXBUF_SIZE(sn, txmemsize) setSn_TXMEM_SIZE(sn,txmemsize)
-                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1630): note: expanded from macro 'setSn_TXMEM_SIZE'
-      WIZCHIP_WRITE(TMSR, (WIZCHIP_READ(TMSR) & ~(0x03 << (2*sn))) | (txmemsize << (2*sn)))
-      ~~~~~~~~~~~~~       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/wizchip_conf.c(491): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                        setSn_RXBUF_SIZE(i, j);
-                        ^~~~~~~~~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1609): note: expanded from macro 'setSn_RXBUF_SIZE'
-#define  setSn_RXBUF_SIZE(sn,rxmemsize) setSn_RXMEM_SIZE(sn,rxmemsize)
-                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1608): note: expanded from macro 'setSn_RXMEM_SIZE'
-      WIZCHIP_WRITE(RMSR, (WIZCHIP_READ(RMSR) & ~(0x03 << (2*sn))) | (rxmemsize << (2*sn)))
-      ~~~~~~~~~~~~~       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/wizchip_conf.c(560): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  ret = (ret << 8) + ir;
-      ~ ~~~~~~~~~~~^~~~
-ioLibrary_Driver/Ethernet/wizchip_conf.c(613): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  ret = (ret << 8) + imr;
-      ~ ~~~~~~~~~~~^~~~~
-ioLibrary_Driver/Ethernet/wizchip_conf.c(617): warning: no previous prototype for function 'wizphy_getphylink' [-Wmissing-prototypes]
-int8_t wizphy_getphylink(void)
-       ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(617): note: declare 'static' if the function is not intended to be used outside of this translation unit
-int8_t wizphy_getphylink(void)
-^
-static 
-ioLibrary_Driver/Ethernet/wizchip_conf.c(895): warning: cast from function call of type 'uint8_t' (aka 'unsigned char') to non-matching type 'netmode_type' [-Wbad-function-cast]
-   return (netmode_type) getMR();
-                         ^~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1123): note: expanded from macro 'getMR'
-   #define getMR()              WIZCHIP_READ(MR)
-                                ^~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/wizchip_conf.c(901): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-   setRTR(nettime->time_100us);
-                              ^
-ioLibrary_Driver/Ethernet/wizchip_conf.c(907): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-   nettime->time_100us = getRTR();
-                       ~ ^~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1256): note: expanded from macro 'getRTR'
-                (((uint16_t)WIZCHIP_READ(_RTR_) << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(_RTR_,1)))
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-27 warnings generated.
-compiling wizchip_conf.c...
-ioLibrary_Driver/Ethernet/W5100/w5100.c(41): warning: In file included from...
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(49): warning: In file included from...
-./ioLibrary_Driver/Ethernet\wizchip_conf.h(243): warning: padding struct 'struct __WIZCHIP' with 3 bytes to align 'CRIS' [-Wpadded]
-   }CRIS;  
-    ^
-ioLibrary_Driver/Ethernet/W5100/w5100.c(189): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-      WIZCHIP.IF.SPI._write_byte((uint16_t)((AddrSel+i) & 0x00FF) >>  0);
-      ~~~~~~~                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(234): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-      val1 = (val1 << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(Sn_TX_FSR(sn),1));
-           ~ ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(238): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-        val = (val << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(Sn_TX_FSR(sn),1));
-            ~ ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(251): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-      val1 = (val1 << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(Sn_RX_RSR(sn),1));
-           ~ ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(255): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-        val = (val << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(Sn_RX_RSR(sn),1));
-            ~ ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(273): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-      rxbase += getSn_RxMAX(i);
-             ~~ ^~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1764): note: expanded from macro 'getSn_RxMAX'
-                ((uint16_t)(1 << getSn_RXMEM_SIZE(sn)) << 10)
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(287): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-      txbase += getSn_TxMAX(i);
-             ~~ ^~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1774): note: expanded from macro 'getSn_TxMAX'
-                ((uint16_t)(1 << getSn_TXMEM_SIZE(sn)) << 10)
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(309): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  ptr = getSn_TX_WR(sn);
-      ~ ^~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1681): note: expanded from macro 'getSn_TX_WR'
-                (((uint16_t)WIZCHIP_READ(Sn_TX_WR(sn)) << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(Sn_TX_WR(sn),1)))
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(312): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  dst_ptr = getSn_TxBASE(sn) + dst_mask;
-          ~ ~~~~~~~~~~~~~~~~~^~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(316): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-    size = getSn_TxMAX(sn) - dst_mask;
-         ~ ~~~~~~~~~~~~~~~~^~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(320): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-    dst_ptr = getSn_TxBASE(sn);
-            ~ ^~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(330): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-  setSn_TX_WR(sn, ptr);  
-                      ^~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(351): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  ptr = getSn_RX_RD(sn);
-      ~ ^~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1711): note: expanded from macro 'getSn_RX_RD'
-                (((uint16_t)WIZCHIP_READ(Sn_RX_RD(sn)) << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(Sn_RX_RD(sn),1)))
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(353): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  src_mask = (uint32_t)ptr & getSn_RxMASK(sn);
-           ~ ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(353): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-  src_mask = (uint32_t)ptr & getSn_RxMASK(sn);
-                           ~ ^~~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1783): note: expanded from macro 'getSn_RxMASK'
-                (getSn_RxMAX(sn) - 1)
-                 ~~~~~~~~~~~~~~~~^~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(354): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  src_ptr = (getSn_RxBASE(sn) + src_mask);
-          ~  ~~~~~~~~~~~~~~~~~^~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(359): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-    size = getSn_RxMAX(sn) - src_mask;
-         ~ ~~~~~~~~~~~~~~~~^~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(363): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-        src_ptr = getSn_RxBASE(sn);
-                ~ ^~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(373): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-  setSn_RX_RD(sn, ptr);
-                      ^
-ioLibrary_Driver/Ethernet/W5100/w5100.c(380): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  ptr = getSn_RX_RD(sn);
-      ~ ^~~~~~~~~~~~~~~
-./ioLibrary_Driver/Ethernet/W5100/w5100.h(1711): note: expanded from macro 'getSn_RX_RD'
-                (((uint16_t)WIZCHIP_READ(Sn_RX_RD(sn)) << 8) + WIZCHIP_READ(WIZCHIP_OFFSET_INC(Sn_RX_RD(sn),1)))
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ioLibrary_Driver/Ethernet/W5100/w5100.c(383): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-  setSn_RX_RD(sn,ptr);
-                     ^
-22 warnings generated.
-compiling w5100.c...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/ARM/clib_arm.c(26): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1199): warning: padding struct 'struct xSTATIC_QUEUE' with 1 byte to align 'uxDummy8' [-Wpadded]
-                UBaseType_t uxDummy8;
-                            ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1176): warning: padding size of 'struct xSTATIC_QUEUE' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_QUEUE
-               ^
-2 warnings generated.
-compiling clib_arm.c...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os1.c(149): warning: 5 enumeration values not explicitly handled in switch: 'osErrorISR', 'osErrorNoMemory', 'osErrorParameter'... [-Wswitch-enum]
-  switch (status) {
-          ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os1.c(226): warning: 5 enumeration values not explicitly handled in switch: 'osErrorISR', 'osErrorNoMemory', 'osErrorParameter'... [-Wswitch-enum]
-  switch (status) {
-          ^
-2 warnings generated.
-compiling cmsis_os1.c...
-compiling os_systick.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c(95): warning: no previous extern declaration for non-static variable 'uwTickPrio' [-Wmissing-variable-declarations]
-uint32_t uwTickPrio   = (1UL << __NVIC_PRIO_BITS); /* Invalid PRIO */
-         ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c(95): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint32_t uwTickPrio   = (1UL << __NVIC_PRIO_BITS); /* Invalid PRIO */
-^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c(96): warning: no previous extern declaration for non-static variable 'uwTickFreq' [-Wmissing-variable-declarations]
-HAL_TickFreqTypeDef uwTickFreq = HAL_TICK_FREQ_DEFAULT;  /* 1KHz */
-                    ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c(96): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-HAL_TickFreqTypeDef uwTickFreq = HAL_TICK_FREQ_DEFAULT;  /* 1KHz */
-^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c(94): warning: no previous extern declaration for non-static variable 'uwTick' [-Wmissing-variable-declarations]
-__IO uint32_t uwTick;
-              ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c(94): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-__IO uint32_t uwTick;
-     ^
-3 warnings generated.
-compiling stm32f4xx_hal.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c(217): warning: function 'HAL_NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c(83): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(412): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_cortex.h(54): warning: padding struct 'MPU_Region_InitTypeDef' with 2 bytes to align 'BaseAddress' [-Wpadded]
-  uint32_t               BaseAddress;           /*!< Specifies the base address of the region to protect.                           */
-                         ^
-2 warnings generated.
-compiling stm32f4xx_hal_cortex.c...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(29): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1112): warning: padding size of 'struct xSTATIC_TCB' with 2 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_TCB
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(523): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
-      default:         state = osThreadError;      break;
-      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(581): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-    taskYIELD();
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(30): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include/task.h(143): warning: padding struct 'struct xTASK_STATUS' with 3 bytes to align 'uxCurrentPriority' [-Wpadded]
-        UBaseType_t uxCurrentPriority;  /* The priority at which the task was running (may be inherited) when the structure was populated. */
-                    ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include/task.h(137): warning: padding size of 'struct xTASK_STATUS' with 2 bytes to alignment boundary [-Wpadded]
-typedef struct xTASK_STATUS
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(721): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-      portYIELD_FROM_ISR (yield);
-                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(29): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1249): warning: padding size of 'struct xSTATIC_TIMER' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_TIMER
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1220): warning: padding size of 'struct xSTATIC_EVENT_GROUP' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_EVENT_GROUP
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(1145): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-      portYIELD_FROM_ISR (yield);
-                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(29): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1199): warning: padding struct 'struct xSTATIC_QUEUE' with 1 byte to align 'uxDummy8' [-Wpadded]
-                UBaseType_t uxDummy8;
-                            ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1176): warning: padding size of 'struct xSTATIC_QUEUE' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_QUEUE
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(1579): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        portYIELD_FROM_ISR (yield);
-                                  ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(1612): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-      portYIELD_FROM_ISR (yield);
-                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(1744): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        portYIELD_FROM_ISR (yield);
-                                  ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(1785): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        portYIELD_FROM_ISR (yield);
-                                  ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c(2156): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-          portYIELD_FROM_ISR (yield);
-                                    ^
-16 warnings generated.
-compiling cmsis_os2.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c(290): warning: cast from function call of type 'uint32_t' (aka 'unsigned int') to non-matching type 'DMA_Base_Registers *' [-Wbad-function-cast]
-  regs = (DMA_Base_Registers *)DMA_CalcBaseAndBitshift(hdma);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c(98): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(408): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(149): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
-  void                       *Parent;                                                          /*!< Parent object state                    */ 
-                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c(352): warning: cast from function call of type 'uint32_t' (aka 'unsigned int') to non-matching type 'DMA_Base_Registers *' [-Wbad-function-cast]
-  regs = (DMA_Base_Registers *)DMA_CalcBaseAndBitshift(hdma);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c(979): warning: enumeration value 'HAL_DMA_XFER_ALL_CB_ID' not explicitly handled in switch [-Wswitch-enum]
-    switch (CallbackID)
-            ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c(1073): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
-    default:
-    ^
-5 warnings generated.
-compiling stm32f4xx_hal_dma.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c(40): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(408): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(149): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
-  void                       *Parent;                                                          /*!< Parent object state                    */ 
-                              ^
-1 warning generated.
-compiling stm32f4xx_hal_dma_ex.c...
-compiling stm32f4xx_hal_gpio.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c(365): warning: unused parameter 'Regulator' [-Wunused-parameter]
-void HAL_PWR_EnterSLEEPMode(uint32_t Regulator, uint8_t SLEEPEntry)
-                                     ^
-1 warning generated.
-compiling stm32f4xx_hal_pwr.c...
-compiling stm32f4xx_hal_pwr_ex.c...
-compiling stm32f4xx_hal_rcc.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c(25): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(396): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_rcc.h(33): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h(123): warning: padding size of 'RCC_PeriphCLKInitTypeDef' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct
-        ^
-1 warning generated.
-compiling stm32f4xx_hal_rcc_ex.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c(175): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(504): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_rtc.h(165): warning: padding size of 'RTC_HandleTypeDef' with 2 bytes to alignment boundary [-Wpadded]
-typedef struct
-        ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_rtc.h(155): warning: padding struct 'RTC_AlarmTypeDef' with 3 bytes to align 'Alarm' [-Wpadded]
-  uint32_t Alarm;                /*!< Specifies the alarm .
-           ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c(1547): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-  sAlarm->AlarmTime.Hours = (uint32_t)((tmpreg & (RTC_ALRMAR_HT | RTC_ALRMAR_HU)) >> 16U);
-                          ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c(1548): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-  sAlarm->AlarmTime.Minutes = (uint32_t)((tmpreg & (RTC_ALRMAR_MNT | RTC_ALRMAR_MNU)) >> 8U);
-                            ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c(1549): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-  sAlarm->AlarmTime.Seconds = (uint32_t)(tmpreg & (RTC_ALRMAR_ST | RTC_ALRMAR_SU));
-                            ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c(1550): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-  sAlarm->AlarmTime.TimeFormat = (uint32_t)((tmpreg & RTC_ALRMAR_PM) >> 16U);
-                               ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c(1552): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-  sAlarm->AlarmDateWeekDay = (uint32_t)((tmpreg & (RTC_ALRMAR_DT | RTC_ALRMAR_DU)) >> 24U);
-                           ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c(1817): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-  return (tmp + (Value & (uint8_t)0x0F));
-  ~~~~~~  ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
-8 warnings generated.
-compiling stm32f4xx_hal_rtc.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c(82): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(504): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_rtc.h(165): warning: padding size of 'RTC_HandleTypeDef' with 2 bytes to alignment boundary [-Wpadded]
-typedef struct
-        ^
-1 warning generated.
-compiling stm32f4xx_hal_rtc_ex.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c(219): warning: In file included from...
+retarget.c(1): warning: In file included from...
+../project_v3/retarget.h(6): warning: In file included from...
 C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
 ./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(524): warning: In file included from...
 C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_uart.h(172): warning: padding struct 'struct __UART_HandleTypeDef' with 1 byte to align 'ErrorCode' [-Wpadded]
   __IO uint32_t                 ErrorCode;        /*!< UART Error code                    */
                                 ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c(219): warning: In file included from...
+retarget.c(1): warning: In file included from...
+../project_v3/retarget.h(25): warning: no newline at end of file [-Wnewline-eof]
+#endif /* _RETARGET_H */
+                        ^
+retarget.c(1): warning: In file included from...
+../project_v3/retarget.h(6): warning: In file included from...
 C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
 ./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(408): warning: In file included from...
 C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(149): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
   void                       *Parent;                                                          /*!< Parent object state                    */ 
                               ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c(1052): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        tmp = (uint16_t *) pData;
-              ^~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c(1136): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        tmp = (uint16_t *) pData;
-              ^~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c(2906): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-      tmp = (uint16_t *) huart->pTxBuffPtr;
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c(2978): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-      tmp = (uint16_t *) huart->pRxBuffPtr;
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-6 warnings generated.
-compiling stm32f4xx_hal_uart.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(199): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(516): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_spi.h(135): warning: padding struct 'struct __SPI_HandleTypeDef' with 2 bytes to align 'ErrorCode' [-Wpadded]
-  __IO uint32_t              ErrorCode;      /*!< SPI Error code                           */
-                             ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(199): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(408): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(149): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
-  void                       *Parent;                                                          /*!< Parent object state                    */ 
-                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(811): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-      hspi->Instance->DR = *((uint16_t *)hspi->pTxBuffPtr);
-                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(821): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        hspi->Instance->DR = *((uint16_t *)hspi->pTxBuffPtr);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(1006): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        *((uint16_t *)hspi->pRxBuffPtr) = (uint16_t)hspi->Instance->DR;
-          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(1040): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-      *((uint16_t *)hspi->pRxBuffPtr) = (uint16_t)hspi->Instance->DR;
-        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(1175): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-      hspi->Instance->DR = *((uint16_t *)hspi->pTxBuffPtr);
-                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(1184): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        hspi->Instance->DR = *((uint16_t *)hspi->pTxBuffPtr);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(1202): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        *((uint16_t *)hspi->pRxBuffPtr) = (uint16_t)hspi->Instance->DR;
-          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(1247): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-        (*(uint8_t *)hspi->pRxBuffPtr) = hspi->Instance->DR;
-                                       ~ ~~~~~~~~~~~~~~~~^~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(3147): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  *((uint16_t *)hspi->pRxBuffPtr) = (uint16_t)(hspi->Instance->DR);
-    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(3199): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  hspi->Instance->DR = *((uint16_t *)hspi->pTxBuffPtr);
-                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(3303): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  *((uint16_t *)hspi->pRxBuffPtr) = (uint16_t)(hspi->Instance->DR);
-    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c(3362): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  hspi->Instance->DR = *((uint16_t *)hspi->pTxBuffPtr);
-                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-14 warnings generated.
-compiling stm32f4xx_hal_spi.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(199): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(528): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_usart.h(125): warning: padding struct 'struct __USART_HandleTypeDef' with 2 bytes to align 'ErrorCode' [-Wpadded]
-  __IO uint32_t                  ErrorCode;       /*!< USART Error code                    */
-                                 ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(199): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(408): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(149): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
-  void                       *Parent;                                                          /*!< Parent object state                    */ 
-                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(777): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        tmp = (uint16_t *) pTxData;
-              ^~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(866): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        tmp = (uint16_t *) pRxData ;
-              ^~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(968): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        tmp = (uint16_t *) pTxData;
-              ^~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(984): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-        tmp = (uint16_t *) pRxData ;
-              ^~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(2437): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-      tmp = (uint16_t *) husart->pTxBuffPtr;
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(2509): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-      tmp = (uint16_t *) husart->pRxBuffPtr;
-            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(2592): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-          tmp = (uint16_t *) husart->pTxBuffPtr;
-                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c(2623): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-          tmp = (uint16_t *) husart->pRxBuffPtr;
-                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-10 warnings generated.
-compiling stm32f4xx_hal_usart.c...
-compiling system_stm32f4xx.c...
-assembling startup_stm32f446xx.s...
-compiling freertos_evr.c...
-compiling list.c...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/event_groups.c(63): warning: padding size of 'struct EventGroupDef_t' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct EventGroupDef_t
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/event_groups.c(37): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1220): warning: padding size of 'struct xSTATIC_EVENT_GROUP' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_EVENT_GROUP
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/event_groups.c(255): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                        portYIELD_WITHIN_API();
-                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/event_groups.c(403): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                        portYIELD_WITHIN_API();
-                                              ^
-4 warnings generated.
-compiling event_groups.c...
-compiling port.c...
-compiling heap_4.c...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(281): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        queueYIELD_IF_USING_PREEMPTION();
-                                                                        ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(127): warning: padding struct 'struct QueueDefinition' with 1 byte to align 'uxQueueNumber' [-Wpadded]
-                UBaseType_t uxQueueNumber;
-                            ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(97): warning: padding size of 'struct QueueDefinition' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct QueueDefinition          /* The old naming convention is used to prevent breaking kernel aware debuggers. */
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(36): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1199): warning: padding struct 'struct xSTATIC_QUEUE' with 1 byte to align 'uxDummy8' [-Wpadded]
-                UBaseType_t uxDummy8;
-                            ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1176): warning: padding size of 'struct xSTATIC_QUEUE' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_QUEUE
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(845): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                                        queueYIELD_IF_USING_PREEMPTION();
-                                                                                        ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(858): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                                queueYIELD_IF_USING_PREEMPTION();
-                                                                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(927): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        portYIELD_WITHIN_API();
-                                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(1323): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                                queueYIELD_IF_USING_PREEMPTION();
-                                                                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(1382): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        portYIELD_WITHIN_API();
-                                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(1485): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                                queueYIELD_IF_USING_PREEMPTION();
-                                                                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(1573): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        portYIELD_WITHIN_API();
-                                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(1689): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                                queueYIELD_IF_USING_PREEMPTION();
-                                                                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(1749): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        portYIELD_WITHIN_API();
-                                                              ^
-14 warnings generated.
-compiling queue.c...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(337): warning: no previous extern declaration for non-static variable 'pxCurrentTCB' [-Wmissing-variable-declarations]
-PRIVILEGED_DATA TCB_t * volatile pxCurrentTCB = NULL;
-                                 ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(337): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-PRIVILEGED_DATA TCB_t * volatile pxCurrentTCB = NULL;
+retarget.c(21): warning: unused parameter 'f' [-Wunused-parameter]
+int fputc(int ch, FILE *f)
+                        ^
+retarget.c(32): warning: unused parameter 'f' [-Wunused-parameter]
+int ferror(FILE *f)
+                 ^
+retarget.c(69): warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+retarget.c(41): warning: unused function 'uart2_init' [-Wunused-function]
+static uint32_t uart2_init(void)
                 ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(252): warning: padding size of 'struct tskTaskControlBlock' with 2 bytes to alignment boundary [-Wpadded]
-typedef struct tskTaskControlBlock                      /* The old naming convention is used to prevent breaking kernel aware debuggers. */
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(38): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1112): warning: padding size of 'struct xSTATIC_TCB' with 2 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_TCB
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1134): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                prvAddTaskToReadyList( pxNewTCB );
-                                                 ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1146): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                        taskYIELD_IF_USING_PREEMPTION();
-                                                       ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1243): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                portYIELD_WITHIN_API();
-                                                      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1328): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                        portYIELD_WITHIN_API();
-                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1373): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                        portYIELD_WITHIN_API();
-                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1675): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        prvAddTaskToReadyList( pxTCB );
-                                                                      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1684): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        taskYIELD_IF_USING_PREEMPTION();
-                                                                       ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1773): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                portYIELD_WITHIN_API();
-                                                      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1871): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        prvAddTaskToReadyList( pxTCB );
-                                                                      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1879): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                                taskYIELD_IF_USING_PREEMPTION();
-                                                                               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(1952): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        prvAddTaskToReadyList( pxTCB );
-                                                                      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(2223): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        prvAddTaskToReadyList( pxTCB );
-                                                                      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(2285): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        taskYIELD_IF_USING_PREEMPTION();
-                                                                       ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(39): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include/task.h(143): warning: padding struct 'struct xTASK_STATUS' with 3 bytes to align 'uxCurrentPriority' [-Wpadded]
-        UBaseType_t uxCurrentPriority;  /* The priority at which the task was running (may be inherited) when the structure was populated. */
-                    ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include/task.h(137): warning: padding size of 'struct xTASK_STATUS' with 2 bytes to alignment boundary [-Wpadded]
-typedef struct xTASK_STATUS
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(2729): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                        taskSWITCH_DELAYED_LISTS();
-                                                  ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(2794): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        prvAddTaskToReadyList( pxTCB );
-                                                                      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(3030): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                taskCHECK_FOR_STACK_OVERFLOW();
-                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(3041): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                taskSELECT_HIGHEST_PRIORITY_TASK(); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
-                                                  ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(3163): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                prvAddTaskToReadyList( pxUnblockedTCB );
-                                                       ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(3241): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        prvAddTaskToReadyList( pxUnblockedTCB );
-                                               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(3434): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                taskYIELD();
-                                           ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(3393): warning: function 'prvIdleTask' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(3773): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                        listGET_OWNER_OF_NEXT_ENTRY( pxFirstTCB, pxList ); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
-                                                                         ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(3781): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                listGET_OWNER_OF_NEXT_ENTRY( pxNextTCB, pxList ); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
-                                                                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4059): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        prvAddTaskToReadyList( pxMutexHolderTCB );
-                                                                                 ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4149): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        prvAddTaskToReadyList( pxTCB );
-                                                                      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4261): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                                prvAddTaskToReadyList( pxTCB );
-                                                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4656): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        portYIELD_WITHIN_API();
-                                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4729): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        portYIELD_WITHIN_API();
-                                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4834): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
-                                default:
-                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4850): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                prvAddTaskToReadyList( pxTCB );
-                                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4875): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        taskYIELD_IF_USING_PREEMPTION();
-                                                                       ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4967): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
-                                default:
-                                ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(4987): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        prvAddTaskToReadyList( pxTCB );
-                                                                      ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c(5075): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        prvAddTaskToReadyList( pxTCB );
-                                                                      ^
-39 warnings generated.
-compiling tasks.c...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/timers.c(36): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1112): warning: padding size of 'struct xSTATIC_TCB' with 2 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_TCB
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/timers.c(73): warning: padding size of 'struct tmrTimerControl' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct tmrTimerControl /* The old naming convention is used to prevent breaking kernel aware debuggers. */
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/timers.c(36): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1249): warning: padding size of 'struct xSTATIC_TIMER' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_TIMER
-               ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/timers.c(549): warning: function 'prvTimerTask' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/timers.c(628): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-                                        portYIELD_WITHIN_API();
-                                                              ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/timers.c(36): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1199): warning: padding struct 'struct xSTATIC_QUEUE' with 1 byte to align 'uxDummy8' [-Wpadded]
-                UBaseType_t uxDummy8;
-                            ^
-C:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(1176): warning: padding size of 'struct xSTATIC_QUEUE' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct xSTATIC_QUEUE
-               ^
 7 warnings generated.
-compiling timers.c...
+compiling retarget.c...
 linking...
-Program Size: Code=5272 RO-data=484 RW-data=16 ZI-data=11488  
-".\Objects\server_tcp.axf" - 0 Error(s), 239 Warning(s).
+Program Size: Code=11290 RO-data=506 RW-data=32 ZI-data=12456  
+".\Objects\server_tcp.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -1007,6 +95,7 @@ Package Vendor: Keil
    * Component: Cortex Version: 1.7.6
    * Component: DMA Version: 1.7.6
    * Component: GPIO Version: 1.7.6
+   * Component: I2C Version: 1.7.6
    * Component: PWR Version: 1.7.6
    * Component: RCC Version: 1.7.6
    * Component: RTC Version: 1.7.6
@@ -1041,26 +130,26 @@ Package Vendor: Keil
       Include file:  CMSIS\RTOS2\FreeRTOS\Config\ARMCM\FreeRTOSConfig.h
 
    * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.3.1
-      Include file:  Source\include\task.h
       Include file:  Source\include\FreeRTOS.h
+      Include file:  Source\include\semphr.h
+      Include file:  Source\include\task.h
       Source file:   Source\list.c
       Include file:  Source\include\queue.h
-      Include file:  Source\include\semphr.h
-      Source file:   Source\portable\GCC\ARM_CM4F\port.c
       Source file:   Source\tasks.c
       Source file:   Source\queue.c
+      Source file:   Source\portable\GCC\ARM_CM4F\port.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
 
    * Component: ARM.FreeRTOS::RTOS:Event Groups:10.3.1
-      Include file:  Source\include\event_groups.h
       Source file:   Source\event_groups.c
+      Include file:  Source\include\event_groups.h
 
    * Component: ARM.FreeRTOS::RTOS:Heap:Heap_4:10.3.1
       Source file:   Source\portable\MemMang\heap_4.c
 
    * Component: ARM.FreeRTOS::RTOS:Timers:10.3.1
-      Include file:  Source\include\timers.h
       Source file:   Source\timers.c
+      Include file:  Source\include\timers.h
 
    * Component: ARM::CMSIS:CORE:5.3.0
 
@@ -1071,23 +160,23 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:RTOS2:FreeRTOS:Cortex-M:10.3.1
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c
       Include file:  CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h
-      Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\os_systick.c
+      Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c
 
    * Component: Keil::Device:STM32Cube Framework:Classic:1.7.6
-      Include file:  CMSIS\Driver\Config\RTE_Device.h
-      Include file:  MDK\Templates_LL\Inc\main.h
       Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
+      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
       Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
       Source file:   MDK\Templates\Src\stm32f4xx_it.c
-      Include file:  MDK\Templates\Inc\main.h
-      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
-      Source file:   MDK\Templates\Src\main.c
       Source file:   MDK\Templates_LL\Src\main.c
+      Include file:  MDK\Templates\Inc\main.h
+      Include file:  CMSIS\Driver\Config\RTE_Device.h
+      Source file:   MDK\Templates\Src\main.c
+      Include file:  MDK\Templates_LL\Inc\main.h
 
    * Component: Keil::Device:STM32Cube HAL:Common:1.7.6
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
       Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
 
    * Component: Keil::Device:STM32Cube HAL:Cortex:1.7.6
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
@@ -1099,9 +188,13 @@ Package Vendor: Keil
    * Component: Keil::Device:STM32Cube HAL:GPIO:1.7.6
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
 
+   * Component: Keil::Device:STM32Cube HAL:I2C:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c
+
    * Component: Keil::Device:STM32Cube HAL:PWR:1.7.6
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:RCC:1.7.6
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
@@ -1122,11 +215,11 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:2.6.3
       Source file:   MDK\Device\Source\ARM\STM32F446xx_OPT.s
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f446xx.s
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f446xx.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:08
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

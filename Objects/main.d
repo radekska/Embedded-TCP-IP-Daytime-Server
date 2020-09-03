@@ -27,6 +27,8 @@
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h \
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h \
@@ -45,4 +47,6 @@
   C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\mpu_wrappers.h \
   C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\task.h \
   C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\list.h \
-  ..\project_v3\server.h
+  ..\project_v3\server.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ..\project_v3\retarget.h ..\project_v3\rtc.h ..\project_v3\i2c.h \
+  ..\project_v3\retarget.h

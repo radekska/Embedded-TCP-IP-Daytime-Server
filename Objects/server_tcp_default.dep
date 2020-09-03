@@ -1,6 +1,6 @@
 Dependencies for Project 'server_tcp', Target 'default': (DO NOT MODIFY !)
 CompilerVersion: 6140000::V6.14::ARMCLANG
-F (.\application\main.c)(0x5F4FE977)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/main.o -MD)
+F (.\application\main.c)(0x5F5119EC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/main.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
@@ -13,7 +13,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_ar
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -28,6 +28,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -47,8 +49,134 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\task.h)(0x5EAA7808)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\list.h)(0x5EAA7808)
 I (..\project_v3\server.h)(0x5F4FE95B)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5ED66044)
+I (..\project_v3\retarget.h)(0x5F509A90)
+I (..\project_v3\rtc.h)(0x5F5115DB)
+I (..\project_v3\i2c.h)(0x5F510CFA)
 F (.\server.h)(0x5F4FE95B)()
 F (.\server.c)(0x5F4FE964)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/server.o -MD)
+F (.\retarget.h)(0x5F509A90)()
+F (.\retarget.c)(0x5F511ABA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/retarget.o -MD)
+I (..\project_v3\retarget.h)(0x5F509A90)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5E0D174C)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5E0D1778)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C8FB044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
+I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x5C5BE486)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h)(0x5C5BE4DC)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc_ex.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x5C5BE55A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x5C5BE56C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x5C87E0AC)
+F (.\rtc.c)(0x5F51183C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/rtc.o -MD)
+I (..\project_v3\rtc.h)(0x5F5115DB)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5E0D174C)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5E0D1778)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C8FB044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
+I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x5C5BE486)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h)(0x5C5BE4DC)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc_ex.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x5C5BE55A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x5C5BE56C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x5C87E0AC)
+I (..\project_v3\i2c.h)(0x5F510CFA)
+I (..\project_v3\retarget.h)(0x5F509A90)
+F (.\rtc.h)(0x5F5115DB)()
+F (.\i2c.h)(0x5F510CFA)()
+F (.\i2c.c)(0x5F5117FC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/i2c.o -MD)
+I (..\project_v3\i2c.h)(0x5F510CFA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5E0D174C)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5E0D1778)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C8FB044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
+I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x5C5BE486)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h)(0x5C5BE4DC)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc_ex.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x5C5BE55A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x5C5BE56C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x5C87E0AC)
 F (.\ioLibrary_Driver\Ethernet\socket.c)(0x5E5CC1FC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/socket.o -MD)
 I (ioLibrary_Driver\Ethernet\socket.h)(0x5E5CC1FC)
 I (ioLibrary_Driver\Ethernet\wizchip_conf.h)(0x5F4C041F)
@@ -71,7 +199,7 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -100,7 +228,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -132,7 +260,7 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5E0D1778)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\RTOS2\Include\os_tick.h)(0x5B61D2F4)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -156,7 +284,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\Fre
 F (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Source\os_systick.c)(0x5D8853E4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/os_systick.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\RTOS2\Include\os_tick.h)(0x5B61D2F4)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -170,7 +298,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\D
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c)(0x5CADD4DC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -195,6 +323,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -205,7 +335,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c)(0x5C5BE4DC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_cortex.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -230,6 +360,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -240,7 +372,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c)(0x5C5BE4F6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_dma.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -265,6 +397,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -275,7 +409,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c)(0x5C5BE4F6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_dma_ex.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -300,6 +434,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -310,7 +446,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c)(0x5C5BE51A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_gpio.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -335,6 +471,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -345,7 +483,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c)(0x5C5BE53E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_pwr.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -370,6 +508,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -380,7 +520,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c)(0x5C5BE53E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_pwr_ex.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -405,6 +545,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -415,7 +557,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c)(0x5C5BE542)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_rcc.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -440,6 +582,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -450,7 +594,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c)(0x5C5BE542)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_rcc_ex.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -475,6 +619,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -485,7 +631,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c)(0x5C5BE54C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_rtc.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -510,6 +656,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -520,7 +668,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c)(0x5C5BE54C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_rtc_ex.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -545,6 +693,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -555,7 +705,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c)(0x5CADB7A4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_spi.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -580,6 +730,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -590,7 +742,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c)(0x5C5BE56C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_uart.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -615,6 +767,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -625,7 +779,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_usart.c)(0x5C5BE56E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_usart.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
 I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
@@ -650,6 +804,8 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
@@ -672,12 +828,86 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5E0D174C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5E0D1778)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C8FB044)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5C5BE482)
+F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c)(0x5CADB85E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_i2c.o -MD)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
+I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5E0D174C)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5E0D1778)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C8FB044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x5C5BE486)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h)(0x5C5BE4DC)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc_ex.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x5C5BE55A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x5C5BE56C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x5C87E0AC)
+F (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c)(0x5C5BE522)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/stm32f4xx_hal_i2c_ex.o -MD)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C5BE516)
+I (RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h)(0x5D0CC494)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x5D0CC494)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D25F326)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5D25F326)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5E0D174C)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5E0D1778)
+I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C8FB044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5C5BE482)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x5C5BE486)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h)(0x5C5BE542)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h)(0x5C5BE51A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h)(0x5C5BE4F6)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h)(0x5C5BE4DC)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x5C5BE50E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x5C5BE522)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x5C5BE53E)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc_ex.h)(0x5C5BE54C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x5C5BE55A)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x5C5BE56C)
+I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x5C87E0AC)
 F (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c)(0x5EAA7802)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../project_v3 -I ./ioLibrary_Driver/Ethernet -I ./ioLibrary_Driver/Ethernet/W5100-I./RTE/Device/STM32F446RETx-I./RTE/RTOS-I./RTE/_default-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include1-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/HP/AppData/Local/Arm/Packs/ARM/CMSIS/5.6.0/CMSIS/RTOS2/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F446xx -D_RTE_-o ./objects/freertos_evr.o -MD)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -708,7 +938,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -736,7 +966,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -760,7 +990,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -786,7 +1016,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -813,7 +1043,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -840,7 +1070,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)
@@ -867,7 +1097,7 @@ I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED66044)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
 I (RTE\RTOS\FreeRTOSConfig.h)(0x5D8853E4)
-I (RTE\_default\RTE_Components.h)(0x5F4FE7EB)
+I (RTE\_default\RTE_Components.h)(0x5F5098A6)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h)(0x5C5BE482)
 I (C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h)(0x5D25F326)

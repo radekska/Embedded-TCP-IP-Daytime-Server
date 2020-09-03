@@ -1,5 +1,5 @@
-./objects/stm32f4xx_hal_rtc_ex.o: \
-  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c \
+./objects/stm32f4xx_hal_i2c_ex.o: \
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h \
   RTE\_default\RTE_Components.h \
