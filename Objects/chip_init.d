@@ -1,8 +1,9 @@
-./objects/main.o: application\main.c \
-  ioLibrary_Driver\Ethernet\wizchip_conf.h \
+./objects/chip_init.o: chip_init.c \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  ..\project_v3\chip_init.h \
+  ..\project_v3\ioLibrary_Driver\Ethernet\socket.h \
+  ioLibrary_Driver\Ethernet\wizchip_conf.h \
   ioLibrary_Driver\Ethernet\W5100\w5100.h \
-  ioLibrary_Driver\Ethernet\socket.h \
   ioLibrary_Driver\Ethernet\wizchip_conf.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h \
@@ -38,5 +39,4 @@
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc_ex.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h

@@ -1,6 +1,9 @@
 #ifndef __SERVER_H__
 #define __SERVER_H__
 
+#include "FreeRTOS.h"
+#include "task.h"
+
 /** TODO: in FreeRTOSConfig.h set widow size (MSS) ipconfigUSE_TCP_WIN to 1 
  * in order to have proper buffer length and scaale */
 

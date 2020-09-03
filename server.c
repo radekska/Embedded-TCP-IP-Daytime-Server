@@ -1,11 +1,22 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "server.h"
-#include "ioLibrary_Driver/Ethernet/socket.h"
 #include "chip_init.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include "semphr.h"
+#include "socket.h"
+#include "w5100.h"
+#include <string.h>
+
+//temporary
+static wiz_NetInfo netInfo = { 
+                        .mac 	= {0x00, 0x08, 0xdc, 0xab, 0xcd, 0xef},	// Mac address
+                        .ip 	= {10, 0, 1, 200},					    // IP address
+                        .sn 	= {255, 255, 255, 0},					// Subnet mask
+                        .gw 	= {10, 0, 1, 1}                         // Gateway address
+                    };
+
 
 /* Requested stack size when server listening task creates connection */
 static uint16_t usedStackSize = 0;
@@ -13,7 +24,7 @@ static uint16_t usedStackSize = 0;
 static void listeningForConnectionTask(void *params);
 static int openTCPServerSocket(socket_t socket);
 static int16_t getSocketStatus(socket_t socket);
-static int acceptTCPServerSocket(socket_t socket, sockaddr_t clientSocketInfo);
+static int acceptTCPServerSocket(socket_t socket, sockaddr_t *clientSocketInfo);
 static void createEchoServerInstance(void *params);
 static void receiveAndEchoBack(socket_t connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize);
 static void clearBuffer(uint8_t *buffer, uint16_t bufferSize);
@@ -21,8 +32,6 @@ static int hasReceivedDataFromSocket(int32_t bytesFromSocket);
 static int hasSentBackDataToSocket(int32_t bytesSentToSocket);
 static void cleanUpResources(socket_t socketToClose, uint8_t *buffer, uint16_t bufferSize);
 static int hasReceiveOnSocketReturnedError(socket_t socketToCheck, uint8_t *buffer, uint16_t bufferSize);
-
-
 
 void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority)
 {
@@ -37,9 +46,9 @@ static void listeningForConnectionTask(void *params)
     sockaddr_t clientSocket;
 
     sockaddr_t bindAddress = {
-        .ip_addr = netInfo.ip,
         .port = (uint16_t) ECHO_PORT
         };
+		memcpy(bindAddress.ip_addr, netInfo.ip, 4);
 
     socket_t serverSocket = {
         .sockNumber = serverSocketNumber,
@@ -57,40 +66,40 @@ static void listeningForConnectionTask(void *params)
                 if (acceptTCPServerSocket(serverSocket, &clientSocket) == SOCK_OK)
                 {
                     xTaskCreate(createEchoServerInstance,
-                        “EchoServerInstance”,
+                        "EchoServerInstance",
                         usedStackSize,
-                        (void *) serverSocket,
+                        (void *) &serverSocket,
                         tskIDLE_PRIORITY,
                         NULL);
                 } else
                 {
                     /* Handle Socket Established Timeout Error */
-                    __nop();
+                    __NOP();
                 }
             }
         } else
         {
             /* Handle Socket listening fail */
-            __nop();
+            __NOP();
         }
     } else
     {
         /* Handle Socket opening fail */
-        __nop();
+        __NOP();
     }
 }
 
 //TODO: Think about some queque for free sockets(socket pool) 
-static int openTCPServerSocket(socket_t socket)
+static int openTCPServerSocket(socket_t socketHandler)
 {
     int8_t retVal = SOCKERR_SOCKNUM;
 
-    if (socket.sockNumber < _WIZCHIP_SOCK_NUM_)
+    if (socketHandler.sockNumber < _WIZCHIP_SOCK_NUM_)
     {
-        retVal = socket(socket.sockNumber, Sn_MR_TCP, socket.sockaddr.port, 0);
+        retVal = socket(socketHandler.sockNumber, Sn_MR_TCP, socketHandler.sockaddr.port, 0);
     }
     
-    return retVal == socket.sockNumber ? SOCKET_SUCCESS : retVal;
+    return retVal == socketHandler.sockNumber ? SOCKET_SUCCESS : retVal;
 }
 
 static int16_t getSocketStatus(socket_t socket)
@@ -98,7 +107,7 @@ static int16_t getSocketStatus(socket_t socket)
     return (int16_t) getSn_SR(socket.sockNumber);
 }
 
-static int acceptTCPServerSocket(socket_t socket, sockaddr_t clientSocketInfo)
+static int acceptTCPServerSocket(socket_t socket, sockaddr_t *clientSocketInfo)
 {
     TickType_t timeToOpen = xTaskGetTickCount();
 
@@ -119,7 +128,7 @@ static void createEchoServerInstance(void *params)
     static const TickType_t timeout = pdMS_TO_TICKS( 5000 );
     static const TickType_t receiveTimeout = timeout; 
     static const TickType_t sendTimeout = timeout;
-    socket_t connectedSocket = (socket_t) params;
+    socket_t connectedSocket = *((socket_t *) params);
 
 
     uint16_t bufferSize = (uint16_t) RX_BUFF_SIZE;

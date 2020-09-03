@@ -4,6 +4,7 @@
 ".\objects\retarget.o"
 ".\objects\rtc.o"
 ".\objects\i2c.o"
+".\objects\chip_init.o"
 ".\objects\socket.o"
 ".\objects\wizchip_conf.o"
 ".\objects\w5100.o"

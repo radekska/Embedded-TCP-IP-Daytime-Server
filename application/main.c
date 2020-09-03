@@ -6,12 +6,16 @@
 #include "stdio.h"
 #include "retarget.h"
 #include "rtc.h"
+#include "chip_init.h"
+
 
 void LED_Init(void);
 void taskLED(void* params);
 void MX_USART2_UART_Init(void);
+static void MX_SPI2_Init(void);
 	
 UART_HandleTypeDef huart2;
+static SPI_HandleTypeDef hspi2;
  
 //----------------------------------------
 
@@ -23,44 +27,27 @@ int main(void)
     LED_Init();
 	
 		MX_USART2_UART_Init();
+		MX_SPI2_Init();
 	
-	retarget_init(NULL);
+		if(init_wiz_chip())
+		{
+			HAL_UART_Transmit(&huart2, "debug1\n", strlen("debug1\n"), 100);
+			while(1);
+		}
 	
-		printf("Ok\n");
-	
-		rtc_init(NULL);	
-	
-	volatile struct date_struct set_date;
-	volatile struct date_struct read_date;
-	
-	set_date.sec = 1;
-	set_date.min = 2;
-	set_date.hour = 2;
-	set_date.day = 3;
-	set_date.month = 4;
-	set_date.year = 5;
-	
-	rtc_set_date(&set_date);
-	
-	for(int i = 0; i < 0xFFFF; i++);
-	
-	//rtc_read_date(&read_date);
-	
-	while(1)
-		rtc_print_date();
+		createTCPServerSocket(configMINIMAL_STACK_SIZE * 100, 2);
 		
-	
-		rtc_read_date(NULL);
-
-	HAL_UART_Transmit(&huart2, "debug2\n", strlen("debug2\n"), 100);
-		
-	HAL_UART_Transmit(&huart2, "debug2\n", strlen("debug2\n"), 100);
   
-    if (pdPASS != xTaskCreate(taskLED, "led", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
+    if (pdPASS != xTaskCreate(taskLED, "led", configMINIMAL_STACK_SIZE, NULL, 1, NULL)) {
         printf("ERROR: Unable to create task!\n");
     }
         
     vTaskStartScheduler();
+		
+		while(1)
+		{
+			__NOP();
+		}
         
 } 
 
@@ -117,4 +104,45 @@ void MX_USART2_UART_Init(void)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 	HAL_UART_Init(&huart2);
+}
+
+
+void MX_SPI2_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct;
+
+    hspi2.Instance = SPI2;
+    hspi2.Init.Mode = SPI_MODE_MASTER;
+    hspi2.Init.Direction = SPI_DIRECTION_2LINES;
+    hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
+    hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
+    hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
+    hspi2.Init.NSS = SPI_NSS_SOFT;
+    hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
+    hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
+    hspi2.Init.TIMode = SPI_TIMODE_DISABLED;
+    hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLED;
+
+    __SPI2_CLK_ENABLE();
+    /**SPI2 GPIO Configuration
+    PB12     ------> SPI2_NSS
+    PB13     ------> SPI2_SCK
+    PB14     ------> SPI2_MISO
+    PB15     ------> SPI2_MOSI
+    */
+    GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
+    GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    /*Configure GPIO pin : PA5 */
+    GPIO_InitStruct.Pin = GPIO_PIN_12;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+	HAL_SPI_Init(&hspi2);
 }

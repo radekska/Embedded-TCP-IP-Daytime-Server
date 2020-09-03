@@ -27,41 +27,16 @@ Project File Date:  09/03/2020
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'default'
-retarget.c(1): warning: In file included from...
-../project_v3/retarget.h(6): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(524): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_uart.h(172): warning: padding struct 'struct __UART_HandleTypeDef' with 1 byte to align 'ErrorCode' [-Wpadded]
-  __IO uint32_t                 ErrorCode;        /*!< UART Error code                    */
-                                ^
-retarget.c(1): warning: In file included from...
-../project_v3/retarget.h(25): warning: no newline at end of file [-Wnewline-eof]
-#endif /* _RETARGET_H */
-                        ^
-retarget.c(1): warning: In file included from...
-../project_v3/retarget.h(6): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(30): warning: In file included from...
-./RTE/Device/STM32F446RETx\stm32f4xx_hal_conf.h(408): warning: In file included from...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.14.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(149): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
-  void                       *Parent;                                                          /*!< Parent object state                    */ 
-                              ^
-retarget.c(21): warning: unused parameter 'f' [-Wunused-parameter]
-int fputc(int ch, FILE *f)
-                        ^
-retarget.c(32): warning: unused parameter 'f' [-Wunused-parameter]
-int ferror(FILE *f)
-                 ^
-retarget.c(69): warning: non-void function does not return a value [-Wreturn-type]
-}
-^
-retarget.c(41): warning: unused function 'uart2_init' [-Wunused-function]
-static uint32_t uart2_init(void)
-                ^
-7 warnings generated.
-compiling retarget.c...
+compiling main.c...
 linking...
-Program Size: Code=11290 RO-data=506 RW-data=32 ZI-data=12456  
-".\Objects\server_tcp.axf" - 0 Error(s), 7 Warning(s).
+.\Objects\server_tcp.axf: Error: L6200E: Symbol spi_wb multiply defined (by chip_init.o and main.o).
+.\Objects\server_tcp.axf: Error: L6200E: Symbol cs_desel multiply defined (by chip_init.o and main.o).
+.\Objects\server_tcp.axf: Error: L6200E: Symbol cs_sel multiply defined (by chip_init.o and main.o).
+.\Objects\server_tcp.axf: Error: L6200E: Symbol spi_rb multiply defined (by chip_init.o and main.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 4 error messages.
+".\Objects\server_tcp.axf" - 4 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -219,6 +194,7 @@ Package Vendor: Keil
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f446xx.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Target not created.
 Build Time Elapsed:  00:00:02
 </pre>
 </body>
