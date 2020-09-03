@@ -7,8 +7,8 @@
 #include "task.h"
 #include "semphr.h"
 
-static const uint8_t rxBuffSize[RX_BUFF_SIZE];
-static const uint8_t txBuffSize[TX_BUFF_SIZE];
+// static const uint8_t rxBuffer[RX_BUFF_SIZE];
+static const uint8_t txBuffer[TX_BUFF_SIZE];
 
 /* Requested stack size when server listening task creates connection */
 static uint16_t usedStackSize = 0;
@@ -34,74 +34,79 @@ void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority)
 static void listeningForConnectionTask(void *params)
 {
     uint8_t serverSocketNumber = 0;
-    sockaddr_t connectedSocket;
+    sockaddr_t clientSocket;
 
     sockaddr_t bindAddress = {
         .ip_addr = netInfo.ip,
         .port = (uint16_t) ECHO_PORT
         };
+
+    socket_t serverSocket = {
+        .sockNumber = serverSocketNumber,
+        .sockaddr = bindAddress
+    };
     //bindAddress.port = htons(bindAddress.port);
 
-    if (openTCPServerSocket(serverSocketNumber, bindAddress.port) == SOCKET_SUCCESS) {
-        setsockopt(serverSocketNumber, SO_TTL, (uint8_t) 3);
-        if (listen(serverSocketNumber) == SOCK_OK) {
+    if (openTCPServerSocket(serverSocket) == SOCKET_SUCCESS) {
+        setsockopt(serverSocket.sockNumber, SO_TTL, (uint8_t) 3);
+        if (listen(serverSocket.sockNumber) == SOCK_OK) {
             // wait for remote conn
-            while(getSocketStatus(serverSocketNumber) == SOCK_LISTEN);
+            while(getSocketStatus(serverSocket) == SOCK_LISTEN);
             while(1)
             {
-                if (acceptTCPServerSocket(&connectedSocket, serverSocketNumber) == SOCK_OK)
+                if (acceptTCPServerSocket(serverSocket, &clientSocket) == SOCK_OK)
                 {
                     xTaskCreate(createEchoServerInstance,
                         “EchoServerInstance”,
                         usedStackSize,
-                        (void *) connectedSocket,
+                        (void *) serverSocket,
                         tskIDLE_PRIORITY,
                         NULL);
                 } else
                 {
                     /* Handle Socket Established Timeout Error */
-                    __NOP();
+                    __nop();
                 }
             }
         } else
         {
             /* Handle Socket listening fail */
-            __NOP();
+            __nop();
         }
-    } else 
+    } else
     {
         /* Handle Socket opening fail */
-        __NOP();
+        __nop();
     }
 }
 
 //TODO: Think about some queque for free sockets(socket pool) 
-static int openTCPServerSocket(uint8_t socketNumberToOpen, uint16_t port)
+static int openTCPServerSocket(socket_t socket)
 {
     int8_t retVal = SOCKERR_SOCKNUM;
 
-    if (socketNumberToOpen < _WIZCHIP_SOCK_NUM_)
+    if (socket.sockNumber < _WIZCHIP_SOCK_NUM_)
     {
-        retVal = socket(socketNumberToOpen, Sn_MR_TCP, port, 0);
+        retVal = socket(socket.sockNumber, Sn_MR_TCP, socket.sockaddr.port, 0);
     }
     
-    return retVal == socketNumberToOpen ? SOCKET_SUCCESS : SOCKET_FAILED;
+    return retVal == socket.sockNumber ? SOCKET_SUCCESS : retVal;
 }
 
-static int16_t getSocketStatus(uint8_t socketNumber)
+static int16_t getSocketStatus(socket_t socket)
 {
-    return (int16_t) getSn_SR(socketNumber);
+    return (int16_t) getSn_SR(socket.sockNumber);
 }
 
-static int acceptTCPServerSocket(sockaddr_t* connectedSocketHandle, uint8_t serverSocket)
+static int acceptTCPServerSocket(socket_t socket, sockaddr_t clientSocketInfo)
 {
     TickType_t timeToOpen = xTaskGetTickCount();
 
     do
     {
-        if (getSocketStatus(serverSocket) == SOCK_ESTABLISHED) {
-            getsockopt(serverSocket, SO_DESTIP, connectedSocketHandle->ip_addr);
-            getsockopt(serverSocket, SO_DESTPORT, (uint16_t *) connectedSocketHandle->port);
+        if (getSocketStatus(socket) == SOCK_ESTABLISHED) {
+            getsockopt(socket.sockNumber, SO_DESTIP, clientSocketInfo->ip_addr);
+            getsockopt(socket.sockNumber, SO_DESTPORT, (uint16_t *) clientSocketInfo->port);
             return SOCK_OK;
         }
     } while ( (xTaskGetTickCount() - timeToOpen) < SOCKET_TIMEOUT);
@@ -114,53 +119,55 @@ static void createEchoServerInstance(void *params)
     static const TickType_t timeout = pdMS_TO_TICKS( 5000 );
     static const TickType_t receiveTimeout = timeout; 
     static const TickType_t sendTimeout = timeout;
-    uint16_t bufferSize = ipconfigTCP_MSS;
+    socket_t connectedSocket = (socket_t) params;
 
-    sockaddr_t connectedSocket = (sockaddr_t) params;
-    
-    uint8_t *receiveBuffer = (uint8_t *) pvPortMalloc(bufferSize);
 
-    if (receiveBuffer != NULL)
+    uint16_t bufferSize = (uint16_t) RX_BUFF_SIZE;
+    uint8_t *rxBuffer = (uint8_t *) pvPortMalloc(bufferSize);
+
+    if (rxBuffer != NULL)
     {
-        FreeRTOS_setsockopt(connectedSocket, UNUSED_PARAM, FREERTOS_SO_RCVTIMEO, &receiveTimeout, UNUSED_PARAM);
-		FreeRTOS_setsockopt(connectedSocket, UNUSED_PARAM, FREERTOS_SO_SNDTIMEO, &sendTimeout, UNUSED_PARAM);
-
-        receiveAndEchoBack(connectedSocket, receiveBuffer, bufferSize);
+        receiveAndEchoBack(connectedSocket, rxBuffer, bufferSize);
     }
 
-    cleanUpResources(connectedSocket, receiveBuffer, bufferSize);
+    cleanUpResources(connectedSocket, rxBuffer, bufferSize);
 }
 
-static void receiveAndEchoBack(Socket_t connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize)
+static void receiveAndEchoBack(socket_t connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize)
 {
     int32_t bytesReceivedOnSocket;
-    int32_t bytesSentBackBySocket;
-    int32_t bytesTotalSentBySocket;
+    int32_t bytesSentBySocket;
+    int32_t bytesTotalSentBack;
 
     while (1)
     {
         clearBuffer(receiveBuffer, bufferSize);
 
-        bytesReceivedOnSocket = FreeRTOS_recv(connectedSocket, receiveBuffer, bufferSize, UNUSED_PARAM);
+        bytesReceivedOnSocket = recv(connectedSocket.sockNumber, receiveBuffer, bufferSize);
         
         if (hasReceivedDataFromSocket(bytesReceivedOnSocket))
         {
-            bytesSentBackBySocket = 0;
-            bytesTotalSentBySocket = bytesSentBackBySocket;
+            bytesSentBySocket = 0;
+            bytesTotalSentBack = bytesSentBySocket;
 
-            while (hasSentBackDataToSocket(bytesSentBackBySocket)) && 
-                    (bytesTotalSentBySocket < bytesReceivedOnSocket))
+            while (hasSentBackDataToSocket(bytesSentBySocket) && (bytesTotalSentBack < bytesReceivedOnSocket))
             {
-                bytesSentBackBySocket = FreeRTOS_send(connectedSocket, receiveBuffer, bytesReceivedOnSocket - bytesTotalSentBySocket, UNUSED_PARAM);
+                bytesSentBySocket = send(connectedSocket.sockNumber, receiveBuffer, bytesReceivedOnSocket - bytesTotalSentBack);
 
-                if (hasSentBackDataToSocket(bytesSentBackBySocket))
-                    bytesTotalSentBySocket += bytesSentBackBySocket;
+                if (hasSentBackDataToSocket(bytesSentBySocket))
+                    bytesTotalSentBack += bytesSentBySocket;
                 else
+                {
+                    //Log it or something
                     return;
+                }
             }
         }
         else
+        {
+            //Log it or something
             return;
+        }
     }
 }
 
@@ -171,32 +178,32 @@ static void clearBuffer(uint8_t *buffer, uint16_t bufferSize)
 
 static int hasReceivedDataFromSocket(int32_t bytesFromSocket)
 {
-    return bytesFromSocket >= 0 ? SOCKET_SUCCESS : SOCKET_FAILED;
+    return bytesFromSocket > 0 ? SOCKET_SUCCESS : SOCKET_FAILED;
 }
 
 static int hasSentBackDataToSocket(int32_t bytesSentToSocket)
 {
-    return bytesSentToSocket >= 0 ? SOCKET_SUCCESS : SOCKET_FAILED;
+    return bytesSentToSocket > 0 ? SOCKET_SUCCESS : SOCKET_FAILED;
 }
 
-static void cleanUpResources(Socket_t socketToClose, uint8_t *buffer, uint16_t bufferSize)
+static void cleanUpResources(socket_t socketToClose, uint8_t *buffer, uint16_t bufferSize)
 {
     TickType_t timeToShut = xTaskGetTickCount();
 
-    FreeRTOS_shutdown(socketToClose, FREERTOS_SHUT_RDWR);
+    disconnect(socketToClose.sockNumber);
 
     do
     {
         if (hasReceiveOnSocketReturnedError(socketToClose, buffer, bufferSize))
             break;
-    } while ( (xTaskGetTickCount() - timeToShut) < SOCKET_SHUTDOWN_MAX_TIME);
+    } while ( (xTaskGetTickCount() - timeToShut) < SOCKET_TIMEOUT);
 
     vPortFree(buffer);
-	FreeRTOS_closesocket(socketToClose);
+    close(socketToClose.sockNumber);
 	vTaskDelete(NULL);
 }
 
-static int hasReceiveOnSocketReturnedError(Socket_t socketToCheck, uint8_t *buffer, uint16_t bufferSize)
+static int hasReceiveOnSocketReturnedError(socket_t socketToCheck, uint8_t *buffer, uint16_t bufferSize)
 {
-    return FreeRTOS_recv(socketToCheck, buffer, bufferSize, UNUSED_PARAM ) < 0;
+    return recv(socketToCheck.sockNumber, buffer, bufferSize) < 0;
 }

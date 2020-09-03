@@ -4,7 +4,7 @@
 /** TODO: in FreeRTOSConfig.h set widow size (MSS) ipconfigUSE_TCP_WIN to 1 
  * in order to have proper buffer length and scaale */
 
-/** DEFINE CONSTANTS **/
+/******** DEFINE CONSTANTS ********/
 /* Socket created successfully */
 #define SOCKET_SUCCESS 1
 /* There was insufficient FreeRTOS heap memory available for the socket to be created. */
@@ -16,8 +16,8 @@
 /* The maximum time to wait for a closing socket to close. */
 #define SOCKET_TIMEOUT	( pdMS_TO_TICKS( 5000 ) )
 
-#define RX_BUFF_SIZE 20
-#define TX_BUFF_SIZE 20
+#define RX_BUFF_SIZE 2048
+#define TX_BUFF_SIZE 2048
 
 typedef struct __sockaddr
 {
@@ -25,7 +25,10 @@ typedef struct __sockaddr
     uint16_t port;
 } sockaddr_t;
 
-
+typedef struct __socket_t {
+    uint8_t sockNumber;
+    sockaddr_t sockaddr;
+} socket_t;
 
 void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority);
 
