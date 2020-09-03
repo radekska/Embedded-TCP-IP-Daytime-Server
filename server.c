@@ -7,12 +7,15 @@
 #include "task.h"
 #include "semphr.h"
 
+static const uint8_t rxBuffSize[RX_BUFF_SIZE];
+static const uint8_t txBuffSize[TX_BUFF_SIZE];
 
 /* Requested stack size when server listening task creates connection */
 static uint16_t usedStackSize = 0;
 
 static void createEchoServerInstance(void *params);
 static void listeningForConnectionTask(void *params);
+static int16_t getSocketStatus(uint8_t socketNumber);
 static void clearBuffer(uint8_t *buffer, uint16_t bufferSize);
 static void receiveAndEchoBack(Socket_t connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize);
 static int openTCPServerSocket(Socket_t* socketToOpen);
@@ -30,48 +33,47 @@ void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority)
 
 static void listeningForConnectionTask(void *params)
 {
-    static const uint8_t rxBuffSize[RX_BUFF_SIZE];
-    static const uint8_t txBuffSize[TX_BUFF_SIZE];
-
-    sockaddr_t clientAddress;
-    sockaddr_t bindAddress = {  .ip_addr = netInfo.ip,
-                                .port = (uint16_t) ECHO_PORT };
-
-    //TODO:
     uint8_t serverSocketNumber = 0;
-    Socket_t connectedSocket;
-    socklen_t clientAddrSize = sizeof(clientAddress);
-    static const TickType_t receiveTimeout = portMAX_DELAY;
-    const uint8_t backlog = 5;
-    //TODO
+    sockaddr_t connectedSocket;
 
+    sockaddr_t bindAddress = {
+        .ip_addr = netInfo.ip,
+        .port = (uint16_t) ECHO_PORT
+        };
+    //bindAddress.port = htons(bindAddress.port);
 
     if (openTCPServerSocket(serverSocketNumber, bindAddress.port) == SOCKET_SUCCESS) {
-
-        FreeRTOS_setsockopt(listeningSocket, UNUSED_PARAM, FREERTOS_SO_RCVBUF, &bufferSize, UNUSED_PARAM);
-        FreeRTOS_setsockopt(listeningSocket, UNUSED_PARAM, FREERTOS_SO_SNDBUF, &bufferSize, UNUSED_PARAM);
-        FreeRTOS_setsockopt(listeningSocket, UNUSED_PARAM, FREERTOS_SO_RCVTIMEO, &receiveTimeout, UNUSED_PARAM);
-        FreeRTOS_setsockopt(listeningSocket, UNUSED_PARAM, FREERTOS_SO_WIN_PROPERTIES, (void *) &xWinProps, UNUSED_PARAM);
-
-        bindAddress.port = htons(bindAddress.port);
-        FreeRTOS_bind(listeningSocket, &bindAddress, sizeof(bindAddress.sin_port));
-        FreeRTOS_listen(listeningSocket, backlog);
-
-        while(1)
-        {
-            if (acceptTCPServerSocket(&connectedSocket, &listeningSocket, &clientAddress, &clientAddrSize) == SOCKET_SUCCESS)
+        setsockopt(serverSocketNumber, SO_TTL, (uint8_t) 3);
+        if (listen(serverSocketNumber) == SOCK_OK) {
+            // wait for remote conn
+            while(getSocketStatus(serverSocketNumber) == SOCK_LISTEN);
+            while(1)
             {
-                xTaskCreate(createEchoServerInstance,
-                    “EchoServerInstance”,
-                    usedStackSize,
-                    (void *) connectedSocket,
-                    tskIDLE_PRIORITY,
-                    NULL);
+                if (acceptTCPServerSocket(&connectedSocket, serverSocketNumber) == SOCK_OK)
+                {
+                    xTaskCreate(createEchoServerInstance,
+                        “EchoServerInstance”,
+                        usedStackSize,
+                        (void *) connectedSocket,
+                        tskIDLE_PRIORITY,
+                        NULL);
+                } else
+                {
+                    /* Handle Socket Established Timeout Error */
+                    __NOP();
+                }
             }
+        } else
+        {
+            /* Handle Socket listening fail */
+            __NOP();
         }
-    }    
+    } else 
+    {
+        /* Handle Socket opening fail */
+        __NOP();
+    }
 }
-
 
 //TODO: Think about some queque for free sockets(socket pool) 
 static int openTCPServerSocket(uint8_t socketNumberToOpen, uint16_t port)
@@ -86,21 +88,35 @@ static int openTCPServerSocket(uint8_t socketNumberToOpen, uint16_t port)
     return retVal == socketNumberToOpen ? SOCKET_SUCCESS : SOCKET_FAILED;
 }
 
-static int acceptTCPServerSocket(Socket_t* connectedSocketHandle, Socket_t* listeningSocket, struct freertos_sockaddr *connectedSocketInfo, socklen_t addressLen)
+static int16_t getSocketStatus(uint8_t socketNumber)
 {
-    *connectedSocketHandle = FreeRTOS_accept(*listeningSocket, connectedSocketInfo, addressLen);
-    return (connectedSocketHandle == FREERTOS_INVALID_SOCKET || connectedSocketHandle == NULL) ? 
-        SOCKET_FAILED : SOCKET_SUCCESS;
+    return (int16_t) getSn_SR(socketNumber);
+}
+
+static int acceptTCPServerSocket(sockaddr_t* connectedSocketHandle, uint8_t serverSocket)
+{
+    TickType_t timeToOpen = xTaskGetTickCount();
+
+    do
+    {
+        if (getSocketStatus(serverSocket) == SOCK_ESTABLISHED) {
+            getsockopt(serverSocket, SO_DESTIP, connectedSocketHandle->ip_addr);
+            getsockopt(serverSocket, SO_DESTPORT, (uint16_t *) connectedSocketHandle->port);
+            return SOCK_OK;
+        }
+    } while ( (xTaskGetTickCount() - timeToOpen) < SOCKET_TIMEOUT);
+
+    return SOCKET_FAILED;
 }
 
 static void createEchoServerInstance(void *params)
 {
     static const TickType_t timeout = pdMS_TO_TICKS( 5000 );
-    static const TickType_t receiveTimeout = timeout;
+    static const TickType_t receiveTimeout = timeout; 
     static const TickType_t sendTimeout = timeout;
     uint16_t bufferSize = ipconfigTCP_MSS;
 
-    Socket_t connectedSocket = (Socket_t) params;
+    sockaddr_t connectedSocket = (sockaddr_t) params;
     
     uint8_t *receiveBuffer = (uint8_t *) pvPortMalloc(bufferSize);
 

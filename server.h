@@ -14,15 +14,15 @@
 /* 7 is well-known port for echo protocol on unix-like os */
 #define ECHO_PORT 7
 /* The maximum time to wait for a closing socket to close. */
-#define SOCKET_SHUTDOWN_MAX_TIME	( pdMS_TO_TICKS( 5000 ) )
+#define SOCKET_TIMEOUT	( pdMS_TO_TICKS( 5000 ) )
 
 #define RX_BUFF_SIZE 20
 #define TX_BUFF_SIZE 20
 
 typedef struct __sockaddr
 {
-    uint16_t port;
     uint8_t ip_addr[4];
+    uint16_t port;
 } sockaddr_t;
 
 
