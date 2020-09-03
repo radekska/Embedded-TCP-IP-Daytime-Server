@@ -9,6 +9,9 @@
 #include "w5100.h"
 #include <string.h>
 
+#include <stm32f4xx_hal.h>
+extern UART_HandleTypeDef  huart2;
+
 //temporary
 static wiz_NetInfo netInfo = { 
                         .mac 	= {0x00, 0x08, 0xdc, 0xab, 0xcd, 0xef},	// Mac address
@@ -35,8 +38,13 @@ static int hasReceiveOnSocketReturnedError(socket_t socketToCheck, uint8_t *buff
 
 void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority)
 {
-    xTaskCreate(listeningForConnectionTask, "EchoServerListener", stackSize, NULL, taskPriority + 1, NULL);
-    usedStackSize = stackSize;
+	HAL_UART_Transmit(&huart2, "createTCPServerSocket\n", strlen("createTCPServerSocket\n"), 100);
+	
+	if (pdPASS != xTaskCreate(listeningForConnectionTask, "EchoServerListener", stackSize, NULL, taskPriority + 1, NULL)) {
+		HAL_UART_Transmit(&huart2, "createTCPServerSocket error\n", strlen("createTCPServerSocket error\n"), 100);
+	}
+
+	usedStackSize = stackSize;
 }
 
 
@@ -44,8 +52,10 @@ static void listeningForConnectionTask(void *params)
 {
     uint8_t serverSocketNumber = 0;
     sockaddr_t clientSocket;
+	
+	HAL_UART_Transmit(&huart2, "listeningForConnectionTask\n", strlen("listeningForConnectionTask\n"), 100);
 
-    sockaddr_t bindAddress = {
+    volatile sockaddr_t bindAddress = {
         .port = (uint16_t) ECHO_PORT
         };
 		memcpy(bindAddress.ip_addr, netInfo.ip, 4);
@@ -61,16 +71,22 @@ static void listeningForConnectionTask(void *params)
         if (listen(serverSocket.sockNumber) == SOCK_OK) {
             // wait for remote conn
             while(getSocketStatus(serverSocket) == SOCK_LISTEN);
-            while(1)
+            //while(1)
             {
+
                 if (acceptTCPServerSocket(serverSocket, &clientSocket) == SOCK_OK)
                 {
+										//HAL_UART_Transmit(&huart2, "socket connected\n", strlen("socket connected\n"), 100);
+									
+									createEchoServerInstance((void *)&serverSocket);
+									
+									/*
                     xTaskCreate(createEchoServerInstance,
                         "EchoServerInstance",
                         usedStackSize,
                         (void *) &serverSocket,
                         tskIDLE_PRIORITY,
-                        NULL);
+                        NULL);*/
                 } else
                 {
                     /* Handle Socket Established Timeout Error */
@@ -129,6 +145,8 @@ static void createEchoServerInstance(void *params)
     static const TickType_t receiveTimeout = timeout; 
     static const TickType_t sendTimeout = timeout;
     socket_t connectedSocket = *((socket_t *) params);
+	
+	HAL_UART_Transmit(&huart2, "createEchoServerInstance task created\n", strlen("createEchoServerInstance task created\n"), 100);
 
 
     uint16_t bufferSize = (uint16_t) RX_BUFF_SIZE;
@@ -136,6 +154,8 @@ static void createEchoServerInstance(void *params)
 
     if (rxBuffer != NULL)
     {
+			HAL_UART_Transmit(&huart2, "rxBuffer not empty\n", strlen("rxBuffer not empty\n"), 100);
+			
         receiveAndEchoBack(connectedSocket, rxBuffer, bufferSize);
     }
 

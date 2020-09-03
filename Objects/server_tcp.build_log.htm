@@ -27,16 +27,10 @@ Project File Date:  09/03/2020
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'default'
-compiling main.c...
+compiling server.c...
 linking...
-.\Objects\server_tcp.axf: Error: L6200E: Symbol spi_wb multiply defined (by chip_init.o and main.o).
-.\Objects\server_tcp.axf: Error: L6200E: Symbol cs_desel multiply defined (by chip_init.o and main.o).
-.\Objects\server_tcp.axf: Error: L6200E: Symbol cs_sel multiply defined (by chip_init.o and main.o).
-.\Objects\server_tcp.axf: Error: L6200E: Symbol spi_rb multiply defined (by chip_init.o and main.o).
-Not enough information to list image symbols.
-Not enough information to list load addresses in the image map.
-Finished: 2 information, 0 warning and 4 error messages.
-".\Objects\server_tcp.axf" - 4 Error(s), 0 Warning(s).
+Program Size: Code=21780 RO-data=600 RW-data=76 ZI-data=13792  
+".\Objects\server_tcp.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -106,13 +100,13 @@ Package Vendor: Keil
 
    * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.3.1
       Include file:  Source\include\FreeRTOS.h
-      Include file:  Source\include\semphr.h
-      Include file:  Source\include\task.h
-      Source file:   Source\list.c
       Include file:  Source\include\queue.h
       Source file:   Source\tasks.c
-      Source file:   Source\queue.c
+      Source file:   Source\list.c
       Source file:   Source\portable\GCC\ARM_CM4F\port.c
+      Source file:   Source\queue.c
+      Include file:  Source\include\task.h
+      Include file:  Source\include\semphr.h
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
 
    * Component: ARM.FreeRTOS::RTOS:Event Groups:10.3.1
@@ -123,8 +117,8 @@ Package Vendor: Keil
       Source file:   Source\portable\MemMang\heap_4.c
 
    * Component: ARM.FreeRTOS::RTOS:Timers:10.3.1
-      Source file:   Source\timers.c
       Include file:  Source\include\timers.h
+      Source file:   Source\timers.c
 
    * Component: ARM::CMSIS:CORE:5.3.0
 
@@ -133,21 +127,21 @@ Package Vendor: Keil
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os1.c
 
    * Component: ARM::CMSIS:RTOS2:FreeRTOS:Cortex-M:10.3.1
+      Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c
       Include file:  CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\os_systick.c
-      Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c
 
    * Component: Keil::Device:STM32Cube Framework:Classic:1.7.6
+      Include file:  MDK\Templates\Inc\main.h
+      Source file:   MDK\Templates_LL\Src\main.c
+      Source file:   MDK\Templates\Src\stm32f4xx_it.c
+      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
       Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
       Include file:  MDK\Templates\Inc\stm32f4xx_it.h
-      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
-      Source file:   MDK\Templates\Src\stm32f4xx_it.c
-      Source file:   MDK\Templates_LL\Src\main.c
-      Include file:  MDK\Templates\Inc\main.h
+      Include file:  MDK\Templates_LL\Inc\main.h
       Include file:  CMSIS\Driver\Config\RTE_Device.h
       Source file:   MDK\Templates\Src\main.c
-      Include file:  MDK\Templates_LL\Inc\main.h
 
    * Component: Keil::Device:STM32Cube HAL:Common:1.7.6
       Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
@@ -172,8 +166,8 @@ Package Vendor: Keil
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:RCC:1.7.6
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
 
    * Component: Keil::Device:STM32Cube HAL:RTC:1.7.6
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c
@@ -189,12 +183,11 @@ Package Vendor: Keil
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_usart.c
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   MDK\Device\Source\ARM\STM32F446xx_OPT.s
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   MDK\Device\Source\ARM\STM32F446xx_OPT.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f446xx.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Target not created.
 Build Time Elapsed:  00:00:02
 </pre>
 </body>

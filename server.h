@@ -35,5 +35,4 @@ typedef struct __socket_t {
 
 void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority);
 
-
 #endif /* __SERVER_H__ */
