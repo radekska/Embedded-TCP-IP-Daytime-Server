@@ -171,11 +171,7 @@ int main(int argc, char **argv)
 
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-<<<<<<< HEAD
 	servaddr.sin_port   = htons(port_number);
-=======
-	servaddr.sin_port   = htons(port_number);	
->>>>>>> 41a92f9ae40d2da2784b95a498734f808d80e92b
 
 	if ( (err=inet_pton(AF_INET, ip_address, &servaddr.sin_addr)) == -1){
 		fprintf(stderr,"ERROR: inet_pton error for %s : %s \n", ip_address, strerror(errno));
@@ -195,11 +191,7 @@ int main(int argc, char **argv)
 	printf("Connected!\n");
 
 	
-<<<<<<< HEAD
 	str_cli(stdin, sockfd);		
-=======
-	str_cli(stdin, sockfd);		/* ECHO PART */
->>>>>>> 41a92f9ae40d2da2784b95a498734f808d80e92b
 
 
 	fprintf(stderr,"OK\n");
