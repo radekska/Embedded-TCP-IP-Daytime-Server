@@ -7,21 +7,21 @@
 #include "task.h"
 #include "semphr.h"
 
-// static const uint8_t rxBuffer[RX_BUFF_SIZE];
-static const uint8_t txBuffer[TX_BUFF_SIZE];
-
 /* Requested stack size when server listening task creates connection */
 static uint16_t usedStackSize = 0;
 
-static void createEchoServerInstance(void *params);
 static void listeningForConnectionTask(void *params);
-static int16_t getSocketStatus(uint8_t socketNumber);
+static int openTCPServerSocket(socket_t socket);
+static int16_t getSocketStatus(socket_t socket);
+static int acceptTCPServerSocket(socket_t socket, sockaddr_t clientSocketInfo);
+static void createEchoServerInstance(void *params);
+static void receiveAndEchoBack(socket_t connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize);
 static void clearBuffer(uint8_t *buffer, uint16_t bufferSize);
-static void receiveAndEchoBack(Socket_t connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize);
-static int openTCPServerSocket(Socket_t* socketToOpen);
-static int acceptTCPServerSocket(Socket_t* connectedSocketHandle, Socket_t* listeningSocket, struct freertos_sockaddr *connectedSocketInfo, socklen_t addressLen);
 static int hasReceivedDataFromSocket(int32_t bytesFromSocket);
 static int hasSentBackDataToSocket(int32_t bytesSentToSocket);
+static void cleanUpResources(socket_t socketToClose, uint8_t *buffer, uint16_t bufferSize);
+static int hasReceiveOnSocketReturnedError(socket_t socketToCheck, uint8_t *buffer, uint16_t bufferSize);
+
 
 
 void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority)
