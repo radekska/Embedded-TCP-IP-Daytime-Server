@@ -15,8 +15,8 @@ static int	read_cnt;
 static char	*read_ptr;
 static char	read_buf[MAXLINE];
 
-static ssize_t my_read(int fd, char *ptr){
-
+static ssize_t my_read(int fd, char *ptr)
+{
 	if (read_cnt <= 0) {
 		again:
 		if ( (read_cnt = read(fd, read_buf, sizeof(read_buf))) < 0) {
@@ -60,7 +60,6 @@ ssize_t readline(int fd, void *vptr, size_t maxlen)
 ssize_t Readline(int fd, void *ptr, size_t maxlen)
 {
 	ssize_t		n;
-
 	if ( (n = readline(fd, ptr, maxlen)) < 0)
 		perror("readline error");
 	return(n);
@@ -172,7 +171,7 @@ int main(int argc, char **argv)
 
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_port   = htons(port_number);	/* daytime server */
+	servaddr.sin_port   = htons(port_number);
 
 	if ( (err=inet_pton(AF_INET, ip_address, &servaddr.sin_addr)) == -1){
 		fprintf(stderr,"ERROR: inet_pton error for %s : %s \n", ip_address, strerror(errno));
@@ -182,14 +181,17 @@ int main(int argc, char **argv)
 		return 1;
 	}
 	
+	printf("Connecting to %s:%d ...\n", ip_address, port_number);
+
 	if (connect(sockfd, (SA *) &servaddr, sizeof(servaddr)) < 0){
-		fprintf(stderr,"connect error : %s \n", strerror(errno));
+		fprintf(stderr,"Connection error : %s \n", strerror(errno));
 		return 1;
 	}
 
+	printf("Connected!\n");
 
 	
-	str_cli(stdin, sockfd);		/* do it all */
+	str_cli(stdin, sockfd);		
 
 
 	fprintf(stderr,"OK\n");
