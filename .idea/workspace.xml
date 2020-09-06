@@ -18,11 +18,10 @@
       <change afterPath="$PROJECT_DIR$/../Programowanie_w_C/ring_buff.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SmartPointers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartPointers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datetime_client.c" beforeDir="false" afterPath="$PROJECT_DIR$/datetime_client.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/echo_server.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/echo_server2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/echo_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/echo_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/echo_server2.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/echo_server2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../folder/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../folder/chese.txt" beforeDir="false" />
     </list>
@@ -54,6 +53,7 @@
       </set>
     </option>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1h3uzpXufNR1wXru1jSiK3GhnIB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -82,7 +82,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="datetime_client_2_0" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" PROGRAM_PARAMS="-h" PASS_PARENT_ENVS_2="true" PROJECT_NAME="datetime_client_2_0" TARGET_NAME="datetime_client_2_0" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="datetime_client_2_0" RUN_TARGET_NAME="datetime_client_2_0">
+    <configuration name="datetime_client_2_0" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" PROGRAM_PARAMS="192.168.8.106 27" PASS_PARENT_ENVS_2="true" PROJECT_NAME="datetime_client_2_0" TARGET_NAME="datetime_client_2_0" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="datetime_client_2_0" RUN_TARGET_NAME="datetime_client_2_0">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -104,7 +104,7 @@
       <workItem from="1599301186182" duration="324000" />
       <workItem from="1599301514913" duration="116000" />
       <workItem from="1599301655177" duration="63000" />
-      <workItem from="1599301739182" duration="3210000" />
+      <workItem from="1599301739182" duration="9345000" />
     </task>
     <servers />
   </component>
@@ -129,8 +129,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/datetime_client.c</url>
-          <line>227</line>
-          <option name="timeStamp" value="18" />
+          <line>226</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/datetime_client.c</url>
+          <line>230</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

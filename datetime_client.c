@@ -124,23 +124,23 @@ void str_cli(FILE *fp, int sockfd) {
 
 }
 
-void args_handler(char *ip_address, long *port_number, char **argv, int argc) {
+int args_handler(char *ip_address, long *port_number, char **argv, int argc) {
     if (argc == 1) {
         printf("Note: type -h for help.\n");
+        return 1;
     }
 
     if (strcmp(argv[1], "-h") == 0) {
-        printf("Usage: ./client <IPv4Address> <PortNumber(def.27)>\n");
-    }
+            printf("Usage: ./client <IPv4Address> <PortNumber(def.27)>\n");
+            return 1;
+        }
 
-    if (argc > 1) {
-        strcpy(ip_address, argv[1]);
-    }
-
-    if (argc > 2) {
+    strcpy(ip_address, argv[1]);
+    if (argc == 3) {
         *port_number = strtol(argv[2], NULL, 10);
-
+        return 0;
     }
+    return 0;
 }
 
 void servaddr_init(struct sockaddr_in *servaddr, long port_number) {
@@ -165,8 +165,8 @@ int socket_init(int sockfd) {
     return sockfd;
 }
 
-int convert_ip(int err, char *ip_address, struct sockaddr_in servaddr) {
-    if ((err = inet_pton(AF_INET, ip_address, &servaddr.sin_addr)) == - 1) {
+int convert_ip(int err, char *ip_address, struct sockaddr_in *servaddr) {
+    if ((err = inet_pton(AF_INET, ip_address, &servaddr->sin_addr)) == - 1) {
         fprintf(stderr, "ERROR: inet_pton error for %s : %s \n", ip_address, strerror(errno));
         return 1;
     } else if (err == 0) {
@@ -199,11 +199,10 @@ int get_new_port(long *new_port_number, int sockfd) {
     return 0;
 }
 
-int
-final_connect(int sockfd, struct sockaddr_in servaddr, long port_number, int err, char *ip_address, int *cpy_sockfd) {
+int final_connect(int sockfd, struct sockaddr_in servaddr, long port_number, int err, char *ip_address, int *cpy_sockfd) {
     sockfd = socket_init(sockfd);
     servaddr_init(&servaddr, port_number);
-    convert_ip(err, ip_address, servaddr);
+    convert_ip(err, ip_address, &servaddr);
 
     if (socket_connect(sockfd, servaddr, ip_address, port_number) == 1)
         return 1;
@@ -225,7 +224,9 @@ int main(int argc, char **argv) {
     long port_number = 27;
     long new_port_number = - 1;
 
-    args_handler(ip_address, &port_number, argv, argc);
+    if (args_handler(ip_address, &port_number, argv, argc) == 1){
+        return 1;
+    };
 
     if (final_connect(sockfd, servaddr, port_number, err, ip_address, &cpy_sockfd) == 1) {
         return 1;
@@ -241,11 +242,8 @@ int main(int argc, char **argv) {
 
     printf("%ld\n", new_port_number);
 
-    //JAK pakuje do funckji to niedziala fiel descriptor - ogarnac to jakos
-    //TO DO funckje sie powtarzaja - zrobic tak zeby byla jedna cala tworzaca socket, servaddr i connect.
     fprintf(stderr, "OK\n");
     fflush(stderr);
 
-    exit(0);
+    return 0;
 }
-

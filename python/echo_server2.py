@@ -1,6 +1,6 @@
 import socket
 
-HOST = ''                 # Symbolic name meaning all available interfaces
+HOST = '192.168.8.106'                 # Symbolic name meaning all available interfaces
 PORT = 10              # Arbitrary non-privileged port
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

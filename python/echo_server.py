@@ -1,13 +1,12 @@
 # Echo server program
 import socket
 
-HOST = ''                 # Symbolic name meaning all available interfaces
-PORT = 27              # Arbitrary non-privileged port
+SERVER = ('192.168.8.106', 27)                 # Symbolic name meaning all available interfaces              # Arbitrary non-privileged port
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-s.bind((HOST, PORT))
+s.bind(SERVER)
 s.listen(1)
 
 conn, addr = s.accept()
