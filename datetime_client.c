@@ -143,28 +143,27 @@ void args_handler(char *ip_address, long *port_number, char **argv, int argc) {
     }
 }
 
-int socket_init(int *sockfd) {
-    int true = 1;
-
-    if ((*sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-        fprintf(stderr, "socket error : %s\n", strerror(errno));
-        return 1;
-    }
-
-    if (setsockopt(*sockfd, SOL_SOCKET, SO_REUSEADDR, &true, sizeof(int)) == - 1) {
-        fprintf(stderr, "setsockopt error: %s\n", strerror(errno));
-        return 1;
-    }
-
-    return 0;
-}
-
 void servaddr_init(struct sockaddr_in *servaddr, long port_number) {
     bzero(servaddr, sizeof(*servaddr));
     servaddr->sin_family = AF_INET;
     servaddr->sin_port = htons(port_number);
 }
 
+int socket_init(int sockfd) {
+    int true = 1;
+
+    if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+        fprintf(stderr, "socket error : %s\n", strerror(errno));
+        return 1;
+    }
+
+    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &true, sizeof(int)) == - 1) {
+        fprintf(stderr, "setsockopt error: %s\n", strerror(errno));
+        return 1;
+    }
+
+    return sockfd;
+}
 
 int convert_ip(int err, char *ip_address, struct sockaddr_in servaddr) {
     if ((err = inet_pton(AF_INET, ip_address, &servaddr.sin_addr)) == - 1) {
@@ -177,9 +176,9 @@ int convert_ip(int err, char *ip_address, struct sockaddr_in servaddr) {
     return 0;
 }
 
-int socket_connect(const int *sockfd, struct sockaddr_in servaddr, char *ip_address, long port_number) {
+int socket_connect(int sockfd, struct sockaddr_in servaddr, char *ip_address, long port_number) {
     printf("Connecting to %s:%ld ...\n", ip_address, port_number);
-    if (connect(*sockfd, (SA *) &servaddr, sizeof(servaddr)) < 0) {
+    if (connect(sockfd, (SA *) &servaddr, sizeof(servaddr)) < 0) {
         fprintf(stderr, "Connection error : %s \n", strerror(errno));
         return 1;
     }
@@ -200,10 +199,25 @@ int get_new_port(long *new_port_number, int sockfd) {
     return 0;
 }
 
+int
+final_connect(int sockfd, struct sockaddr_in servaddr, long port_number, int err, char *ip_address, int *cpy_sockfd) {
+    sockfd = socket_init(sockfd);
+    servaddr_init(&servaddr, port_number);
+    convert_ip(err, ip_address, servaddr);
+
+    if (socket_connect(sockfd, servaddr, ip_address, port_number) == 1)
+        return 1;
+
+    *cpy_sockfd = sockfd;
+    return 0;
+}
+
 
 int main(int argc, char **argv) {
-    int sockfd, err = 0;
-    int new_sockfd;
+    int sockfd = 0;
+    int cpy_sockfd = 0;
+    int err = 0;
+
     struct sockaddr_in servaddr;
 //    char recvline[MAXLINE + 1];
 //    char sendline[MAXLINE + 1];
@@ -212,24 +226,22 @@ int main(int argc, char **argv) {
     long new_port_number = - 1;
 
     args_handler(ip_address, &port_number, argv, argc);
-    socket_init(&sockfd);
-    servaddr_init(&servaddr, port_number);
 
-    convert_ip(err, ip_address, servaddr);
-    if (socket_connect(&sockfd, servaddr, ip_address, port_number) == 1)
+    if (final_connect(sockfd, servaddr, port_number, err, ip_address, &cpy_sockfd) == 1) {
         return 1;
+    }
 
-    //str_cli(stdin, sockfd);
-    get_new_port(&new_port_number, sockfd);
+    get_new_port(&new_port_number, cpy_sockfd);
+    cpy_sockfd = 0;
 
-    socket_init(&new_sockfd);
-    servaddr_init(&servaddr, new_port_number);
-
-    if (socket_connect(&new_sockfd, servaddr, ip_address, new_port_number) == 1)
+    if (final_connect(sockfd, servaddr, new_port_number, err, ip_address, &cpy_sockfd) == 1) {
         return 1;
+    }
+
 
     printf("%ld\n", new_port_number);
 
+    //JAK pakuje do funckji to niedziala fiel descriptor - ogarnac to jakos
     //TO DO funckje sie powtarzaja - zrobic tak zeby byla jedna cala tworzaca socket, servaddr i connect.
     fprintf(stderr, "OK\n");
     fflush(stderr);
