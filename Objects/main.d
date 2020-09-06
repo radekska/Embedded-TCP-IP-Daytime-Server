@@ -49,4 +49,7 @@
   C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\portable\GCC\ARM_CM4F\portmacro.h \
   C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\mpu_wrappers.h \
   C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\task.h \
-  C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\list.h
+  C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\list.h \
+  ..\project_v3\rtc.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h \
+  ..\project_v3\i2c.h ..\project_v3\retarget.h

@@ -4,8 +4,7 @@
 #include "i2c.h"
 #include "retarget.h"
 
-//#define RTC_I2C_ADDR 0x68
-#define RTC_I2C_ADDR 0xD0 // 0x68 << 1
+#define RTC_I2C_ADDR 0x68
 
 //----------------------------------------
 

@@ -33,6 +33,9 @@
   C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\task.h \
   ioLibrary_Driver\Ethernet\socket.h \
   ioLibrary_Driver\Ethernet\W5100\w5100.h \
+  C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\queue.h \
+  ..\project_v3\retarget.h \
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -55,4 +58,5 @@
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc_ex.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h \
+  ..\project_v3\rtc.h ..\project_v3\i2c.h

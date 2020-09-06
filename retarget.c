@@ -13,6 +13,8 @@ uint32_t retarget_init(struct retarget_config *config)
 {
 	retarget_ctx = *config;
 	
+	uart2_init();
+	
 	return 0;
 }
 
@@ -39,9 +41,7 @@ int ferror(FILE *f)
 /* Private functions */
 
 static uint32_t uart2_init(void)
-{
-	UART_HandleTypeDef huart2;
-	
+{	
 	GPIO_InitTypeDef GPIO_InitStruct;
 
 	huart2_ctx.Instance = USART2;
@@ -65,7 +65,5 @@ static uint32_t uart2_init(void)
     GPIO_InitStruct.Alternate = GPIO_AF7_USART2;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-	HAL_UART_Init(&huart2);
+	HAL_UART_Init(&huart2_ctx);
 }
-
-
