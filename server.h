@@ -26,12 +26,18 @@ typedef struct __sockaddr
 {
     uint8_t ip_addr[4];
     uint16_t port;
-} sockaddr_t;
+} Sockaddr_t;
 
 typedef struct __socket_t {
     uint8_t sockNumber;
-    sockaddr_t sockaddr;
-} socket_t;
+    Sockaddr_t sockaddr;
+} Socket_t;
+
+typedef struct __redirectionParams
+{
+    Sockaddr_t clientAddr;
+    Socket_t childSocket;
+} RedirectionParams_t;
 
 void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority);
 
