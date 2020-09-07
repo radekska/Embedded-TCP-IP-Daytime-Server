@@ -69,6 +69,9 @@ static int hasSentBackDataToSocket(int32_t bytesSentToSocket);
 static void cleanUpResources(Socket_t socketToClose, uint8_t *buffer, uint16_t bufferSize);
 static int hasReceiveOnSocketReturnedError(Socket_t socketToCheck, uint8_t *buffer, uint16_t bufferSize);
 
+static int number_to_string(uint32_t number, char *str);
+
+
 void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority)
 {
 	HAL_UART_Transmit(&huart2, "createTCPServerSocket\n", strlen("createTCPServerSocket\n"), 100);
@@ -196,9 +199,9 @@ static int number_to_string(uint32_t number, char *str)
 
 static char* getChildTaskName(int socketNumber)
 {
-    char[17] nameBuf;
-    snprintf(nameBuf, 17, "RedirectionTask%d", socketNumber);
-    return *nameBuf;
+    char *str;
+    number_to_string(socketNumber, str);
+    return strcat("RedirectionTask", str);
 }
 
 //TODO: Think about some queque for free sockets(socket pool) 
@@ -342,6 +345,7 @@ static void receiveAndEchoBack(Socket_t connectedSocket, uint8_t *receiveBuffer,
             //Log it or something
             return;
         }
+        
     }
 }
 
