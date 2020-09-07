@@ -289,6 +289,9 @@ static void redirectConnectionToChildSocket(void *params)
             /* some err */
         }
     }
+		
+		disconnect(workerSocket.sockNumber);
+		close(workerSocket.sockNumber);
 
     // Delete the task in case the provided argument is NULL
     vTaskDelete(NULL);

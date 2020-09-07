@@ -146,12 +146,14 @@ int main(void)
 													
 	retarget_init();													
 	rtc_init();													
-	eeprom_init();
+//	eeprom_init();
+//													
+//	uint8_t eeprom_data[8];
+//													
+//	eeprom_read_page(0, eeprom_data, 8); 
+//																				
+
 													
-	uint8_t eeprom_data[8];
-													
-	eeprom_read_page(0, eeprom_data, 8); 
-																																							
 	printf("START\n");
 													
 	rtc_print_date();
