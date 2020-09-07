@@ -2,8 +2,6 @@
 
 //----------------------------------------
 
-/* TODO set date in BCD */
-
 static uint32_t read_sec(uint8_t *second);
 static uint32_t read_min(uint8_t *minute);
 static uint32_t read_hour(uint8_t *hour);
@@ -14,7 +12,7 @@ static uint32_t dec2bcd(uint32_t num);
 
 //----------------------------------------
 
-uint32_t rtc_init(struct rtc_config *config)
+uint32_t rtc_init(void)
 {
 	i2c_init();
 	
@@ -174,10 +172,10 @@ static uint32_t dec2bcd(uint32_t num)
     unsigned int tens = 0;
     unsigned int temp = 0;
 
-    ones = num%10; // 65535%10 = 5
-    temp = num/10; // 65535/10 = 6553
-    tens = temp<<4;  // what's displayed is by tens is actually the lower
-                     // 4 bits of tens, so tens is 6553%16=9
-    return (tens + ones);// so the result is 95
+    ones = num%10; 
+    temp = num/10; 
+    tens = temp<<4;  
+                     
+    return (tens + ones);
 }
 	

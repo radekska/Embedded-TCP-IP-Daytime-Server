@@ -43,6 +43,7 @@
 #include <string.h>
 #include "server.h"
 #include "rtc.h"
+#include "eeprom.h"
 
 #define SEPARATOR            "=============================================\r\n"
 #define WELCOME_MSG  		 "Welcome to STM32Nucleo Ethernet configuration\r\n"
@@ -143,10 +144,14 @@ int main(void)
   wizchip_setnetinfo(&netInfo);
   wizchip_getnetinfo(&netInfo);
 													
-	retarget_init(NULL);
+	retarget_init();													
+	rtc_init();													
+	eeprom_init();
 													
-	rtc_init(NULL);
-																										
+	uint8_t eeprom_data[8];
+													
+	eeprom_read_page(0, eeprom_data, 8); 
+																																							
 	printf("START\n");
 													
 	rtc_print_date();
@@ -157,14 +162,11 @@ int main(void)
 													
 	HAL_UART_Transmit(&huart2, "wizchip_getnetinfo\n", strlen("wizchip_getnetinfo\n"), 100);
 													
-		createTCPServerSocket(configMINIMAL_STACK_SIZE, 2);
-//		createTCPServerSocket(configMINIMAL_STACK_SIZE, 2, "EchoServer1", sockNumber++);
-//	createTCPServerSocket(configMINIMAL_STACK_SIZE, 2, "EchoServer2", sockNumber++);
-//	createTCPServerSocket(configMINIMAL_STACK_SIZE, 2, "EchoServer3", sockNumber);		
-  
-    if (pdPASS != xTaskCreate(taskLED, "led1", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
-        printf("ERROR: Unable to create task!\n");
-    }
+	createTCPServerSocket(configMINIMAL_STACK_SIZE, 2);	
+
+	if (pdPASS != xTaskCreate(taskLED, "led1", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
+			printf("ERROR: Unable to create task!\n");
+	}
 		
 	vTaskStartScheduler();
 		

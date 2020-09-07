@@ -438,6 +438,16 @@
               <FileType>5</FileType>
               <FilePath>.\chip_init.h</FilePath>
             </File>
+            <File>
+              <FileName>eeprom.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\eeprom.c</FilePath>
+            </File>
+            <File>
+              <FileName>eeprom.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\eeprom.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
