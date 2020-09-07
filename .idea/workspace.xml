@@ -20,8 +20,6 @@
       <change beforePath="$PROJECT_DIR$/../SmartPointers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartPointers/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datetime_client.c" beforeDir="false" afterPath="$PROJECT_DIR$/datetime_client.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/echo_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/echo_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/echo_server2.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/echo_server2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../folder/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../folder/chese.txt" beforeDir="false" />
     </list>
@@ -60,6 +58,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -67,7 +66,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -82,7 +81,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="datetime_client_2_0" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" PROGRAM_PARAMS="192.168.8.106 27" PASS_PARENT_ENVS_2="true" PROJECT_NAME="datetime_client_2_0" TARGET_NAME="datetime_client_2_0" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="datetime_client_2_0" RUN_TARGET_NAME="datetime_client_2_0">
+    <configuration name="datetime_client_2_0" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" PROGRAM_PARAMS="192.168.8.106 27 -d" PASS_PARENT_ENVS_2="true" PROJECT_NAME="datetime_client_2_0" TARGET_NAME="datetime_client_2_0" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="datetime_client_2_0" RUN_TARGET_NAME="datetime_client_2_0">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -104,7 +103,8 @@
       <workItem from="1599301186182" duration="324000" />
       <workItem from="1599301514913" duration="116000" />
       <workItem from="1599301655177" duration="63000" />
-      <workItem from="1599301739182" duration="9345000" />
+      <workItem from="1599301739182" duration="9587000" />
+      <workItem from="1599507247207" duration="8133000" />
     </task>
     <servers />
   </component>
@@ -129,13 +129,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/datetime_client.c</url>
-          <line>226</line>
-          <option name="timeStamp" value="24" />
+          <line>246</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/datetime_client.c</url>
-          <line>230</line>
-          <option name="timeStamp" value="25" />
+          <line>292</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

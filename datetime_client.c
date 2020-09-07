@@ -1,4 +1,5 @@
 #include   <sys/types.h>   /* basic system data types */
+#include   <sys/time.h>
 #include   <sys/socket.h>  /* basic socket definitions */
 #include   <netinet/in.h>  /* sockaddr_in{} and other Internet defns */
 #include   <arpa/inet.h>   /* inet(3) functions */
@@ -7,6 +8,7 @@
 #include   <stdlib.h>
 #include   <unistd.h>
 #include   <string.h>
+#include   <time.h>
 
 #define MAXLINE 1024
 #define SA      struct sockaddr
@@ -14,6 +16,7 @@
 static int read_cnt;
 static char *read_ptr;
 static char read_buf[MAXLINE];
+
 
 static ssize_t my_read(int fd, char *ptr) {
     if (read_cnt <= 0) {
@@ -124,42 +127,64 @@ void str_cli(FILE *fp, int sockfd) {
 
 }
 
-int args_handler(char *ip_address, long *port_number, char **argv, int argc) {
+int args_handler(char *ip_address, long *port_number, char **argv, int argc, int *debug_mode) {
     if (argc == 1) {
         printf("Note: type -h for help.\n");
         return 1;
     }
 
     if (strcmp(argv[1], "-h") == 0) {
-            printf("Usage: ./client <IPv4Address> <PortNumber(def.27)>\n");
-            return 1;
-        }
+        printf("Usage: ./client [IPv4Address] [PortNumber(def.27)] [-d (optional)]\n");
+        printf("Usage: -d for debug mode.\n");
+        return 1;
+    }
 
     strcpy(ip_address, argv[1]);
     if (argc == 3) {
         *port_number = strtol(argv[2], NULL, 10);
         return 0;
     }
+    if ((argc == 4) && strcmp(argv[3], "-d") == 0) {
+        *debug_mode = 1;
+        return 0;
+    } else {
+        printf("Bad parameter.\n");
+        return 1;
+    }
     return 0;
 }
 
-void servaddr_init(struct sockaddr_in *servaddr, long port_number) {
+void servaddr_init(struct sockaddr_in *servaddr, long port_number, int debug_mode) {
+    if (debug_mode == 1) {
+        printf("debug: initializing ...\n");
+    }
     bzero(servaddr, sizeof(*servaddr));
     servaddr->sin_family = AF_INET;
     servaddr->sin_port = htons(port_number);
 }
 
-int socket_init(int sockfd) {
+int socket_init(int debug_mode) {
     int true = 1;
+    int sockfd = 0;
+
+    if (debug_mode == 1) {
+        printf("debug: creating socket ...\n");
+    }
 
     if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         fprintf(stderr, "socket error : %s\n", strerror(errno));
         return 1;
     }
-
+    if (debug_mode == 1) {
+        printf("debug: setting socket options ...\n");
+    }
     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &true, sizeof(int)) == - 1) {
         fprintf(stderr, "setsockopt error: %s\n", strerror(errno));
         return 1;
+    }
+
+    if (debug_mode == 1) {
+        printf("debug: socket created successfully ...\n");
     }
 
     return sockfd;
@@ -176,13 +201,19 @@ int convert_ip(int err, char *ip_address, struct sockaddr_in *servaddr) {
     return 0;
 }
 
-int socket_connect(int sockfd, struct sockaddr_in servaddr, char *ip_address, long port_number) {
-    printf("Connecting to %s:%ld ...\n", ip_address, port_number);
+int socket_connect(int sockfd, struct sockaddr_in servaddr, char *ip_address, long port_number, int debug_mode) {
+    if (debug_mode == 1) {
+        printf("debug: connecting to %s:%ld ...\n", ip_address, port_number);
+    }
+
     if (connect(sockfd, (SA *) &servaddr, sizeof(servaddr)) < 0) {
         fprintf(stderr, "Connection error : %s \n", strerror(errno));
         return 1;
     }
-    printf("Connected!\n");
+
+    if (debug_mode == 1) {
+        printf("debug: connected!!!\n");
+    }
     return 0;
 }
 
@@ -196,15 +227,30 @@ int get_new_port(long *new_port_number, int sockfd) {
         }
         *new_port_number = strtol(recvline, NULL, 10);
     }
+    printf("debug: new port recieved - %ld\n", *new_port_number);
     return 0;
 }
 
-int final_connect(int sockfd, struct sockaddr_in servaddr, long port_number, int err, char *ip_address, int *cpy_sockfd) {
-    sockfd = socket_init(sockfd);
-    servaddr_init(&servaddr, port_number);
+int get_date_time(int sockfd) {
+    char recvline[MAXLINE];
+
+    if (Readline(sockfd, recvline, MAXLINE) == 0) {
+        perror("server terminated prematurely");
+        exit(0);
+    }
+
+    printf("%s", recvline);
+    return 0;
+}
+
+int final_connect(struct sockaddr_in servaddr, long port_number, int err, char *ip_address, int *cpy_sockfd,
+                  int debug_mode) {
+    int sockfd = 0;
+    sockfd = socket_init(debug_mode);
+    servaddr_init(&servaddr, port_number, debug_mode);
     convert_ip(err, ip_address, &servaddr);
 
-    if (socket_connect(sockfd, servaddr, ip_address, port_number) == 1)
+    if (socket_connect(sockfd, servaddr, ip_address, port_number, debug_mode) == 1)
         return 1;
 
     *cpy_sockfd = sockfd;
@@ -215,32 +261,39 @@ int final_connect(int sockfd, struct sockaddr_in servaddr, long port_number, int
 int main(int argc, char **argv) {
     int sockfd = 0;
     int cpy_sockfd = 0;
+    int debug_mode = 0;
     int err = 0;
 
     struct sockaddr_in servaddr;
-//    char recvline[MAXLINE + 1];
-//    char sendline[MAXLINE + 1];
+    servaddr.sin_len = 0;
+
+    //    char recvline[MAXLINE + 1];
+    //    char sendline[MAXLINE + 1];
+
     char ip_address[256];
     long port_number = 27;
     long new_port_number = - 1;
 
-    if (args_handler(ip_address, &port_number, argv, argc) == 1){
+    if (args_handler(ip_address, &port_number, argv, argc, &debug_mode) == 1) {
         return 1;
     };
 
-    if (final_connect(sockfd, servaddr, port_number, err, ip_address, &cpy_sockfd) == 1) {
+    if (final_connect(servaddr, port_number, err, ip_address, &cpy_sockfd, debug_mode) == 1) {
         return 1;
     }
-
     get_new_port(&new_port_number, cpy_sockfd);
-    cpy_sockfd = 0;
 
-    if (final_connect(sockfd, servaddr, new_port_number, err, ip_address, &cpy_sockfd) == 1) {
+    shutdown(cpy_sockfd, SHUT_WR);
+    sleep(3);
+
+    if (final_connect(servaddr, new_port_number, err, ip_address, &cpy_sockfd, debug_mode) == 1) {
         return 1;
     }
 
+    get_date_time(cpy_sockfd);
 
-    printf("%ld\n", new_port_number);
+    // TO DO napisac funkcje zbierajaca datetime
+
 
     fprintf(stderr, "OK\n");
     fflush(stderr);
