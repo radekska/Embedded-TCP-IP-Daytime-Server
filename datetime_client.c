@@ -260,7 +260,6 @@ int final_connect(struct sockaddr_in servaddr, long port_number, int err, char *
 
 int main(int argc, char **argv) {
     int sockfd = 0;
-    int cpy_sockfd = 0;
     int debug_mode = 0;
     int err = 0;
 
@@ -278,19 +277,19 @@ int main(int argc, char **argv) {
         return 1;
     };
 
-    if (final_connect(servaddr, port_number, err, ip_address, &cpy_sockfd, debug_mode) == 1) {
+    if (final_connect(servaddr, port_number, err, ip_address, &sockfd, debug_mode) == 1) {
         return 1;
     }
-    get_new_port(&new_port_number, cpy_sockfd);
+    get_new_port(&new_port_number, sockfd);
 
-    shutdown(cpy_sockfd, SHUT_WR);
+    shutdown(sockfd, SHUT_WR);
     sleep(3);
 
-    if (final_connect(servaddr, new_port_number, err, ip_address, &cpy_sockfd, debug_mode) == 1) {
+    if (final_connect(servaddr, new_port_number, err, ip_address, &sockfd, debug_mode) == 1) {
         return 1;
     }
 
-    get_date_time(cpy_sockfd);
+    get_date_time(sockfd);
 
     // TO DO napisac funkcje zbierajaca datetime
 
