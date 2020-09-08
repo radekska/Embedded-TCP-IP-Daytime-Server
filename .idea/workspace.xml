@@ -58,7 +58,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/python" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -110,7 +110,8 @@
       <workItem from="1599301514913" duration="116000" />
       <workItem from="1599301655177" duration="63000" />
       <workItem from="1599301739182" duration="9587000" />
-      <workItem from="1599507247207" duration="8465000" />
+      <workItem from="1599507247207" duration="8589000" />
+      <workItem from="1599580705499" duration="4674000" />
     </task>
     <servers />
   </component>
@@ -135,13 +136,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/datetime_client.c</url>
-          <line>246</line>
-          <option name="timeStamp" value="30" />
+          <line>290</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/datetime_client.c</url>
-          <line>291</line>
-          <option name="timeStamp" value="32" />
+          <line>286</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

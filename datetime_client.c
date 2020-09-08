@@ -127,7 +127,8 @@ void str_cli(FILE *fp, int sockfd) {
 
 }
 
-int args_handler(char *ip_address, long *port_number, char **argv, int argc, int *debug_mode) {
+int args_handler(char *ip_address, long *port_number, char *argv[], int argc, int *debug_mode) {
+
     if (argc == 1) {
         printf("Note: type -h for help.\n");
         return 1;
@@ -137,27 +138,30 @@ int args_handler(char *ip_address, long *port_number, char **argv, int argc, int
         printf("Usage: ./client [IPv4Address] [PortNumber(def.27)] [-d (optional)]\n");
         printf("Usage: -d for debug mode.\n");
         return 1;
+    } else if (argc == 2){
+        strcpy(ip_address, argv[1]);
+        return 0;
     }
 
-    strcpy(ip_address, argv[1]);
     if (argc == 3) {
+        strcpy(ip_address, argv[1]);
         *port_number = strtol(argv[2], NULL, 10);
         return 0;
     }
     if ((argc == 4) && strcmp(argv[3], "-d") == 0) {
+        strcpy(ip_address, argv[1]);
         *debug_mode = 1;
         return 0;
     } else {
         printf("Bad parameter.\n");
         return 1;
     }
-    return 0;
 }
 
 void servaddr_init(struct sockaddr_in *servaddr, long port_number, int debug_mode) {
-    if (debug_mode == 1) {
+    if (debug_mode == 1)
         printf("debug: initializing ...\n");
-    }
+
     bzero(servaddr, sizeof(*servaddr));
     servaddr->sin_family = AF_INET;
     servaddr->sin_port = htons(port_number);
@@ -167,25 +171,26 @@ int socket_init(int debug_mode) {
     int true = 1;
     int sockfd = 0;
 
-    if (debug_mode == 1) {
+    if (debug_mode == 1)
         printf("debug: creating socket ...\n");
-    }
+
 
     if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         fprintf(stderr, "socket error : %s\n", strerror(errno));
         return 1;
     }
-    if (debug_mode == 1) {
+
+    if (debug_mode == 1)
         printf("debug: setting socket options ...\n");
-    }
+
     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &true, sizeof(int)) == - 1) {
         fprintf(stderr, "setsockopt error: %s\n", strerror(errno));
         return 1;
     }
 
-    if (debug_mode == 1) {
+    if (debug_mode == 1)
         printf("debug: socket created successfully ...\n");
-    }
+
 
     return sockfd;
 }
@@ -202,23 +207,26 @@ int convert_ip(int err, char *ip_address, struct sockaddr_in *servaddr) {
 }
 
 int socket_connect(int sockfd, struct sockaddr_in servaddr, char *ip_address, long port_number, int debug_mode) {
-    if (debug_mode == 1) {
+    if (debug_mode == 1)
         printf("debug: connecting to %s:%ld ...\n", ip_address, port_number);
-    }
+
 
     if (connect(sockfd, (SA *) &servaddr, sizeof(servaddr)) < 0) {
         fprintf(stderr, "Connection error : %s \n", strerror(errno));
         return 1;
     }
 
-    if (debug_mode == 1) {
+    if (debug_mode == 1)
         printf("debug: connected!!!\n");
-    }
+
     return 0;
 }
 
-int get_new_port(long *new_port_number, int sockfd) {
+void get_new_port(long *new_port_number, int sockfd, int debug_mode) {
     char recvline[MAXLINE];
+
+    if (debug_mode == 1)
+        printf("debug: waiting for new port ...\n");
 
     while (*new_port_number < 0 || (int) *new_port_number > 65535) {
         if (Readline(sockfd, recvline, MAXLINE) == 0) {
@@ -227,20 +235,24 @@ int get_new_port(long *new_port_number, int sockfd) {
         }
         *new_port_number = strtol(recvline, NULL, 10);
     }
-    printf("debug: new port recieved - %ld\n", *new_port_number);
-    return 0;
+    if (debug_mode == 1)
+        printf("debug: new port recieved - %ld\n", *new_port_number);
 }
 
-int get_date_time(int sockfd) {
+void get_date_time(int sockfd, int debug_mode) {
     char recvline[MAXLINE];
+
+    if (debug_mode == 1)
+        printf("debug: waiting for date ...\n");
 
     if (Readline(sockfd, recvline, MAXLINE) == 0) {
         perror("server terminated prematurely");
         exit(0);
     }
+    if (debug_mode == 1)
+        printf("debug: date from server recieved - %s\n", recvline);
 
     printf("%s", recvline);
-    return 0;
 }
 
 int final_connect(struct sockaddr_in servaddr, long port_number, int err, char *ip_address, int *cpy_sockfd,
@@ -266,12 +278,11 @@ int main(int argc, char **argv) {
     struct sockaddr_in servaddr;
     servaddr.sin_len = 0;
 
-    //    char recvline[MAXLINE + 1];
-    //    char sendline[MAXLINE + 1];
 
     char ip_address[256];
     long port_number = 27;
     long new_port_number = - 1;
+
 
     if (args_handler(ip_address, &port_number, argv, argc, &debug_mode) == 1) {
         return 1;
@@ -280,18 +291,16 @@ int main(int argc, char **argv) {
     if (final_connect(servaddr, port_number, err, ip_address, &sockfd, debug_mode) == 1) {
         return 1;
     }
-    get_new_port(&new_port_number, sockfd);
+    get_new_port(&new_port_number, sockfd, debug_mode);
 
     shutdown(sockfd, SHUT_WR);
-    sleep(3);
+    sleep(2);
 
     if (final_connect(servaddr, new_port_number, err, ip_address, &sockfd, debug_mode) == 1) {
         return 1;
     }
 
-    get_date_time(sockfd);
-
-    // TO DO napisac funkcje zbierajaca datetime
+    get_date_time(sockfd, debug_mode);
 
 
     fprintf(stderr, "OK\n");
