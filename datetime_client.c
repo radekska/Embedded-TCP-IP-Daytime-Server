@@ -240,20 +240,27 @@ void get_new_port(long *new_port_number, int sockfd, int debug_mode) {
         printf("debug: new port recieved - %ld\n", *new_port_number);
 }
 
-void get_date_time(int sockfd, int debug_mode) {
+int get_date_time(int sockfd, int debug_mode) {
     char recvline[MAXLINE];
+
+    memset(recvline, 0, (MAXLINE));
 
     if (debug_mode == 1)
         printf("debug: waiting for date ...\n");
 
     if (Readline(sockfd, recvline, MAXLINE) == 0) {
         perror("server terminated prematurely");
-        exit(0);
+
+        return 1;
     }
     if (debug_mode == 1)
         printf("debug: date from server recieved - %s\n", recvline);
 
     printf("%s", recvline);
+
+    memset(recvline, 0, (MAXLINE));
+
+    return 0;
 }
 
 int final_connect(struct sockaddr_in servaddr, long port_number, int err, char *ip_address, int *cpy_sockfd,
@@ -293,14 +300,20 @@ int main(int argc, char **argv) {
     }
     get_new_port(&new_port_number, sockfd, debug_mode);
 
+    if(new_port_number == -1)
+    {
+        printf("disconneting\n");
+
+        return 1;
+    }
+
     shutdown(sockfd, SHUT_WR);
-    sleep(2);
 
     if (final_connect(servaddr, new_port_number, err, ip_address, &sockfd, debug_mode) == 1) {
         return 1;
     }
 
-    get_date_time(sockfd, debug_mode);
+    while(get_date_time(sockfd, debug_mode) == 0);
 
 
     fprintf(stderr, "OK\n");
