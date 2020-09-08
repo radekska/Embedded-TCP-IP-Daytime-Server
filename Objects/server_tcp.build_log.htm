@@ -27,9 +27,9 @@ Project File Date:  09/07/2020
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'default'
-compiling main.c...
+compiling server.c...
 linking...
-Program Size: Code=23148 RO-data=600 RW-data=80 ZI-data=13800  
+Program Size: Code=23280 RO-data=600 RW-data=80 ZI-data=13800  
 ".\Objects\server_tcp.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -99,14 +99,14 @@ Package Vendor: Keil
       Include file:  CMSIS\RTOS2\FreeRTOS\Config\ARMCM\FreeRTOSConfig.h
 
    * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.3.1
+      Include file:  Source\include\task.h
+      Include file:  Source\include\semphr.h
+      Source file:   Source\list.c
       Include file:  Source\include\FreeRTOS.h
       Include file:  Source\include\queue.h
-      Include file:  Source\include\semphr.h
-      Include file:  Source\include\task.h
-      Source file:   Source\list.c
       Source file:   Source\tasks.c
-      Source file:   Source\portable\GCC\ARM_CM4F\port.c
       Source file:   Source\queue.c
+      Source file:   Source\portable\GCC\ARM_CM4F\port.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
 
    * Component: ARM.FreeRTOS::RTOS:Event Groups:10.3.1
@@ -123,29 +123,29 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.3.0
 
    * Component: ARM::CMSIS:RTOS:FreeRTOS:10.3.1
-      Include file:  CMSIS\RTOS2\FreeRTOS\Include1\cmsis_os.h
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os1.c
+      Include file:  CMSIS\RTOS2\FreeRTOS\Include1\cmsis_os.h
 
    * Component: ARM::CMSIS:RTOS2:FreeRTOS:Cortex-M:10.3.1
+      Include file:  CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h
+      Source file:   CMSIS\RTOS2\FreeRTOS\Source\os_systick.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c
-      Source file:   CMSIS\RTOS2\FreeRTOS\Source\os_systick.c
-      Include file:  CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h
 
    * Component: Keil::Device:STM32Cube Framework:Classic:1.7.6
-      Source file:   MDK\Templates_LL\Src\main.c
-      Source file:   MDK\Templates\Src\main.c
-      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
-      Include file:  MDK\Templates\Inc\main.h
       Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
       Include file:  MDK\Templates_LL\Inc\main.h
-      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
-      Source file:   MDK\Templates\Src\stm32f4xx_it.c
+      Include file:  MDK\Templates\Inc\main.h
       Include file:  CMSIS\Driver\Config\RTE_Device.h
+      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
+      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
+      Source file:   MDK\Templates\Src\main.c
+      Source file:   MDK\Templates_LL\Src\main.c
+      Source file:   MDK\Templates\Src\stm32f4xx_it.c
 
    * Component: Keil::Device:STM32Cube HAL:Common:1.7.6
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
       Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
 
    * Component: Keil::Device:STM32Cube HAL:Cortex:1.7.6
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
@@ -162,8 +162,8 @@ Package Vendor: Keil
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c
 
    * Component: Keil::Device:STM32Cube HAL:PWR:1.7.6
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:RCC:1.7.6
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
@@ -185,10 +185,10 @@ Package Vendor: Keil
    * Component: Keil::Device:Startup:2.6.3
       Source file:   MDK\Device\Source\ARM\STM32F446xx_OPT.s
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f446xx.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

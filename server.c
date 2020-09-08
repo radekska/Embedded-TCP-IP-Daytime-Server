@@ -62,7 +62,7 @@ static void listeningForConnectionTask(void *params);
 static int openTCPServerSocket(Socket_t socket);
 static int16_t getSocketStatus(Socket_t socket);
 static int acceptTCPServerSocket(Socket_t socket, Sockaddr_t *clientAddrInfo);
-static void receiveAndEchoBack(Socket_t *connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize);
+static void receiveAndEchoBack(Socket_t connectedSocket, char *bytesToSend);
 static void clearBuffer(uint8_t *buffer, uint16_t bufferSize);
 static int hasReceivedDataFromSocket(int32_t bytesFromSocket);
 static int hasSentBackDataToSocket(int32_t bytesSentToSocket);
@@ -264,7 +264,16 @@ static void redirectConnectionToChildSocket(void *params)
 										printf("Echo server created\n");							
 									
                     //createEchoServerInstance(&workerSocket);
-										sendCurrentDate(&workerSocket);
+										while(1)
+										{
+											if(sendCurrentDate(&workerSocket) == SOCKET_FAILED)
+											{
+												break;
+											}
+											
+											vTaskDelay(1000);
+										}
+										
                 } else
                 {
                     /* Handle Socket Established Timeout Error */
@@ -311,62 +320,45 @@ static void createEchoServerInstance(Socket_t *echoSocket)
     {
 				printf("rxBuffer not empty\n");
 			
-        receiveAndEchoBack(echoSocket, rxBuffer, bufferSize);
+        receiveAndEchoBack(*echoSocket, rxBuffer);
     }
 
     cleanUpResources(echoSocket, rxBuffer, bufferSize);
 }
 
-static void receiveAndEchoBack(Socket_t *connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize)
+static void receiveAndEchoBack(Socket_t connectedSocket, char *bufferToSend)
 {
-    int32_t bytesReceivedOnSocket = 0;
-    int32_t bytesSentBySocket = 0;
-    int32_t bytesTotalSentBack = 0;
-	
-		printf("Echo start\n");
+    int32_t bytesToSend;
+    int32_t bytesSentBySocket;
+    int32_t bytesTotalSentBack;
 
-    while (1)
+
+    bytesToSend = strlen(bufferToSend);
+
+    if (hasReceivedDataFromSocket(bytesToSend))
     {
-        clearBuffer(receiveBuffer, bufferSize);
-				
-				vTaskDelay((TickType_t)100);
-			
-				__disable_irq();
-        bytesReceivedOnSocket = recv(connectedSocket->sockNumber, receiveBuffer, bufferSize);
-				__enable_irq();
-        
-			
-        if (hasReceivedDataFromSocket(bytesReceivedOnSocket))
+        bytesSentBySocket = 0;
+        bytesTotalSentBack = bytesSentBySocket;
+
+        while (hasSentBackDataToSocket(bytesSentBySocket) && (bytesTotalSentBack < bytesToSend))
         {
-            bytesSentBySocket = 0;
-            bytesTotalSentBack = bytesSentBySocket;
-					
-						printf("Bytes received\n");
-					
-            while (hasSentBackDataToSocket(bytesSentBySocket) && (bytesTotalSentBack < bytesReceivedOnSocket))
+            bytesSentBySocket = send(connectedSocket.sockNumber, bufferToSend, bytesToSend - bytesTotalSentBack);
+
+            if (hasSentBackDataToSocket(bytesSentBySocket))
+                bytesTotalSentBack += bytesSentBySocket;
+            else
             {
-								__disable_irq();
-                bytesSentBySocket = send(connectedSocket->sockNumber, receiveBuffer, bytesReceivedOnSocket - bytesTotalSentBack);
-								__enable_irq();
-								printf("Bytes sent\n");
-							
-                if (hasSentBackDataToSocket(bytesSentBySocket))
-                    bytesTotalSentBack += bytesSentBySocket;
-                else
-                {
-										printf("end of echo\n");
-                    //Log it or something
-                    return;
-                }
+                //Log it or something
+                return;
             }
         }
-        else
-        {
-            //Log it or something
-            return;
-        }
-				bytesReceivedOnSocket = -1;
     }
+    else
+    {
+        //Log it or something
+        return;
+    }
+
 }
 
 static void clearBuffer(uint8_t *buffer, uint16_t bufferSize)
@@ -429,7 +421,7 @@ static int sendCurrentDate(Socket_t *clientSocket)
 	
 	char *str = malloc(20), tmp[4]; // temporary
 	
-	//strcpy(str, "current date");
+	//strcpy(str, "cu");
 	
 	number_to_string(currentDate.hour, tmp);
 	strcat(str, tmp);
@@ -439,13 +431,16 @@ static int sendCurrentDate(Socket_t *clientSocket)
 	strcat(str, ":");
 	number_to_string(currentDate.sec, tmp);
 	strcat(str, tmp);
-	strcat(str, "\r\n");
+	strcat(str, "\r\n");	
 	
 	printf("send date\n");
 	
 	__disable_irq();
-	send(clientSocket->sockNumber, str, 20);
+	//volatile uint32_t response = send(clientSocket->sockNumber, str, 20);
+	receiveAndEchoBack(*clientSocket, str);
 	__enable_irq();
+	
+	free(str);
 	
 	printf("end of rtc\n");
 	

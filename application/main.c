@@ -153,6 +153,17 @@ int main(void)
 //	eeprom_read_page(0, eeprom_data, 8); 
 //																				
 
+//	struct date_struct date_set = 
+//	{
+//		.year = 2020,
+//		.month = 9,
+//		.day = 8,
+//		.hour = 22,
+//		.min = 10,
+//		.sec = 30,
+//	};
+//	
+//	rtc_set_date(&date_set);
 													
 	printf("START\n");
 													

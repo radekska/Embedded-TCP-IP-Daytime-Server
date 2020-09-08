@@ -2,7 +2,21 @@
 
 //----------------------------------------
 
+static enum is_initialized
+{
+	NOT_INITIALIZED,
+	INITIALIZED,
+};
+
+static struct eeprom_context
+{
+	
+};
+
+//----------------------------------------
+
 static uint32_t eeprom_check_if_busy(void);
+static uint32_t eeprom_task(void *params);
 
 //----------------------------------------
 
@@ -49,6 +63,18 @@ uint32_t eeprom_write_page(uint8_t read_addr, uint8_t *buffer, uint8_t length)
 }
 
 //----------------------------------------
+
+uint32_t eeprom_task_create(void)
+{
+	
+//		if (pdPASS != xTaskCreate(taskLED, "eeprom", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
+//			printf("ERROR: Unable to create task!\n");
+//	}
+	
+	return 0;
+}
+
+//----------------------------------------
 /* Private functions */
 
 static uint32_t eeprom_check_if_busy(void)
@@ -61,5 +87,13 @@ static uint32_t eeprom_check_if_busy(void)
 	
 	return 0; // eeprom not busy
 }
+
+static uint32_t eeprom_task(void *params)
+{
+	
+}
+
+
+
 
     

@@ -15,4 +15,6 @@ uint32_t eeprom_init(void);
 uint32_t eeprom_read_page(uint8_t read_addr, uint8_t *buffer, uint8_t length); //max read length 8 bytes
 uint32_t eeprom_write_page(uint8_t read_addr, uint8_t *buffer, uint8_t length); //max write length 8 bytes
 
+uint32_t eeprom_task_create(void);
+
 //----------------------------------------
