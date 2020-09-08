@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\server_tcp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\server_tcp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Tue Sep  8 22:19:28 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Tue Sep  8 22:59:30 2020
 <BR><P>
 <H3>Maximum Stack Usage =        328 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -669,7 +669,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc_internal$concurrent
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getChildTaskName
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fopen$locked
 </UL>
@@ -690,7 +690,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free_internal$concurrent
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_terminateio
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fclose_internal
 </UL>
@@ -743,8 +743,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;redirectConnectionToChildSocket
+<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;redirectConnectionToChildSocket
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listeningForConnectionTask
 <LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_print_date
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -752,14 +752,14 @@ Global Symbols
 <P><STRONG><a name="[c8]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, strlen.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receiveAndEchoBack
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;number_to_string
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_open
 </UL>
 
 <P><STRONG><a name="[111]"></a>strcat</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, strcat.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<BR><BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getChildTaskName
 </UL>
 
@@ -1744,7 +1744,7 @@ Global Symbols
 <LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_hour
 <LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_day
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
 <LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_print_date
 </UL>
 
@@ -1794,7 +1794,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.text.main)
 </UL>
 <P><STRONG><a name="[128]"></a>uxListRemove</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, list.o(.text.uxListRemove))
-<BR><BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<BR><BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 <LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
@@ -1840,7 +1840,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[129]"></a>vListInsertEnd</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, list.o(.text.vListInsertEnd))
-<BR><BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<BR><BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 <LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
@@ -1855,7 +1855,7 @@ Global Symbols
 <P><STRONG><a name="[12c]"></a>vPortEnterCritical</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, port.o(.text.vPortEnterCritical))
 <BR><BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceive
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
@@ -1872,7 +1872,7 @@ Global Symbols
 <P><STRONG><a name="[12e]"></a>vPortExitCritical</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, port.o(.text.vPortExitCritical))
 <BR><BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceive
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
@@ -1934,7 +1934,7 @@ Global Symbols
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskLED
 </UL>
 
-<P><STRONG><a name="[15d]"></a>vTaskDelete</STRONG> (Thumb, 164 bytes, Stack size 16 bytes, tasks.o(.text.vTaskDelete))
+<P><STRONG><a name="[15e]"></a>vTaskDelete</STRONG> (Thumb, 164 bytes, Stack size 16 bytes, tasks.o(.text.vTaskDelete))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = vTaskDelete &rArr; prvDeleteTCB &rArr; vPortFree &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
@@ -2481,7 +2481,7 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receiveAndEchoBack
 </UL>
 
-<P><STRONG><a name="[64]"></a>listeningForConnectionTask</STRONG> (Thumb, 476 bytes, Stack size 64 bytes, server.o(.text.listeningForConnectionTask))
+<P><STRONG><a name="[64]"></a>listeningForConnectionTask</STRONG> (Thumb, 500 bytes, Stack size 64 bytes, server.o(.text.listeningForConnectionTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 328 + Unknown Stack Size
 <LI>Call Chain = listeningForConnectionTask &rArr; getChildTaskName &rArr; malloc &rArr; malloc_internal$concurrent &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free_internal$concurrent &rArr; _mutex_acquire &rArr; xQueueSemaphoreTake &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
@@ -2499,6 +2499,7 @@ Local Symbols
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;puts
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> server.o(.text.createTCPServerSocket)
@@ -2508,7 +2509,7 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listeningForConnectionTask
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getChildTaskName
 </UL>
@@ -2522,7 +2523,7 @@ Local Symbols
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listeningForConnectionTask
 </UL>
 
-<P><STRONG><a name="[159]"></a>receiveAndEchoBack</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, server.o(.text.receiveAndEchoBack))
+<P><STRONG><a name="[159]"></a>receiveAndEchoBack</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, server.o(.text.receiveAndEchoBack))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = receiveAndEchoBack &rArr; send &rArr; wiz_send_data &rArr; getSn_TxBASE &rArr; WIZCHIP_READ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
@@ -2530,20 +2531,22 @@ Local Symbols
 <LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hasReceivedDataFromSocket
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;redirectConnectionToChildSocket
 </UL>
 
-<P><STRONG><a name="[65]"></a>redirectConnectionToChildSocket</STRONG> (Thumb, 240 bytes, Stack size 32 bytes, server.o(.text.redirectConnectionToChildSocket))
-<BR><BR>[Stack]<UL><LI>Max Depth = 288 + Unknown Stack Size
+<P><STRONG><a name="[65]"></a>redirectConnectionToChildSocket</STRONG> (Thumb, 316 bytes, Stack size 16 bytes, server.o(.text.redirectConnectionToChildSocket))
+<BR><BR>[Stack]<UL><LI>Max Depth = 280 + Unknown Stack Size
 <LI>Call Chain = redirectConnectionToChildSocket &rArr; sendCurrentDate &rArr; malloc &rArr; malloc_internal$concurrent &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free_internal$concurrent &rArr; _mutex_acquire &rArr; xQueueSemaphoreTake &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setsockopt
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listen
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendCurrentDate
+<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receiveAndEchoBack
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openTCPServerSocket
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSocketStatus
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;acceptTCPServerSocket
@@ -2554,15 +2557,14 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> server.o(.text.listeningForConnectionTask)
 </UL>
-<P><STRONG><a name="[15e]"></a>sendCurrentDate</STRONG> (Thumb, 220 bytes, Stack size 32 bytes, server.o(.text.sendCurrentDate))
-<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = sendCurrentDate &rArr; malloc &rArr; malloc_internal$concurrent &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free_internal$concurrent &rArr; _mutex_acquire &rArr; xQueueSemaphoreTake &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<P><STRONG><a name="[15d]"></a>sendCurrentDate</STRONG> (Thumb, 152 bytes, Stack size 40 bytes, server.o(.text.sendCurrentDate))
+<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = sendCurrentDate &rArr; malloc &rArr; malloc_internal$concurrent &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free_internal$concurrent &rArr; _mutex_acquire &rArr; xQueueSemaphoreTake &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_read_date
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receiveAndEchoBack
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;number_to_string
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcat
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;puts
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 </UL>
@@ -2846,7 +2848,7 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 <LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 </UL>
 
@@ -2878,7 +2880,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[165]"></a>prvResetNextTaskUnblockTime</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, tasks.o(.text.prvResetNextTaskUnblockTime))
-<BR><BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<BR><BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
 <LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 </UL>

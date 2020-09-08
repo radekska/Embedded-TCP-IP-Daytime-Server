@@ -62,7 +62,7 @@ static void listeningForConnectionTask(void *params);
 static int openTCPServerSocket(Socket_t socket);
 static int16_t getSocketStatus(Socket_t socket);
 static int acceptTCPServerSocket(Socket_t socket, Sockaddr_t *clientAddrInfo);
-static void receiveAndEchoBack(Socket_t connectedSocket, char *bytesToSend);
+static int receiveAndEchoBack(Socket_t connectedSocket, char *bytesToSend);
 static void clearBuffer(uint8_t *buffer, uint16_t bufferSize);
 static int hasReceivedDataFromSocket(int32_t bytesFromSocket);
 static int hasSentBackDataToSocket(int32_t bytesSentToSocket);
@@ -169,6 +169,9 @@ static void listeningForConnectionTask(void *params)
                 /* Handle Socket listening fail */
                 __NOP();
             }
+						
+						printf("main socket close\n");
+						
             disconnect(serverSocket.sockNumber);
             close(serverSocket.sockNumber);
 						
@@ -283,6 +286,9 @@ static void redirectConnectionToChildSocket(void *params)
 										printf("Echo server created\n");							
 									
                     //createEchoServerInstance(&workerSocket);
+									
+										receiveAndEchoBack(workerSocket, "\n");
+									
 										while(1)
 										{
 											if(sendCurrentDate(&workerSocket) == SOCKET_FAILED)
@@ -293,6 +299,24 @@ static void redirectConnectionToChildSocket(void *params)
 											vTaskDelay(1000);
 										}
 										
+										printf("client disconnect\n");
+
+										disconnect(workerSocket.sockNumber);
+										close(workerSocket.sockNumber);
+
+										if (xQueueSend(socket_queue, &workerSocket, 1000) == pdTRUE)
+										{
+											// break;
+										} 
+										else
+										{
+											/* some err */
+										}
+										
+										vTaskDelete(NULL);
+										
+										printf("task delete failed\n");
+									
                 } else
                 {
                     /* Handle Socket Established Timeout Error */
@@ -309,18 +333,10 @@ static void redirectConnectionToChildSocket(void *params)
             /* Handle Socket opening fail */
             __NOP();
         }
-        if (xQueueSend(socket_queue, &workerSocket, 1000) == pdTRUE)
-        {
-            break;
-        } else
-        {
-            /* some err */
-        }
-    }
-		
-		disconnect(workerSocket.sockNumber);
-		close(workerSocket.sockNumber);
+				
 
+    }
+	
     // Delete the task in case the provided argument is NULL
     vTaskDelete(NULL);
 }
@@ -345,7 +361,7 @@ static void createEchoServerInstance(Socket_t *echoSocket)
     cleanUpResources(echoSocket, rxBuffer, bufferSize);
 }
 
-static void receiveAndEchoBack(Socket_t connectedSocket, char *bufferToSend)
+static int receiveAndEchoBack(Socket_t connectedSocket, char *bufferToSend)
 {
     int32_t bytesToSend;
     int32_t bytesSentBySocket;
@@ -362,13 +378,26 @@ static void receiveAndEchoBack(Socket_t connectedSocket, char *bufferToSend)
         while (hasSentBackDataToSocket(bytesSentBySocket) && (bytesTotalSentBack < bytesToSend))
         {
             bytesSentBySocket = send(connectedSocket.sockNumber, bufferToSend, bytesToSend - bytesTotalSentBack);
+					
+						//printf("byte sent: %d\n", bytesSentBySocket);
+					
+						if(bytesSentBySocket < 0) // error ocured
+						{
+								//printf("socket error\n");
+							
+                //Log it or something
+                return SOCKET_FAILED;
+						}
 
             if (hasSentBackDataToSocket(bytesSentBySocket))
                 bytesTotalSentBack += bytesSentBySocket;
             else
             {
+							
+							//printf("SOCKET_FAILED\n");
+							
                 //Log it or something
-                return;
+                return SOCKET_FAILED;
             }
         }
 <<<<<<< HEAD
@@ -383,9 +412,13 @@ static void receiveAndEchoBack(Socket_t connectedSocket, char *bufferToSend)
     }
     else
     {
+				//printf("SOCKET_FAILED\n");
         //Log it or something
-        return;
+        return SOCKET_FAILED;
     }
+		
+		//printf("SOCKET_SUCCESS\n");		
+		return SOCKET_SUCCESS;
 
 }
 
@@ -439,17 +472,11 @@ static int sendCurrentDate(Socket_t *clientSocket)
 {
 	struct date_struct currentDate;
 	
-	printf("read rtc\n");
-	
 	__disable_irq();
 	rtc_read_date(&currentDate);
-	__enable_irq();
-	
-	printf("prepare str\n");
+	__enable_irq();	
 	
 	char *str = malloc(20), tmp[4]; // temporary
-	
-	//strcpy(str, "cu");
 	
 	number_to_string(currentDate.hour, tmp);
 	strcat(str, tmp);
@@ -461,16 +488,14 @@ static int sendCurrentDate(Socket_t *clientSocket)
 	strcat(str, tmp);
 	strcat(str, "\r\n");	
 	
-	printf("send date\n");
-	
 	__disable_irq();
 	//volatile uint32_t response = send(clientSocket->sockNumber, str, 20);
-	receiveAndEchoBack(*clientSocket, str);
+	volatile int response = receiveAndEchoBack(*clientSocket, str);
 	__enable_irq();
 	
 	free(str);
 	
-	printf("end of rtc\n");
+	//printf("end of rtc\n");
 	
-	return 0;
+	return response;
 }
