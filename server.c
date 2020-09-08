@@ -9,7 +9,8 @@
 #include "w5100.h"
 #include <string.h>
 #include "queue.h"
-
+#include "retarget.h"
+#include "rtc.h"
 
 #include <stm32f4xx_hal.h>
 extern UART_HandleTypeDef  huart2;
@@ -61,17 +62,27 @@ static void listeningForConnectionTask(void *params);
 static int openTCPServerSocket(Socket_t socket);
 static int16_t getSocketStatus(Socket_t socket);
 static int acceptTCPServerSocket(Socket_t socket, Sockaddr_t *clientAddrInfo);
-static void createEchoServerInstance(void *params);
-static void receiveAndEchoBack(Socket_t connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize);
+static void receiveAndEchoBack(Socket_t connectedSocket, char *bytesToSend);
 static void clearBuffer(uint8_t *buffer, uint16_t bufferSize);
 static int hasReceivedDataFromSocket(int32_t bytesFromSocket);
 static int hasSentBackDataToSocket(int32_t bytesSentToSocket);
+<<<<<<< HEAD
 static void cleanUpResources(Socket_t socketToClose, uint8_t *buffer, uint16_t bufferSize);
 static int hasReceiveOnSocketReturnedError(Socket_t socketToCheck, uint8_t *buffer, uint16_t bufferSize);
 
 static int number_to_string(uint32_t number, char *str);
 
 
+=======
+static void cleanUpResources(Socket_t *socketToClose, uint8_t *buffer, uint16_t bufferSize);
+static void redirectConnectionToChildSocket(void *params);
+static int hasReceiveOnSocketReturnedError(Socket_t *socketToCheck, uint8_t *buffer, uint16_t bufferSize);
+static int number_to_string(uint32_t number, char *str);
+static char* getChildTaskName(int socketNumber);
+static void createEchoServerInstance(Socket_t *echoSocket);
+static int sendCurrentDate(Socket_t *clientSocket);
+	
+>>>>>>> c8b8501963166f70b930a2f628043578e7ff9fdd
 void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority)
 {
 	HAL_UART_Transmit(&huart2, "createTCPServerSocket\n", strlen("createTCPServerSocket\n"), 100);
@@ -132,10 +143,14 @@ static void listeningForConnectionTask(void *params)
                         char portAsString[4];
                         number_to_string(child_socket.sockaddr.port, portAsString);
                         send(serverSocket.sockNumber, portAsString, 4);
+												
+												char *taskName = getChildTaskName(child_socket.sockNumber);
+												printf(taskName);
                         
-                        if (pdPASS != xTaskCreate(redirectConnectionToChildSocket, getChildTaskName(child_socket.sockNumber), usedStackSize, &params, 2, NULL)) {
+                        if (pdPASS != xTaskCreate(redirectConnectionToChildSocket, taskName, usedStackSize, &params, 2, NULL)) {
                             HAL_UART_Transmit(&huart2, "redirectConnectionToChildSocket error\n", strlen("redirectConnectionToChildSocket error\n"), 100);
                         }
+												
                         childPortCounter++;
                         // redirectConnectionToChildSocket(clientAddr, socket_queue);
                         // createEchoServerInstance((void *)&serverSocket);
@@ -156,6 +171,8 @@ static void listeningForConnectionTask(void *params)
             }
             disconnect(serverSocket.sockNumber);
             close(serverSocket.sockNumber);
+						
+						vTaskDelay(100); //wait after close
         } else
         {
             /* Handle Socket opening fail */
@@ -186,10 +203,10 @@ static int number_to_string(uint32_t number, char *str)
 		iter++;
 	}	
 	
-	str[iter] = '\r';
-	iter++;
-	str[iter] = '\n';
-	iter++;
+//	str[iter] = '\r';
+//	iter++;
+//	str[iter] = '\n';
+//	iter++;
 	str[iter] = '\0';
 	
 	//free(tmp);
@@ -197,6 +214,7 @@ static int number_to_string(uint32_t number, char *str)
 	return 0;
 }
 
+<<<<<<< HEAD
 static char* getChildTaskName(int socketNumber)
 {
     char *str;
@@ -204,6 +222,8 @@ static char* getChildTaskName(int socketNumber)
     return strcat("RedirectionTask", str);
 }
 
+=======
+>>>>>>> c8b8501963166f70b930a2f628043578e7ff9fdd
 //TODO: Think about some queque for free sockets(socket pool) 
 static int openTCPServerSocket(Socket_t socketHandler)
 {
@@ -233,7 +253,7 @@ static int acceptTCPServerSocket(Socket_t socket, Sockaddr_t *clientAddrInfo)
             getsockopt(socket.sockNumber, SO_DESTPORT, (uint16_t *) clientAddrInfo->port);
             return SOCK_OK;
         }
-    } while ( (xTaskGetTickCount() - timeToOpen) < Socket_tIMEOUT);
+    } while ( (xTaskGetTickCount() - timeToOpen) < SOCKET_TIMEOUT);
 
     return SOCKET_FAILED;
 }
@@ -244,7 +264,7 @@ static void redirectConnectionToChildSocket(void *params)
     Socket_t workerSocket = ((RedirectionParams_t *) params)->childSocket;
     memcpy(workerSocket.sockaddr.ip_addr, netInfo.ip, 4);
 
-    printf(rcGet)
+		printf("task: %s\n", pcTaskGetName(NULL));
 
     while(1)
     {
@@ -260,7 +280,19 @@ static void redirectConnectionToChildSocket(void *params)
 
                 if (acceptTCPServerSocket(workerSocket, &clientAddr) == SOCK_OK)
                 {
-                    createEchoServerInstance(workerSocket);
+										printf("Echo server created\n");							
+									
+                    //createEchoServerInstance(&workerSocket);
+										while(1)
+										{
+											if(sendCurrentDate(&workerSocket) == SOCKET_FAILED)
+											{
+												break;
+											}
+											
+											vTaskDelay(1000);
+										}
+										
                 } else
                 {
                     /* Handle Socket Established Timeout Error */
@@ -277,7 +309,7 @@ static void redirectConnectionToChildSocket(void *params)
             /* Handle Socket opening fail */
             __NOP();
         }
-        if (xQueueSend(socket_queue, &workerSocket, 1000) = pdTRUE)
+        if (xQueueSend(socket_queue, &workerSocket, 1000) == pdTRUE)
         {
             break;
         } else
@@ -285,16 +317,19 @@ static void redirectConnectionToChildSocket(void *params)
             /* some err */
         }
     }
+		
+		disconnect(workerSocket.sockNumber);
+		close(workerSocket.sockNumber);
 
     // Delete the task in case the provided argument is NULL
     vTaskDelete(NULL);
 }
 
-static void createEchoServerInstance(socket_t echoSocket)
+static void createEchoServerInstance(Socket_t *echoSocket)
 {
     //Socket_t connectedSocket = *((Socket_t *) params);
 	
-	HAL_UART_Transmit(&huart2, "createEchoServerInstance task created\n", strlen("createEchoServerInstance task created\n"), 100);
+	printf("createEchoServerInstance task created\n");
 
 
     uint16_t bufferSize = (uint16_t) RX_BUFF_SIZE;
@@ -302,51 +337,56 @@ static void createEchoServerInstance(socket_t echoSocket)
 
     if (rxBuffer != NULL)
     {
-			HAL_UART_Transmit(&huart2, "rxBuffer not empty\n", strlen("rxBuffer not empty\n"), 100);
+				printf("rxBuffer not empty\n");
 			
-        receiveAndEchoBack(echoSocket, rxBuffer, bufferSize);
+        receiveAndEchoBack(*echoSocket, rxBuffer);
     }
 
     cleanUpResources(echoSocket, rxBuffer, bufferSize);
 }
 
-static void receiveAndEchoBack(Socket_t connectedSocket, uint8_t *receiveBuffer, uint16_t bufferSize)
+static void receiveAndEchoBack(Socket_t connectedSocket, char *bufferToSend)
 {
-    int32_t bytesReceivedOnSocket;
+    int32_t bytesToSend;
     int32_t bytesSentBySocket;
     int32_t bytesTotalSentBack;
 
-    while (1)
+
+    bytesToSend = strlen(bufferToSend);
+
+    if (hasReceivedDataFromSocket(bytesToSend))
     {
-        clearBuffer(receiveBuffer, bufferSize);
+        bytesSentBySocket = 0;
+        bytesTotalSentBack = bytesSentBySocket;
 
-        bytesReceivedOnSocket = recv(connectedSocket.sockNumber, receiveBuffer, bufferSize);
-        
-        if (hasReceivedDataFromSocket(bytesReceivedOnSocket))
+        while (hasSentBackDataToSocket(bytesSentBySocket) && (bytesTotalSentBack < bytesToSend))
         {
-            bytesSentBySocket = 0;
-            bytesTotalSentBack = bytesSentBySocket;
+            bytesSentBySocket = send(connectedSocket.sockNumber, bufferToSend, bytesToSend - bytesTotalSentBack);
 
-            while (hasSentBackDataToSocket(bytesSentBySocket) && (bytesTotalSentBack < bytesReceivedOnSocket))
+            if (hasSentBackDataToSocket(bytesSentBySocket))
+                bytesTotalSentBack += bytesSentBySocket;
+            else
             {
-                bytesSentBySocket = send(connectedSocket.sockNumber, receiveBuffer, bytesReceivedOnSocket - bytesTotalSentBack);
-
-                if (hasSentBackDataToSocket(bytesSentBySocket))
-                    bytesTotalSentBack += bytesSentBySocket;
-                else
-                {
-                    //Log it or something
-                    return;
-                }
+                //Log it or something
+                return;
             }
         }
+<<<<<<< HEAD
         else
         {
             //Log it or something
             return;
         }
         
+=======
+>>>>>>> c8b8501963166f70b930a2f628043578e7ff9fdd
     }
+    else
+    {
+        //Log it or something
+        return;
+    }
+
 }
 
 static void clearBuffer(uint8_t *buffer, uint16_t bufferSize)
@@ -364,24 +404,73 @@ static int hasSentBackDataToSocket(int32_t bytesSentToSocket)
     return bytesSentToSocket > 0 ? SOCKET_SUCCESS : SOCKET_FAILED;
 }
 
-static void cleanUpResources(Socket_t socketToClose, uint8_t *buffer, uint16_t bufferSize)
+static void cleanUpResources(Socket_t *socketToClose, uint8_t *buffer, uint16_t bufferSize)
 {
     TickType_t timeToShut = xTaskGetTickCount();
 
-    disconnect(socketToClose.sockNumber);
+    disconnect(socketToClose->sockNumber);
 
     do
     {
         if (hasReceiveOnSocketReturnedError(socketToClose, buffer, bufferSize))
             break;
-    } while ( (xTaskGetTickCount() - timeToShut) < Socket_tIMEOUT);
+    } while ( (xTaskGetTickCount() - timeToShut) < SOCKET_TIMEOUT);
 
     vPortFree(buffer);
-    close(socketToClose.sockNumber);
+    close(socketToClose->sockNumber);
 	// vTaskDelete(NULL);
 }
 
-static int hasReceiveOnSocketReturnedError(Socket_t socketToCheck, uint8_t *buffer, uint16_t bufferSize)
+static int hasReceiveOnSocketReturnedError(Socket_t *socketToCheck, uint8_t *buffer, uint16_t bufferSize)
 {
-    return recv(socketToCheck.sockNumber, buffer, bufferSize) < 0;
+    return recv(socketToCheck->sockNumber, buffer, bufferSize) < 0;
+}
+
+static char* getChildTaskName(int socketNumber)
+{
+    char str[19] = "RedirectionTask";
+    char *ptr = malloc(10);
+    number_to_string(socketNumber, ptr);
+    char *result = strcat(str, ptr);
+    return result;
+}
+
+static int sendCurrentDate(Socket_t *clientSocket)
+{
+	struct date_struct currentDate;
+	
+	printf("read rtc\n");
+	
+	__disable_irq();
+	rtc_read_date(&currentDate);
+	__enable_irq();
+	
+	printf("prepare str\n");
+	
+	char *str = malloc(20), tmp[4]; // temporary
+	
+	//strcpy(str, "cu");
+	
+	number_to_string(currentDate.hour, tmp);
+	strcat(str, tmp);
+	strcat(str, ":");
+	number_to_string(currentDate.min, tmp);
+	strcat(str, tmp);
+	strcat(str, ":");
+	number_to_string(currentDate.sec, tmp);
+	strcat(str, tmp);
+	strcat(str, "\r\n");	
+	
+	printf("send date\n");
+	
+	__disable_irq();
+	//volatile uint32_t response = send(clientSocket->sockNumber, str, 20);
+	receiveAndEchoBack(*clientSocket, str);
+	__enable_irq();
+	
+	free(str);
+	
+	printf("end of rtc\n");
+	
+	return 0;
 }

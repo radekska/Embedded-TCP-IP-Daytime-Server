@@ -7,15 +7,7 @@
 
 //----------------------------------------
 
-struct retarget_config
-{
-	UART_HandleTypeDef uart_config;
-	GPIO_InitTypeDef uart_gpio_config;
-};
-
-//----------------------------------------
-
-uint32_t retarget_init(struct retarget_config *config);
+uint32_t retarget_init(void);
 
 int fputc(int ch, FILE *f);
 int ferror(FILE *f);

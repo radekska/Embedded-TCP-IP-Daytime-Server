@@ -42,6 +42,8 @@
 #include <stm32f4xx_hal.h>
 #include <string.h>
 #include "server.h"
+#include "rtc.h"
+#include "eeprom.h"
 
 #define SEPARATOR            "=============================================\r\n"
 #define WELCOME_MSG  		 "Welcome to STM32Nucleo Ethernet configuration\r\n"
@@ -82,6 +84,8 @@
 SPI_HandleTypeDef 	hspi2;
 UART_HandleTypeDef  huart2;
 char msg[60];
+
+uint8_t sockNumber = 0;
 
 static void SystemClock_Config(void);
 static void Error_Handler(void);
@@ -128,9 +132,6 @@ int main(void)
   
   MX_GPIO_Init();
   MX_SPI2_Init();
-  MX_USART2_UART_Init();
-		
-  PRINT_HEADER();
 
   reg_wizchip_cs_cbfunc(cs_sel, cs_desel);
   reg_wizchip_spi_cbfunc(spi_rb, spi_wb);
@@ -143,19 +144,44 @@ int main(void)
   wizchip_setnetinfo(&netInfo);
   wizchip_getnetinfo(&netInfo);
 													
+	retarget_init();													
+	rtc_init();													
+//	eeprom_init();
+//													
+//	uint8_t eeprom_data[8];
+//													
+//	eeprom_read_page(0, eeprom_data, 8); 
+//																				
+
+//	struct date_struct date_set = 
+//	{
+//		.year = 2020,
+//		.month = 9,
+//		.day = 8,
+//		.hour = 22,
+//		.min = 10,
+//		.sec = 30,
+//	};
+//	
+//	rtc_set_date(&date_set);
+													
+	printf("START\n");
+													
+	rtc_print_date();
+													
+		if (pdPASS != xTaskCreate(taskLED, "led2", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
+			printf("ERROR: Unable to create task!\n");
+		}													
+													
 	HAL_UART_Transmit(&huart2, "wizchip_getnetinfo\n", strlen("wizchip_getnetinfo\n"), 100);
 													
-		createTCPServerSocket(configMINIMAL_STACK_SIZE, 2);
+	createTCPServerSocket(configMINIMAL_STACK_SIZE, 2);	
+
+	if (pdPASS != xTaskCreate(taskLED, "led1", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
+			printf("ERROR: Unable to create task!\n");
+	}
 		
-  
-    if (pdPASS != xTaskCreate(taskLED, "led", configMINIMAL_STACK_SIZE, NULL, 1, NULL)) {
-        printf("ERROR: Unable to create task!\n");
-    }
-     
-													
-HAL_UART_Transmit(&huart2, "createTCPServerSocket\n", strlen("createTCPServerSocket\n"), 100);
-													
-    vTaskStartScheduler();
+	vTaskStartScheduler();
 		
 		while(1)
 		{
@@ -181,6 +207,7 @@ void LED_Init(void){
 
 void taskLED(void* params)
 {
+	printf(pcTaskGetName(NULL));
     // Toggle the LED on pin GPIOF.4
     while (1) {
         // toggle the LED
@@ -390,4 +417,3 @@ void assert_failed(uint8_t* file, uint32_t line)
 /**
   * @}
   */
-

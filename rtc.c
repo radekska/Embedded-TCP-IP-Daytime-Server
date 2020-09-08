@@ -2,18 +2,17 @@
 
 //----------------------------------------
 
-/* TODO set date in BCD */
-
 static uint32_t read_sec(uint8_t *second);
 static uint32_t read_min(uint8_t *minute);
 static uint32_t read_hour(uint8_t *hour);
 static uint32_t read_day(uint8_t *day);
 static uint32_t read_month(uint8_t *month);
 static uint32_t read_year(uint8_t *year);
+static uint32_t dec2bcd(uint32_t num);
 
 //----------------------------------------
 
-uint32_t rtc_init(struct rtc_config *config)
+uint32_t rtc_init(void)
 {
 	i2c_init();
 	
@@ -55,32 +54,32 @@ uint32_t rtc_set_date(struct date_struct *date)
 {
 	volatile uint8_t data[2];
 	data[0] = 0;
-	data[1] = date->sec;
+	data[1] = (uint8_t)dec2bcd(date->sec);
 	
 	i2c_write_data(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 1;
-	data[1] = date->min;
+	data[1] = (uint8_t)dec2bcd(date->min);
 	
 	i2c_write_data(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 2;
-	data[1] = date->hour;
+	data[1] = (uint8_t)dec2bcd(date->hour);
 	
 	i2c_write_data(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 4;
-	data[1] = date->day;
+	data[1] = (uint8_t)dec2bcd(date->day);
 	
 	i2c_write_data(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 5;
-	data[1] = date->month;
+	data[1] = (uint8_t)dec2bcd(date->month);
 	
 	i2c_write_data(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 6;
-	data[1] = date->year;
+	data[1] = (uint8_t)dec2bcd(date->year);
 	
 	i2c_write_data(RTC_I2C_ADDR, data, 2);	
 	
@@ -93,7 +92,7 @@ uint32_t rtc_print_date(void)
 	rtc_read_date(&date);
 	printf("time:\n");
 	
-	printf("time: &d : %d : %d \n", date.hour, date.min, date.sec);
+	printf("time: %d : %d : %d \n", date.hour, date.min, date.sec);
 	
 	return 0;
 }
@@ -107,7 +106,7 @@ static uint32_t read_sec(uint8_t *second)
 	
 	i2c_read_register(RTC_I2C_ADDR, 0, &data, 1);
 	
-	*second = ((data >> 4)*10) + (data | 0x0F);
+	*second = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
@@ -118,7 +117,7 @@ static uint32_t read_min(uint8_t *minute)
 	
 	i2c_read_register(RTC_I2C_ADDR, 1, &data, 1);
 	
-	*minute = ((data >> 4)*10) + (data | 0x0F);
+	*minute = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
@@ -129,7 +128,7 @@ static uint32_t read_hour(uint8_t *hour)
 	
 	i2c_read_register(RTC_I2C_ADDR, 2, &data, 1);
 	
-	*hour = ((data >> 4)*10) + (data | 0x0F);
+	*hour = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
@@ -140,7 +139,7 @@ static uint32_t read_day(uint8_t *day)
 	
 	i2c_read_register(RTC_I2C_ADDR, 4, &data, 1);
 	
-	*day = ((data >> 4)*10) + (data | 0x0F);
+	*day = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
@@ -151,7 +150,7 @@ static uint32_t read_month(uint8_t *month)
 	
 	i2c_read_register(RTC_I2C_ADDR, 5, &data, 1);
 	
-		*month = ((data >> 4)*10) + (data | 0x0F);
+		*month = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
@@ -162,8 +161,21 @@ static uint32_t read_year(uint8_t *year)
 	
 	i2c_read_register(RTC_I2C_ADDR, 6, &data, 1);
 	
-	*year = ((data >> 4)*10) + (data | 0x0F);
+	*year = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
+}
+
+static uint32_t dec2bcd(uint32_t num)
+{
+    unsigned int ones = 0;
+    unsigned int tens = 0;
+    unsigned int temp = 0;
+
+    ones = num%10; 
+    temp = num/10; 
+    tens = temp<<4;  
+                     
+    return (tens + ones);
 }
 	
