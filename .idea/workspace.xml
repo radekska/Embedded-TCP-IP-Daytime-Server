@@ -70,8 +70,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/python" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -87,7 +87,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="datetime_client_2_0" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" PROGRAM_PARAMS="192.168.8.106 27 -d" PASS_PARENT_ENVS_2="true" PROJECT_NAME="datetime_client_2_0" TARGET_NAME="datetime_client_2_0" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="datetime_client_2_0" RUN_TARGET_NAME="datetime_client_2_0">
+    <configuration name="datetime_client_2_0" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" PROGRAM_PARAMS="192.168.8.106 30 -d" PASS_PARENT_ENVS_2="true" PROJECT_NAME="datetime_client_2_0" TARGET_NAME="datetime_client_2_0" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="datetime_client_2_0" RUN_TARGET_NAME="datetime_client_2_0">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -111,7 +111,7 @@
       <workItem from="1599301655177" duration="63000" />
       <workItem from="1599301739182" duration="9587000" />
       <workItem from="1599507247207" duration="8589000" />
-      <workItem from="1599580705499" duration="4674000" />
+      <workItem from="1599580705499" duration="5962000" />
     </task>
     <servers />
   </component>

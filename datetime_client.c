@@ -150,6 +150,7 @@ int args_handler(char *ip_address, long *port_number, char *argv[], int argc, in
     }
     if ((argc == 4) && strcmp(argv[3], "-d") == 0) {
         strcpy(ip_address, argv[1]);
+        *port_number = strtol(argv[2], NULL, 10);
         *debug_mode = 1;
         return 0;
     } else {
@@ -276,7 +277,6 @@ int main(int argc, char **argv) {
     int err = 0;
 
     struct sockaddr_in servaddr;
-    servaddr.sin_len = 0;
 
 
     char ip_address[256];
