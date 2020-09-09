@@ -9,7 +9,7 @@
 #define SOCKET_FAILED -1
 /* 13 is well-known port for daytime protocol on unix-like os */
 #define DAYTIME_PORT 13
-#define SOCKET_TIMEOUT	( pdMS_TO_TICKS( 5000 ) )
+#define SOCKET_TIMEOUT	( pdMS_TO_TICKS( 5000 ) ) // 5s timeout
 
 #define RX_BUFF_SIZE 2048
 #define TX_BUFF_SIZE 2048
@@ -26,12 +26,6 @@ typedef struct __socket
     Sockaddr_t sockaddr;
 } Socket_t;
 
-typedef struct __redirectionParams
-{
-    Sockaddr_t clientAddr;
-    Socket_t childSocket;
-} RedirectionParams_t;
-
-void createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority);
+extern int8_t createTCPServerSocket(uint16_t stackSize, UBaseType_t taskPriority);
 
 #endif /* __SERVER_H__ */

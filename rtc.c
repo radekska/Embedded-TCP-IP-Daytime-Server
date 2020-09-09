@@ -34,7 +34,8 @@ uint32_t rtc_init(void)
 //----------------------------------------
 
 uint32_t rtc_read_date(struct date_struct *date)
-{	
+{
+    __disable_irq();
 	volatile uint8_t data = 0;
 	
 	for(int i = 0; i < 0xFFFF; i++); //temporary
@@ -56,7 +57,9 @@ uint32_t rtc_read_date(struct date_struct *date)
 	
 	read_year(&data);
 	date->year = data;
-		
+
+    __enable_irq();
+
 	return 0;
 }
 
