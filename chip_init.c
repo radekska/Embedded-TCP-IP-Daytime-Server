@@ -6,7 +6,7 @@
 #include "wizchip_conf.h"
 #include "rtc.h"
 #include "led.h"
-#include "eeprom.h"
+//#include "eeprom.h"
 #include "retarget.h"
 
 
@@ -43,7 +43,7 @@ int8_t initHardware()
 
     retarget_init();
     rtc_init();
-    eeprom_init();
+    //eeprom_init();
     ledInit();
 
     return initResult;

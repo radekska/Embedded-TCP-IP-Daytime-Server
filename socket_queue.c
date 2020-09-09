@@ -23,6 +23,8 @@ int createSocketQueue(void)
 		};
 		memset(socket.sockaddr.ip_addr, 0, sizeof(*(socket.sockaddr.ip_addr) * 4));
 		
+		printf("sockNumber: %d\n", socket.sockNumber);
+		
 		if(xQueueSendToBack(socketQueue, (void *)&socket, (TickType_t)10) != pdPASS)
 		{
 			return -1; // error: couldn't push socket to queue

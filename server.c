@@ -44,7 +44,8 @@ static void listeningForConnectionTask(void *params)
 {
     uint8_t serverSocketNumber = 0;
     Sockaddr_t clientAddr;
-
+		Socket_t childSocket;
+	
     volatile Sockaddr_t bindAddress = {
         .port = (uint16_t) DAYTIME_PORT
         };
@@ -66,13 +67,15 @@ static void listeningForConnectionTask(void *params)
                 {
                     vTaskDelay((TickType_t) 100);
                 }
-
+								
                 if (acceptTCPServerSocket(serverSocket, &clientAddr) == SOCK_OK)
                 {
                     // log to eeprom the clientAddr
-                    Socket_t childSocket;
+                    
                     if (xQueueReceive(socketQueue, &childSocket, 10000) == pdTRUE)
                     {
+											printf("child socket: %d", childSocket.sockNumber);
+											
                         char portAsString[4];
                         numberToString(childSocket.sockaddr.port, portAsString);
                         sendCompleteMessage(serverSocket, portAsString);
