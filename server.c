@@ -18,6 +18,7 @@
 
 /* Requested stack size when server listening task creates connection */
 static uint16_t usedStackSize = 0;
+wiz_NetInfo netInfoConfig;
 										
 static void listeningForConnectionTask(void *params);
 static int openTCPServerSocket(Socket_t socket);
