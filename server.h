@@ -4,19 +4,11 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-/** TODO: in FreeRTOSConfig.h set widow size (MSS) ipconfigUSE_TCP_WIN to 1 
- * in order to have proper buffer length and scaale */
-
 /******** DEFINE CONSTANTS ********/
-/* Socket created successfully */
 #define SOCKET_SUCCESS 1
-/* There was insufficient FreeRTOS heap memory available for the socket to be created. */
 #define SOCKET_FAILED -1
-/* Value indicating unused parameter */
-#define UNUSED_PARAM ((void *) 0)
-/* 7 is well-known port for echo protocol on unix-like os */
-#define ECHO_PORT 7
-/* The maximum time to wait for a closing socket to close. */
+/* 13 is well-known port for daytime protocol on unix-like os */
+#define DAYTIME_PORT 13
 #define SOCKET_TIMEOUT	( pdMS_TO_TICKS( 5000 ) )
 
 #define RX_BUFF_SIZE 2048
@@ -28,7 +20,8 @@ typedef struct __sockaddr
     uint16_t port;
 } Sockaddr_t;
 
-typedef struct __socket_t {
+typedef struct __socket
+{
     uint8_t sockNumber;
     Sockaddr_t sockaddr;
 } Socket_t;

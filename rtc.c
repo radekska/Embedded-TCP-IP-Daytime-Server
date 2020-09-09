@@ -14,6 +14,18 @@ static uint32_t dec2bcd(uint32_t num);
 
 uint32_t rtc_init(void)
 {
+    //	struct date_struct date_set =
+//	{
+//		.year = 2020,
+//		.month = 9,
+//		.day = 8,
+//		.hour = 22,
+//		.min = 10,
+//		.sec = 30,
+//	};
+//
+//	rtc_set_date(&date_set);
+
 	i2c_init();
 	
 	return 0;
