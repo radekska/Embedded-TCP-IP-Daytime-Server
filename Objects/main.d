@@ -52,4 +52,9 @@
   C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\list.h \
   ..\project_v3\rtc.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h \
-  ..\project_v3\i2c.h ..\project_v3\retarget.h ..\project_v3\eeprom.h
+  ..\project_v3\i2c.h ..\project_v3\retarget.h ..\project_v3\eeprom.h \
+  C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\queue.h \
+  C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\task.h \
+  C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\semphr.h \
+  C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\queue.h \
+  ..\project_v3\logs.h ..\project_v3\linked_list.h ..\project_v3\rtc.h

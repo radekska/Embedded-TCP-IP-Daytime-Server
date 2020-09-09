@@ -6,6 +6,8 @@
 ".\objects\i2c.o"
 ".\objects\chip_init.o"
 ".\objects\eeprom.o"
+".\objects\logs.o"
+".\objects\linked_list.o"
 ".\objects\socket.o"
 ".\objects\wizchip_conf.o"
 ".\objects\w5100.o"

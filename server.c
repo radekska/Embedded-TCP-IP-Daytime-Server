@@ -16,6 +16,8 @@
 extern UART_HandleTypeDef  huart2;
 static QueueHandle_t socket_queue;
 
+char *log_tab_server[8] = {"log1", "log2", "log3", "log4", "log5", "log6", "log7", "log8"};
+
 static int create_socket_queue(void)
 {
 	uint8_t no_sockets = 4; // number of sockets
@@ -147,12 +149,24 @@ static void listeningForConnectionTask(void *params)
                         receiveAndEchoBack(serverSocket, "-1");
                     }
 										
+										if(logs_add_log(15, 3) != 0)
+										{
+											printf("add log failed\n");
+										}
+										
+										if(logs_save(15) != 0)
+										{
+											printf("save log failed\n");
+										}
+										
 										printf("main socket close\n");
 
 //										disconnect(serverSocket.sockNumber);
 										close(serverSocket.sockNumber);
 
 										// vTaskDelay(100); //wait after close // TODO time_wait
+										
+										
 										
 										
                 } else

@@ -448,6 +448,26 @@
               <FileType>5</FileType>
               <FilePath>.\eeprom.h</FilePath>
             </File>
+            <File>
+              <FileName>logs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\logs.h</FilePath>
+            </File>
+            <File>
+              <FileName>logs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\logs.c</FilePath>
+            </File>
+            <File>
+              <FileName>linked_list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\linked_list.c</FilePath>
+            </File>
+            <File>
+              <FileName>linked_list.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\linked_list.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

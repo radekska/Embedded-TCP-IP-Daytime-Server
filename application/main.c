@@ -146,20 +146,32 @@ int main(void)
 													
 	retarget_init();													
 	rtc_init();													
-//	eeprom_init();
+	eeprom_init();
+	logs_init();
+													
+	if(logs_add_new_module(15) != 0)
+	{
+		printf("logs_add_new_module failed");
+	}
+													
+	uint8_t eeprom_data[8] = {255, 255, 255, 255, 255, 255, 255, 255};
+	
+	//i2c_read_data(0x50, eeprom_data, 1);
+	
+	//eeprom_write_page(1, eeprom_data, 8); 
+//	
+//	for(volatile int i = 0; i < 0xFFFFFF; i++);
 //													
-//	uint8_t eeprom_data[8];
-//													
-//	eeprom_read_page(0, eeprom_data, 8); 
+//	eeprom_read_page(1, eeprom_data, 8); 
 //																				
 
 //	struct date_struct date_set = 
 //	{
 //		.year = 2020,
 //		.month = 9,
-//		.day = 8,
-//		.hour = 22,
-//		.min = 10,
+//		.day = 9,
+//		.hour = 20,
+//		.min = 43,
 //		.sec = 30,
 //	};
 //	
@@ -169,13 +181,17 @@ int main(void)
 													
 	rtc_print_date();
 													
-		if (pdPASS != xTaskCreate(taskLED, "led2", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
-			printf("ERROR: Unable to create task!\n");
-		}													
+	if (pdPASS != xTaskCreate(taskLED, "led2", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
+		printf("ERROR: Unable to create task!\n");
+	}													
 													
 	HAL_UART_Transmit(&huart2, "wizchip_getnetinfo\n", strlen("wizchip_getnetinfo\n"), 100);
 													
 	createTCPServerSocket(configMINIMAL_STACK_SIZE, 2);	
+		
+	eeprom_task_create();
+	
+	logs_task_create();
 
 	if (pdPASS != xTaskCreate(taskLED, "led1", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
 			printf("ERROR: Unable to create task!\n");

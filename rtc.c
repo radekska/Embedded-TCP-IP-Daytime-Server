@@ -89,12 +89,23 @@ uint32_t rtc_print_date(void)
 {
 	struct date_struct date;
 	
-	rtc_read_date(&date);
-	printf("time:\n");
+	printf("read date\n");
+	
+	rtc_read_date(&date);	
 	
 	printf("time: %d : %d : %d \n", date.hour, date.min, date.sec);
 	
 	return 0;
+}
+
+uint32_t rtc_get_hour_bcd(uint8_t *hour_bcd)
+{
+	return i2c_read_register(RTC_I2C_ADDR, 2, hour_bcd, 1);
+}
+
+uint32_t rtc_get_min_bcd(uint8_t *min_bcd)
+{
+	return i2c_read_register(RTC_I2C_ADDR, 1, min_bcd, 1);
 }
 
 //----------------------------------------
