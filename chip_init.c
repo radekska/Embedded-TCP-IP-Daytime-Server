@@ -33,7 +33,7 @@ static void MX_USART2_UART_Init(void);
 int8_t initHardware()
 {
     HAL_Init();
-    /* Configure the System clock to 84 MHz */
+
     SystemClock_Config();
 
     MX_GPIO_Init();
@@ -44,7 +44,7 @@ int8_t initHardware()
     retarget_init();
     rtc_init();
     eeprom_init();
-    LED_Init();
+    ledInit();
 
     return initResult;
 }
@@ -147,7 +147,6 @@ void MX_SPI2_Init(void)
     HAL_SPI_Init(&hspi2);
 }
 
-/* USART2 init function */
 void MX_USART2_UART_Init(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct;
@@ -179,6 +178,7 @@ void MX_USART2_UART_Init(void)
 
 /**
   * @brief  System Clock Configuration
+  * Configure the System clock to 84 MHz
   *         The system Clock is configured as follow :
   *            System Clock source            = PLL (HSI)
   *            SYSCLK(Hz)                     = 84000000

@@ -1,5 +1,5 @@
 #include <stm32f4xx_hal.h>
-void LED_Init(void)
+void ledInit(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct;
 

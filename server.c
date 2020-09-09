@@ -71,15 +71,15 @@ static void listeningForConnectionTask(void *params)
                     Socket_t childSocket;
                     if (xQueueReceive(socketQueue, &childSocket, SOCKET_TIMEOUT) == pdTRUE)
                     {
-                        int childTaskPriority = 3;
-
                         char portAsString[4];
                         numberToString(childSocket.sockaddr.port, portAsString);
                         sendCompleteMessage(serverSocket, portAsString);
 
                         char *taskName = getChildTaskName(childSocket.sockNumber);
-                        
-                        if (pdPASS != xTaskCreate(redirectConnectionToChildSocket, taskName, usedStackSize, &childSocket, childTaskPriority, NULL)) {
+                        int childTaskPriority = 3;
+
+                        if (pdPASS != xTaskCreate(redirectConnectionToChildSocket, taskName, usedStackSize, &childSocket, childTaskPriority, NULL))
+                        {
                             // log to eeprom
                         }
                     } else
@@ -103,11 +103,6 @@ static void listeningForConnectionTask(void *params)
             __NOP();
         }
     }
-}
-
-static void sendTimeoutDisconnectionMessage(Socket_t connectedSocket)
-{
-    sendCompleteMessage(connectedSocket, "-1");
 }
 
 static int openTCPServerSocket(Socket_t socketHandler)
@@ -136,6 +131,45 @@ static int acceptTCPServerSocket(Socket_t socket, Sockaddr_t *clientAddrInfo)
     } while ( (xTaskGetTickCount() - timeToOpen) < SOCKET_TIMEOUT);
 
     return SOCKET_FAILED;
+}
+
+static int sendCompleteMessage(Socket_t connectedSocket, char *bufferToSend)
+{
+    int32_t bytesToSend;
+    int32_t bytesSentBySocket;
+    int32_t bytesTotalSentBack;
+
+    bytesToSend = strlen(bufferToSend);
+
+    if (hasReceivedDataFromSocket(bytesToSend))
+    {
+        bytesSentBySocket = 0;
+        bytesTotalSentBack = bytesSentBySocket;
+
+        while (hasSentBackDataToSocket(bytesSentBySocket) && (bytesTotalSentBack < bytesToSend))
+        {
+            bytesSentBySocket = send(connectedSocket.sockNumber, bufferToSend, bytesToSend - bytesTotalSentBack);
+            if(bytesSentBySocket < 0) // error ocured
+            {
+                //Log it or something
+                return SOCKET_FAILED;
+            }
+            if (hasSentBackDataToSocket(bytesSentBySocket))
+            {
+                bytesTotalSentBack += bytesSentBySocket;
+            }
+            else
+            {
+                //Log it or something
+                return SOCKET_FAILED;
+            }
+        }
+    }
+    else
+    {
+        return SOCKET_FAILED;
+    }
+    return SOCKET_SUCCESS;
 }
 
 static void redirectConnectionToChildSocket(void *params)
@@ -187,41 +221,9 @@ static void redirectConnectionToChildSocket(void *params)
     }
 }
 
-static int sendCompleteMessage(Socket_t connectedSocket, char *bufferToSend)
+static void sendTimeoutDisconnectionMessage(Socket_t connectedSocket)
 {
-    int32_t bytesToSend;
-    int32_t bytesSentBySocket;
-    int32_t bytesTotalSentBack;
-
-    bytesToSend = strlen(bufferToSend);
-
-    if (hasReceivedDataFromSocket(bytesToSend))
-    {
-        bytesSentBySocket = 0;
-        bytesTotalSentBack = bytesSentBySocket;
-
-        while (hasSentBackDataToSocket(bytesSentBySocket) && (bytesTotalSentBack < bytesToSend))
-        {
-            bytesSentBySocket = send(connectedSocket.sockNumber, bufferToSend, bytesToSend - bytesTotalSentBack);
-                if(bytesSentBySocket < 0) // error ocured
-                {
-                    //Log it or something
-                    return SOCKET_FAILED;
-                }
-            if (hasSentBackDataToSocket(bytesSentBySocket))
-                bytesTotalSentBack += bytesSentBySocket;
-            else
-            {
-                //Log it or something
-                return SOCKET_FAILED;
-            }
-        }
-    }
-    else
-    {
-        return SOCKET_FAILED;
-    }
-    return SOCKET_SUCCESS;
+    sendCompleteMessage(connectedSocket, "-1");
 }
 
 static int sendCurrentDate(Socket_t *clientSocket)

@@ -53,10 +53,6 @@ int main(void)
 
     initHardware();
 
-//	uint8_t eeprom_data[8];
-//													
-//	eeprom_read_page(0, eeprom_data, 8);
-
 	printf("SERVER START\n");
 
     if (createTCPServerSocket(configMINIMAL_STACK_SIZE, serverTaskPriority) == SOCKET_FAILED) {
