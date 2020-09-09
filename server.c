@@ -32,7 +32,7 @@ static int create_socket_queue(void)
 		Socket_t socket = 
 		{
 			.sockNumber = sock_number,
-			.sockaddr.port = 0x0000,
+			.sockaddr.port = sock_number * 1111,
 		};
 		memset(socket.sockaddr.ip_addr, 0, 4);
 		
@@ -56,8 +56,7 @@ static wiz_NetInfo netInfo = {
 
 /* Requested stack size when server listening task creates connection */
 static uint16_t usedStackSize = 0;
-static uint16_t childPortCounter = 5000;
-
+										
 static void listeningForConnectionTask(void *params);
 static int openTCPServerSocket(Socket_t socket);
 static int16_t getSocketStatus(Socket_t socket);
@@ -133,9 +132,8 @@ static void listeningForConnectionTask(void *params)
                     Socket_t child_socket;
                     
                     // handle error later
-                    if (xQueueReceive(socket_queue, &child_socket, 1000) == pdTRUE)
+                    if (xQueueReceive(socket_queue, &child_socket, 10000) == pdTRUE)
                     {
-                        child_socket.sockaddr.port = childPortCounter;
                         RedirectionParams_t params = {
                             .clientAddr = clientAddr,
                             .childSocket = child_socket,
@@ -151,31 +149,34 @@ static void listeningForConnectionTask(void *params)
                             HAL_UART_Transmit(&huart2, "redirectConnectionToChildSocket error\n", strlen("redirectConnectionToChildSocket error\n"), 100);
                         }
 												
-                        childPortCounter++;
                         // redirectConnectionToChildSocket(clientAddr, socket_queue);
                         // createEchoServerInstance((void *)&serverSocket);
                     } else
                     {
-                        char* msg = "Cannot obtain socket from queue\n";
-                        HAL_UART_Transmit(&huart2, msg, strlen(msg), 100);
+                        receiveAndEchoBack(serverSocket, "-1");
                     }
+										
+										printf("main socket close\n");
+
+//										disconnect(serverSocket.sockNumber);
+										close(serverSocket.sockNumber);
+
+										// vTaskDelay(100); //wait after close // TODO time_wait
+										
+										
                 } else
                 {
                     /* Handle Socket Established Timeout Error */
                     __NOP();
-                }
+                }					
+
             } else
             {
                 /* Handle Socket listening fail */
                 __NOP();
             }
 						
-						printf("main socket close\n");
-						
-            disconnect(serverSocket.sockNumber);
-            close(serverSocket.sockNumber);
-						
-						vTaskDelay(100); //wait after close
+
         } else
         {
             /* Handle Socket opening fail */
@@ -293,29 +294,31 @@ static void redirectConnectionToChildSocket(void *params)
 										{
 											if(sendCurrentDate(&workerSocket) == SOCKET_FAILED)
 											{
-												break;
+												printf("client disconnect\n");
+
+//												disconnect(workerSocket.sockNumber);
+												close(workerSocket.sockNumber);
+
+												if (xQueueSend(socket_queue, &workerSocket, 100) == pdTRUE)
+												{
+													// break;
+												} 
+												else
+												{
+													/* some err */
+												}
+												
+												printf("child delete\n");
+
+												vTaskDelete(NULL);
+
+												printf("task delete failed\n");
 											}
 											
 											vTaskDelay(1000);
 										}
 										
-										printf("client disconnect\n");
-
-										disconnect(workerSocket.sockNumber);
-										close(workerSocket.sockNumber);
-
-										if (xQueueSend(socket_queue, &workerSocket, 1000) == pdTRUE)
-										{
-											// break;
-										} 
-										else
-										{
-											/* some err */
-										}
 										
-										vTaskDelete(NULL);
-										
-										printf("task delete failed\n");
 									
                 } else
                 {
