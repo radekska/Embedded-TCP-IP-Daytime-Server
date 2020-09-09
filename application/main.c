@@ -149,7 +149,7 @@ int main(void)
 	eeprom_init();
 	logs_init();
 													
-	if(logs_add_new_module(15) != 0)
+	if(logs_add_new_module(MODULE_SERVER) != 0)
 	{
 		printf("logs_add_new_module failed");
 	}
@@ -158,7 +158,7 @@ int main(void)
 	
 	//i2c_read_data(0x50, eeprom_data, 1);
 	
-	//eeprom_write_page(1, eeprom_data, 8); 
+//	eeprom_write_page(1, eeprom_data, 8); 
 //	
 //	for(volatile int i = 0; i < 0xFFFFFF; i++);
 //													
