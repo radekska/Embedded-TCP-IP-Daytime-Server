@@ -58,7 +58,7 @@ int hasReceivedDataFromSocket(int32_t bytesFromSocket)
 
 int hasSentBackDataToSocket(int32_t bytesSentToSocket)
 {
-    return checkBytesCount(bytesFromSocket);
+    return checkBytesCount(bytesSentToSocket);
 }
 
 static int checkBytesCount(int32_t bytes)

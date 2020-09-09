@@ -14,12 +14,13 @@
 #include "retarget.h"
 #include "rtc.h"
 #include "server_utils.h"
-
+#include "queue.h"
 
 /* Requested stack size when server listening task creates connection */
 static uint16_t usedStackSize = 0;
-wiz_NetInfo netInfoConfig;
-										
+extern wiz_NetInfo netInfoConfig;
+extern QueueHandle_t socketQueue;		
+
 static void listeningForConnectionTask(void *params);
 static int openTCPServerSocket(Socket_t socket);
 static int acceptTCPServerSocket(Socket_t socket, Sockaddr_t *clientAddrInfo);
@@ -70,7 +71,7 @@ static void listeningForConnectionTask(void *params)
                 {
                     // log to eeprom the clientAddr
                     Socket_t childSocket;
-                    if (xQueueReceive(socketQueue, &childSocket, SOCKET_TIMEOUT) == pdTRUE)
+                    if (xQueueReceive(socketQueue, &childSocket, 10000) == pdTRUE)
                     {
                         char portAsString[4];
                         numberToString(childSocket.sockaddr.port, portAsString);
@@ -79,7 +80,7 @@ static void listeningForConnectionTask(void *params)
                         char *taskName = getChildTaskName(childSocket.sockNumber);
                         int childTaskPriority = 3;
 
-                        if (pdPASS != xTaskCreate(redirectConnectionToChildSocket, taskName, usedStackSize, &childSocket, childTaskPriority, NULL))
+                        if (pdPASS != xTaskCreate(redirectConnectionToChildSocket, taskName, usedStackSize, (void *)&childSocket, childTaskPriority, NULL))
                         {
                             // log to eeprom
                         }
@@ -176,6 +177,7 @@ static int sendCompleteMessage(Socket_t connectedSocket, char *bufferToSend)
 static void redirectConnectionToChildSocket(void *params)
 {
     Socket_t workerSocket = *((Socket_t *) params);
+		Sockaddr_t clientAddr;
     memcpy(workerSocket.sockaddr.ip_addr, netInfoConfig.ip, 4);
 
     while(1)
@@ -235,7 +237,7 @@ static int sendCurrentDate(Socket_t *clientSocket)
 	int response = sendCompleteMessage(*clientSocket, currentTime);
 	__enable_irq();
 	
-	free(str);
+	free(currentTime);
 	
 	return response;
 }

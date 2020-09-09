@@ -448,6 +448,36 @@
               <FileType>5</FileType>
               <FilePath>.\eeprom.h</FilePath>
             </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\led.h</FilePath>
+            </File>
+            <File>
+              <FileName>server_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\server_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>server_utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\server_utils.h</FilePath>
+            </File>
+            <File>
+              <FileName>socket_queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\socket_queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>socket_queue.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\socket_queue.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
