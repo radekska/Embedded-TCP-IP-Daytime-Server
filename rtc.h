@@ -1,3 +1,6 @@
+#ifndef __RTC_H__
+#define __RTC_H__
+
 #include <stdio.h>
 #include "stm32f446xx.h"
 #include <stm32f4xx_hal.h>
@@ -20,10 +23,13 @@ struct date_struct
 
 //----------------------------------------
 
-uint32_t rtc_init(void);
-uint32_t rtc_read_date(struct date_struct *date);
-uint32_t rtc_set_date(struct date_struct *date);
-
-uint32_t rtc_print_date(void);
+int rtcInit(void);
+int rtcReadDate(struct date_struct *date);
+int rtcSetDate(struct date_struct *date);
+int rtcPrintDate(void);
+int rtcGetHourBcd(uint8_t *hourBcd);
+int rtcGetMinBcd(uint8_t *minBcd);
 
 //----------------------------------------
+
+#endif /* __RTC_H__ */

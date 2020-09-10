@@ -41,10 +41,11 @@ int8_t initHardware()
 
     int8_t initResult = initWizChip();
 
-    retarget_init();
-    rtc_init();
-    //eeprom_init();
+    retargetInit();
+    rtcInit();
+    eepromInit();
     ledInit();
+    logsInit();
 
     return initResult;
 }

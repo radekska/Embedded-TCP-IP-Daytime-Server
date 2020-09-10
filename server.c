@@ -44,7 +44,7 @@ static void listeningForConnectionTask(void *params)
 {
     uint8_t serverSocketNumber = 0;
     Sockaddr_t clientAddr;
-		Socket_t childSocket;
+    Socket_t childSocket;
 	
     volatile Sockaddr_t bindAddress = {
         .port = (uint16_t) DAYTIME_PORT
@@ -73,9 +73,7 @@ static void listeningForConnectionTask(void *params)
                     // log to eeprom the clientAddr
                     
                     if (xQueueReceive(socketQueue, &childSocket, 10000) == pdTRUE)
-                    {
-											printf("child socket: %d", childSocket.sockNumber);
-											
+                    {						
                         char portAsString[4];
                         numberToString(childSocket.sockaddr.port, portAsString);
                         sendCompleteMessage(serverSocket, portAsString);
@@ -91,7 +89,19 @@ static void listeningForConnectionTask(void *params)
                     {
                         sendTimeoutDisconnectionMessage(serverSocket);
                     }
-                    close(serverSocket.sockNumber);
+										
+                    if(logsAddLog(MODULE_SERVER, 3) != 0)
+                    {
+                        printf("add log failed\n");
+                    }
+                    
+                    if(logsSave(MODULE_SERVER) != 0)
+                    {
+                        printf("save log failed\n");
+                    }
+                    
+                    close(serverSocket.sockNumber);											
+										
                 } else
                 {
                     /* Handle Socket Established Timeout Error */
@@ -180,7 +190,7 @@ static int sendCompleteMessage(Socket_t connectedSocket, char *bufferToSend)
 static void redirectConnectionToChildSocket(void *params)
 {
     Socket_t workerSocket = *((Socket_t *) params);
-		Sockaddr_t clientAddr;
+    Sockaddr_t clientAddr;
     memcpy(workerSocket.sockaddr.ip_addr, netInfoConfig.ip, 4);
 
     while(1)

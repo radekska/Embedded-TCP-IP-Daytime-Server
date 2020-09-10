@@ -7,7 +7,7 @@
 
 //----------------------------------------
 
-uint32_t retarget_init(void);
+uint32_t retargetInit(void);
 
 int fputc(int ch, FILE *f);
 int ferror(FILE *f);

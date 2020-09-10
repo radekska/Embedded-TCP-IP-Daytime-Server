@@ -63,6 +63,13 @@ int main(void)
     if (pdPASS != xTaskCreate(taskLED, "led1", configMINIMAL_STACK_SIZE, NULL, ledTaskPriority, NULL)) {
         printf("ERROR: Unable to create task!\n");
     }
+    if(logsAddNewModule(MODULE_SERVER) != 0)
+	{
+		printf("logsAddNewModule failed");
+	}
+    eepromTaskCreate();
+	
+	logsTaskCreate();
 
     if (pdPASS != xTaskCreate(taskLED, "led2", configMINIMAL_STACK_SIZE, NULL, ledTaskPriority, NULL)) {
         printf("ERROR: Unable to create task!\n");

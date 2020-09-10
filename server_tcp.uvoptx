@@ -148,7 +148,24 @@
           <Name>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_512 -FS08000000 -FL080000 -FP0($$Device:STM32F446RETx$CMSIS\Flash\STM32F4xx_512.FLM))</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint/>
+      <Breakpoint>
+        <Bp>
+          <Number>0</Number>
+          <Type>0</Type>
+          <LineNumber>180</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134233126</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>.\application\main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\server_tcp\application/main.c\180</Expression>
+        </Bp>
+      </Breakpoint>
       <ScvdPack>
         <Filename>C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\FreeRTOS.scvd</Filename>
         <Type>ARM.CMSIS-FreeRTOS.10.3.1</Type>
@@ -416,6 +433,7 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
+<<<<<<< HEAD
     <File>
       <GroupNumber>1</GroupNumber>
       <FileNumber>18</FileNumber>
@@ -488,6 +506,8 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
+=======
+>>>>>>> eeprom
   </Group>
 
   <Group>
@@ -498,7 +518,11 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>2</GroupNumber>
+<<<<<<< HEAD
       <FileNumber>24</FileNumber>
+=======
+      <FileNumber>18</FileNumber>
+>>>>>>> eeprom
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -510,7 +534,11 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
+<<<<<<< HEAD
       <FileNumber>25</FileNumber>
+=======
+      <FileNumber>19</FileNumber>
+>>>>>>> eeprom
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -522,7 +550,11 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
+<<<<<<< HEAD
       <FileNumber>26</FileNumber>
+=======
+      <FileNumber>20</FileNumber>
+>>>>>>> eeprom
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -534,7 +566,11 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
+<<<<<<< HEAD
       <FileNumber>27</FileNumber>
+=======
+      <FileNumber>21</FileNumber>
+>>>>>>> eeprom
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -546,7 +582,11 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
+<<<<<<< HEAD
       <FileNumber>28</FileNumber>
+=======
+      <FileNumber>22</FileNumber>
+>>>>>>> eeprom
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -558,7 +598,11 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
+<<<<<<< HEAD
       <FileNumber>29</FileNumber>
+=======
+      <FileNumber>23</FileNumber>
+>>>>>>> eeprom
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>

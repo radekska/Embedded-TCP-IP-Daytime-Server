@@ -8,7 +8,7 @@ static UART_HandleTypeDef huart2_ctx; //context
 
 //----------------------------------------
 
-uint32_t retarget_init(void)
+uint32_t retargetInit(void)
 {
 	
 	return uart2_init();
