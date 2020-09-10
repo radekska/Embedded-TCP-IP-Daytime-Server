@@ -147,7 +147,7 @@ int main(void)
 	retargetInit();													
 	rtcInit();													
 	eepromInit();
-	logs_init();
+	logsInit();
 													
 	if(logsAddNewModule(MODULE_SERVER) != 0)
 	{
@@ -158,7 +158,7 @@ int main(void)
 	
 	//i2cReadData(0x50, eeprom_data, 1);
 	
-//	eepromWritePage(1, eeprom_data, 8); 
+	eepromWritePage(0, eeprom_data, 8); 
 //	
 //	for(volatile int i = 0; i < 0xFFFFFF; i++);
 //													
@@ -169,9 +169,9 @@ int main(void)
 //	{
 //		.year = 2020,
 //		.month = 9,
-//		.day = 9,
-//		.hour = 20,
-//		.min = 43,
+//		.day = 10,
+//		.hour = 22,
+//		.min = 34,
 //		.sec = 30,
 //	};
 //	

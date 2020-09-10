@@ -20,14 +20,14 @@ static struct eepromContext
 static struct eepromContext eepromCtx; // context
 
 extern QueueHandle_t logsQueue; // queue from logs files
-extern SemaphoreHandle_t save_logs_semaphore; // semaphore from logs files
+extern SemaphoreHandle_t saveLogs_semaphore; // semaphore from logs files
 
 //----------------------------------------
 
 static int eepromCheckIfBusy(void);
 static int eepromTask(void *params);
-static int save_log(struct logStruct *log);
-static int find_last_log(void);
+static int saveLog(struct logStruct *log);
+static int findLastLog(void);
 
 //----------------------------------------
 
@@ -40,7 +40,7 @@ int eepromInit(void)
 	
 	i2cInit();
 	
-	//eepromCtx.write_pointer = find_last_log();
+	eepromCtx.write_pointer = findLastLog();
 		
 	eepromCtx.isInit = INITIALIZED;
 	
@@ -147,37 +147,24 @@ static int eepromTask(void *params)
 	}
 	
 	while(1)
-	{
-		//if(pdTRUE == xSemaphoreTake(save_logs_semaphore, 100))
-		{
-			//printf("eeprom: semaphore taken successfully\n");
-			
-			// semaphore taken successfully
-			
-			struct logStruct log_data;
-			
-			while(xQueueReceive(logsQueue, &log_data, 1000) == pdTRUE)
-			{		
-				if(eepromCheckIfBusy() == 1)
-				{
-					vTaskDelay(10);
-				}
-				
-				__disable_irq();
-				save_log(&log_data);
-				__enable_irq();
-			}
-		} 
-//		else 
-//		{
-//			// timeout occurred
-//		}
-		
-	}
+	{		
+		struct logStruct log_data;
 
+		while(xQueueReceive(logsQueue, &log_data, 1000) == pdTRUE)
+		{		
+			if(eepromCheckIfBusy() == 1)
+			{
+				vTaskDelay(10);
+			}
+			
+			__disable_irq();
+			saveLog(&log_data);
+			__enable_irq();
+		} 
+	}
 }
 
-static int save_log(struct logStruct *log)
+static int saveLog(struct logStruct *log)
 {
 	uint8_t buffer[4];
 	
@@ -203,7 +190,7 @@ static int save_log(struct logStruct *log)
 	}
 }
 
-static int find_last_log(void)
+static int findLastLog(void)
 {
 	uint8_t buffer[4];
 	
