@@ -8,10 +8,10 @@
 
 //----------------------------------------
 
-uint32_t i2c_init(void);
-uint32_t i2c_write_data(uint8_t addr, uint8_t *data, uint8_t length);
-uint32_t i2c_read_data(uint8_t addr, uint8_t *data, uint8_t length);
-uint32_t i2c_read_register(uint8_t addr, uint8_t reg_addr, uint8_t *data, uint8_t length);
+int i2cInit(void);
+int i2cWriteData(uint8_t addr, uint8_t *data, uint8_t length);
+int i2cReadData(uint8_t addr, uint8_t *data, uint8_t length);
+int i2cReadRegister(uint8_t addr, uint8_t reg_addr, uint8_t *data, uint8_t length);
 
 //----------------------------------------
 

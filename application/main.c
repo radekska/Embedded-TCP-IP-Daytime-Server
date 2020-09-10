@@ -144,25 +144,25 @@ int main(void)
   wizchip_setnetinfo(&netInfo);
   wizchip_getnetinfo(&netInfo);
 													
-	retarget_init();													
-	rtc_init();													
-	eeprom_init();
+	retargetInit();													
+	rtcInit();													
+	eepromInit();
 	logs_init();
 													
-	if(logs_add_new_module(MODULE_SERVER) != 0)
+	if(logsAddNewModule(MODULE_SERVER) != 0)
 	{
-		printf("logs_add_new_module failed");
+		printf("logsAddNewModule failed");
 	}
 													
 	uint8_t eeprom_data[8] = {255, 255, 255, 255, 255, 255, 255, 255};
 	
-	//i2c_read_data(0x50, eeprom_data, 1);
+	//i2cReadData(0x50, eeprom_data, 1);
 	
-//	eeprom_write_page(1, eeprom_data, 8); 
+//	eepromWritePage(1, eeprom_data, 8); 
 //	
 //	for(volatile int i = 0; i < 0xFFFFFF; i++);
 //													
-//	eeprom_read_page(1, eeprom_data, 8); 
+//	eepromReadPage(1, eeprom_data, 8); 
 //																				
 
 //	struct date_struct date_set = 
@@ -175,11 +175,11 @@ int main(void)
 //		.sec = 30,
 //	};
 //	
-//	rtc_set_date(&date_set);
+//	rtcSetDate(&date_set);
 													
 	printf("START\n");
 													
-	rtc_print_date();
+	rtcPrintDate();
 													
 	if (pdPASS != xTaskCreate(taskLED, "led2", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
 		printf("ERROR: Unable to create task!\n");
@@ -189,9 +189,9 @@ int main(void)
 													
 	createTCPServerSocket(configMINIMAL_STACK_SIZE, 2);	
 		
-	eeprom_task_create();
+	eepromTaskCreate();
 	
-	logs_task_create();
+	logsTaskCreate();
 
 	if (pdPASS != xTaskCreate(taskLED, "led1", configMINIMAL_STACK_SIZE, NULL, 3, NULL)) {
 			printf("ERROR: Unable to create task!\n");

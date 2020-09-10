@@ -18,12 +18,12 @@
 
 //----------------------------------------
 
-uint32_t eeprom_init(void);
-uint32_t eeprom_read_page(uint8_t read_addr, uint8_t *buffer, uint8_t length); //max read length 8 bytes
-uint32_t eeprom_write_page(uint8_t read_addr, uint8_t *buffer, uint8_t length); //max write length 8 bytes
-uint32_t eeprom_read_block(uint8_t block_number, struct log_struct *log);
+int eepromInit(void);
+int eepromReadPage(uint8_t readAddr, uint8_t *buffer, uint8_t length); //max read length 8 bytes
+int eepromWritePage(uint8_t readAddr, uint8_t *buffer, uint8_t length); //max write length 8 bytes
+int eepromReadBlock(uint8_t block_number, struct logStruct *log);
 
-uint32_t eeprom_task_create(void);
+int eepromTaskCreate(void);
 
 //----------------------------------------
 

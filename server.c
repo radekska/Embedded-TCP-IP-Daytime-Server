@@ -148,12 +148,12 @@ static void listeningForConnectionTask(void *params)
                         receiveAndEchoBack(serverSocket, "-1");
                     }
 										
-										if(logs_add_log(MODULE_SERVER, 3) != 0)
+										if(logsAddLog(MODULE_SERVER, 3) != 0)
 										{
 											printf("add log failed\n");
 										}
 										
-										if(logs_save(MODULE_SERVER) != 0)
+										if(logsSave(MODULE_SERVER) != 0)
 										{
 											printf("save log failed\n");
 										}
@@ -461,7 +461,7 @@ static int sendCurrentDate(Socket_t *clientSocket)
 	struct date_struct currentDate;
 	
 	__disable_irq();
-	rtc_read_date(&currentDate);
+	rtcReadDate(&currentDate);
 	__enable_irq();	
 	
 	char *str = malloc(20), tmp[4]; // temporary

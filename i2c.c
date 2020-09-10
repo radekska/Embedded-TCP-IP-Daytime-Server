@@ -2,25 +2,25 @@
 
 //----------------------------------------
 
-static enum is_initialized
+static enum isInitialized
 {
 	NOT_INITIALIZED,
 	INITIALIZED,
 };
 
-static struct eeprom_context
+static struct eepromContext
 {
-	enum is_initialized is_init;
+	enum isInitialized isInit;
 };
 
-static struct eeprom_context eeprom_ctx; //context
+static struct eepromContext eepromCtx; //context
 
 //----------------------------------------
 
-uint32_t i2c_init(void)
+int i2cInit(void)
 {
 	
-	if(eeprom_ctx.is_init == INITIALIZED)
+	if(eepromCtx.isInit == INITIALIZED)
 	{
 		printf("i2c is init\n");
 		
@@ -43,8 +43,6 @@ uint32_t i2c_init(void)
 	// reset and clear reg
 	I2C1->CR1 = I2C_CR1_SWRST;
 	I2C1->CR1 = 0UL | I2C_CR1_ACK;
-
-	
 	
 	I2C1->CR2 |= (1 << 1); // set periph clk
 	I2C1->CCR |= (50 << 0);
@@ -56,12 +54,12 @@ uint32_t i2c_init(void)
 
 	I2C1->CR1 |= I2C_CR1_PE; // enable i2c
 	
-	eeprom_ctx.is_init = INITIALIZED;
+	eepromCtx.isInit = INITIALIZED;
 	
 	return 0;
 }
 
-uint32_t i2c_write_data(uint8_t addr, uint8_t *data, uint8_t length)
+int i2cWriteData(uint8_t addr, uint8_t *data, uint8_t length)
 {
 	
 	  // start
@@ -87,12 +85,12 @@ uint32_t i2c_write_data(uint8_t addr, uint8_t *data, uint8_t length)
 		
 		for(volatile int i = 0; i < 0xFF; i++); //temporary
 		
-		eeprom_ctx.is_init = INITIALIZED;
+		eepromCtx.isInit = INITIALIZED;
 	
 	return 0;
 }
 
-uint32_t i2c_read_data(uint8_t addr, uint8_t *data, uint8_t length)
+int i2cReadData(uint8_t addr, uint8_t *data, uint8_t length)
 {
 	//start
 	I2C1->CR1 |= I2C_CR1_START;
@@ -129,7 +127,7 @@ uint32_t i2c_read_data(uint8_t addr, uint8_t *data, uint8_t length)
 	return 0;
 }
 
-uint32_t i2c_read_register(uint8_t addr, uint8_t reg_addr, uint8_t *data, uint8_t length)
+int i2cReadRegister(uint8_t addr, uint8_t reg_addr, uint8_t *data, uint8_t length)
 {	
 	
 	  // start

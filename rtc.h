@@ -23,14 +23,12 @@ struct date_struct
 
 //----------------------------------------
 
-uint32_t rtc_init(void);
-uint32_t rtc_read_date(struct date_struct *date);
-uint32_t rtc_set_date(struct date_struct *date);
-
-uint32_t rtc_print_date(void);
-
-uint32_t rtc_get_hour_bcd(uint8_t *hour_bcd);
-uint32_t rtc_get_min_bcd(uint8_t *min_bcd);
+int rtcInit(void);
+int rtcReadDate(struct date_struct *date);
+int rtcSetDate(struct date_struct *date);
+int rtcPrintDate(void);
+int rtcGetHourBcd(uint8_t *hourBcd);
+int rtcGetMinBcd(uint8_t *minBcd);
 
 //----------------------------------------
 

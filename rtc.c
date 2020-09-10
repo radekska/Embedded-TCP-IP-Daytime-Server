@@ -2,47 +2,47 @@
 
 //----------------------------------------
 
-static uint32_t read_sec(uint8_t *second);
-static uint32_t read_min(uint8_t *minute);
-static uint32_t read_hour(uint8_t *hour);
-static uint32_t read_day(uint8_t *day);
-static uint32_t read_month(uint8_t *month);
-static uint32_t read_year(uint8_t *year);
-static uint32_t dec2bcd(uint32_t num);
+static int readSec(uint8_t *second);
+static int readMin(uint8_t *minute);
+static int readHour(uint8_t *hour);
+static int readDay(uint8_t *day);
+static int readMonth(uint8_t *month);
+static int readYear(uint8_t *year);
+static int dec2bcd(uint32_t num);
 
 //----------------------------------------
 
-uint32_t rtc_init(void)
+int rtcInit(void)
 {
-	i2c_init();
+	i2cInit();
 	
 	return 0;
 }
 
 //----------------------------------------
 
-uint32_t rtc_read_date(struct date_struct *date)
+int rtcReadDate(struct date_struct *date)
 {	
 	volatile uint8_t data = 0;
 	
 	for(int i = 0; i < 0xFFFF; i++); //temporary
 	
-	read_sec(&data);
+	readSec(&data);
 	date->sec = data;
 	
-	read_min(&data);
+	readMin(&data);
 	date->min = data;
 	
-	read_hour(&data);
+	readHour(&data);
 	date->hour = data;
 	
-	read_day(&data);
+	readDay(&data);
 	date->day = data;
 	
-	read_month(&data);
+	readMonth(&data);
 	date->month = data;
 	
-	read_year(&data);
+	readYear(&data);
 	date->year = data;
 		
 	return 0;
@@ -50,134 +50,134 @@ uint32_t rtc_read_date(struct date_struct *date)
 
 //----------------------------------------
 
-uint32_t rtc_set_date(struct date_struct *date)
+int rtcSetDate(struct date_struct *date)
 {
 	volatile uint8_t data[2];
 	data[0] = 0;
 	data[1] = (uint8_t)dec2bcd(date->sec);
 	
-	i2c_write_data(RTC_I2C_ADDR, data, 2);
+	i2cWriteData(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 1;
 	data[1] = (uint8_t)dec2bcd(date->min);
 	
-	i2c_write_data(RTC_I2C_ADDR, data, 2);
+	i2cWriteData(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 2;
 	data[1] = (uint8_t)dec2bcd(date->hour);
 	
-	i2c_write_data(RTC_I2C_ADDR, data, 2);
+	i2cWriteData(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 4;
 	data[1] = (uint8_t)dec2bcd(date->day);
 	
-	i2c_write_data(RTC_I2C_ADDR, data, 2);
+	i2cWriteData(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 5;
 	data[1] = (uint8_t)dec2bcd(date->month);
 	
-	i2c_write_data(RTC_I2C_ADDR, data, 2);
+	i2cWriteData(RTC_I2C_ADDR, data, 2);
 	
 	data[0] = 6;
 	data[1] = (uint8_t)dec2bcd(date->year);
 	
-	i2c_write_data(RTC_I2C_ADDR, data, 2);	
+	i2cWriteData(RTC_I2C_ADDR, data, 2);	
 	
 }
 
-uint32_t rtc_print_date(void)
+int rtcPrintDate(void)
 {
 	struct date_struct date;
 	
 	printf("read date\n");
 	
-	rtc_read_date(&date);	
+	rtcReadDate(&date);	
 	
 	printf("time: %d : %d : %d \n", date.hour, date.min, date.sec);
 	
 	return 0;
 }
 
-uint32_t rtc_get_hour_bcd(uint8_t *hour_bcd)
+int rtcGetHourBcd(uint8_t *hourBcd)
 {
-	return i2c_read_register(RTC_I2C_ADDR, 2, hour_bcd, 1);
+	return i2cReadRegister(RTC_I2C_ADDR, 2, hourBcd, 1);
 }
 
-uint32_t rtc_get_min_bcd(uint8_t *min_bcd)
+int rtcGetMinBcd(uint8_t *minBcd)
 {
-	return i2c_read_register(RTC_I2C_ADDR, 1, min_bcd, 1);
+	return i2cReadRegister(RTC_I2C_ADDR, 1, minBcd, 1);
 }
 
 //----------------------------------------
 /* Private functions */
 
-static uint32_t read_sec(uint8_t *second)
+static int readSec(uint8_t *second)
 {
 	uint8_t data;
 	
-	i2c_read_register(RTC_I2C_ADDR, 0, &data, 1);
+	i2cReadRegister(RTC_I2C_ADDR, 0, &data, 1);
 	
 	*second = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
 
-static uint32_t read_min(uint8_t *minute)
+static int readMin(uint8_t *minute)
 {
 	uint8_t data;
 	
-	i2c_read_register(RTC_I2C_ADDR, 1, &data, 1);
+	i2cReadRegister(RTC_I2C_ADDR, 1, &data, 1);
 	
 	*minute = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
 	
-static uint32_t read_hour(uint8_t *hour)
+static int readHour(uint8_t *hour)
 {
 	uint8_t data;
 	
-	i2c_read_register(RTC_I2C_ADDR, 2, &data, 1);
+	i2cReadRegister(RTC_I2C_ADDR, 2, &data, 1);
 	
 	*hour = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
 	
-static uint32_t read_day(uint8_t *day)
+static int readDay(uint8_t *day)
 {
 	uint8_t data;
 	
-	i2c_read_register(RTC_I2C_ADDR, 4, &data, 1);
+	i2cReadRegister(RTC_I2C_ADDR, 4, &data, 1);
 	
 	*day = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
 	
-static uint32_t read_month(uint8_t *month)
+static int readMonth(uint8_t *month)
 {
 	uint8_t data;
 	
-	i2c_read_register(RTC_I2C_ADDR, 5, &data, 1);
+	i2cReadRegister(RTC_I2C_ADDR, 5, &data, 1);
 	
 		*month = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
 	
-static uint32_t read_year(uint8_t *year)
+static int readYear(uint8_t *year)
 {
 	uint8_t data;
 	
-	i2c_read_register(RTC_I2C_ADDR, 6, &data, 1);
+	i2cReadRegister(RTC_I2C_ADDR, 6, &data, 1);
 	
 	*year = (((data >> 4) & 0x0F)*10) + (data & 0x0F);
 	
 	return 0;
 }
 
-static uint32_t dec2bcd(uint32_t num)
+static int dec2bcd(uint32_t num)
 {
     unsigned int ones = 0;
     unsigned int tens = 0;
