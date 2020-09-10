@@ -5,13 +5,13 @@
 
 //----------------------------------------
 
-static enum isInitialized
+enum isInitialized
 {
 	NOT_INITIALIZED,
 	INITIALIZED,
 };
 
-static struct eepromContext
+struct eepromContext
 {
 	enum isInitialized isInit;
 	uint8_t write_pointer; // next write address in eeprom
@@ -61,7 +61,7 @@ int eepromReadPage(uint8_t readAddr, uint8_t *buffer, uint8_t length)
 
 //----------------------------------------
 
-int eepromWritePage(uint8_t readAddr, uint8_t *buffer, uint8_t length)
+int eepromWritePage(uint8_t writeAddr, uint8_t *buffer, uint8_t length)
 {
 	if(length > 8)
 	{
@@ -69,7 +69,7 @@ int eepromWritePage(uint8_t readAddr, uint8_t *buffer, uint8_t length)
 	}
 		
 	uint8_t tmp_buffer[length + 1];
-	tmp_buffer[0] = readAddr; // attach read address at the begining
+	tmp_buffer[0] = writeAddr; // attach read address at the begining
 	memcpy(&(tmp_buffer[1]), buffer, length);
 	
 	return i2cWriteData(EEPROM_I2C_ADDR, tmp_buffer, length + 1 );
@@ -86,24 +86,30 @@ int eepromReadBlock(uint8_t block_number, struct logStruct *log)
 	
 	uint8_t buffer[8];
 	
-	if(eepromReadPage((block_number * 4), buffer, 8) != 0)
-	{
-		printf(" eepromReadPage error\n");
-		
+	if(eepromReadPage((block_number * 8), buffer, 8) != 0)
+	{	
 		return -1; // error: eepromReadPage failed
 	}
 
 	if((buffer[0] & (3 << 6)) != 0) // if there is no sync symbol
-	{	
-		printf(" sync error\n");
-		
-		return -1; // error: invalid block
+	{			
+		return EEPROM_INVALID_FIRST_BLOCK; // error: invalid first block
 	}
 	
 	log->moduleAddr = buffer[0];
 	log->hourBcd = buffer[1];
 	log->minBcd = buffer[2];
 	log->log_code = buffer[3];
+	
+		if((buffer[5] & (3 << 6)) != 0) // if there is no sync symbol
+	{			
+		return EEPROM_INVALID_SECOND_BLOCK; // error: invalid second block
+	}
+	
+	log->moduleAddr = buffer[5];
+	log->hourBcd = buffer[6];
+	log->minBcd = buffer[7];
+	log->log_code = buffer[8];
 	
 	return 0;
 }
@@ -120,8 +126,23 @@ int eepromTaskCreate(void)
 		return -1;
 	}
 	
-	printf("eeprom task created\n");
+	return 0;
+}
+
+//----------------------------------------
+
+int eepromClear(void)
+{
+	uint8_t buffer[8] = {255, 255, 255, 255, 255, 255, 255, 255};
 	
+	for(int addr = 0; addr < EEPROM_SIZE; addr+=8)
+	{
+		if(eepromWritePage(addr, buffer, 8))
+		{
+			return -1; // error: write failed
+		}
+	}
+
 	return 0;
 }
 
@@ -166,25 +187,43 @@ static int eepromTask(void *params)
 
 static int saveLog(struct logStruct *log)
 {
-	uint8_t buffer[4];
+	uint8_t buffer[8];
 	
-	buffer[0] = (EEPROM_SYNC) | (log->moduleAddr & LOG_moduleAddr_MASK); // sync and module address
-	buffer[1] = log->hourBcd;
-	buffer[2] = log->minBcd;
-	buffer[3] = log->log_code;
-	
-	if(eepromWritePage(eepromCtx.write_pointer, buffer, 4))
+	if((eepromCtx.write_pointer % 8) == 0) // if write first 4 bytes of page
 	{
-		eepromCtx.write_pointer += 4;
-		eepromCtx.write_pointer %= EEPROM_SIZE;
+		buffer[0] = (EEPROM_SYNC) | (log->moduleAddr & LOG_moduleAddr_MASK); // sync and module address
+		buffer[1] = log->hourBcd;
+		buffer[2] = log->minBcd;
+		buffer[3] = log->log_code;
+		buffer[4] = 255;
+		buffer[5] = 255;
+		buffer[6] = 255;
+		buffer[7] = 255;	
+	}
+	else // if write last 4 bytes of page
+	{		
+		if(eepromReadPage((eepromCtx.write_pointer - (eepromCtx.write_pointer % 8)), buffer, 8) != 0)
+		{	
+			return -1; // error: eepromReadPage failed
+		}
 		
-		printf("data saved\n");
+		buffer[4] = (EEPROM_SYNC) | (log->moduleAddr & LOG_moduleAddr_MASK); // sync and module address
+		buffer[5] = log->hourBcd;
+		buffer[6] = log->minBcd;
+		buffer[7] = log->log_code;	
+	}
+
+	
+	if(eepromWritePage(eepromCtx.write_pointer, buffer, 8) == 0)
+	{
+		eepromCtx.write_pointer += 8;
+		eepromCtx.write_pointer %= EEPROM_SIZE;
 		
 		return 0;
 	}
 	else
-	{
-			printf("data save failed\n");
+	{	
+		printf("eeprom save failed\n");
 		
 		return -1; // error: eeprom write failed
 	}
@@ -192,11 +231,11 @@ static int saveLog(struct logStruct *log)
 
 static int findLastLog(void)
 {
-	uint8_t buffer[4];
+	uint8_t buffer[8];
 	
-	for(uint8_t i = 0; i < 127; i+=4)
+	for(uint8_t i = 0; i < EEPROM_SIZE; i+=8)
 	{
-		if(eepromReadPage(i, buffer, 4) != 0)
+		if(eepromReadPage(i, buffer, 8) != 0)
 		{
 			return -1; // error: eepromReadPage failed
 		}
@@ -204,6 +243,13 @@ static int findLastLog(void)
 		if((buffer[0] & (3 << 6)) != 0) // if there is no sync symbol
 		{
 			eepromCtx.write_pointer = i;
+			
+			return 0;
+		}
+		
+		if((buffer[5] & (3 << 6)) != 0) // if there is no sync symbol
+		{
+			eepromCtx.write_pointer = i + 4;
 			
 			return 0;
 		}

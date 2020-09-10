@@ -25,9 +25,7 @@ int logsInit(void)
 	
 	logsQueue = xQueueCreate(LOGS_QUEUE_LENGTH, sizeof(struct logStruct));
 	if(logsQueue == NULL)
-	{
-		printf("logsQueue error\n");
-		
+	{		
 		return -1; // error: queue not created
 	}
 	
@@ -54,18 +52,14 @@ int logsAddNewModule(uint8_t moduleAddr)
 int logsAddLog(uint8_t moduleAddr, uint8_t logNumber)
 {
 	if(logNumber > 7)
-	{
-		printf("logNumber excedded range\n");
-		
+	{		
 		return -1; // error: incorrect value (log number - <0, 7>)
 	}
 	
 	struct logStruct log_data;
 	
 	if(linkedListFindModule(logs_ctx.logs_list, &log_data, moduleAddr) != 0) // get current module logs
-	{
-		printf("logsAddLog: linked list failure\n");
-		
+	{		
 		return -1; // error: linked list failure
 	}
 	
@@ -104,10 +98,8 @@ int logsPrintSaved(char *log_tab[MODULES_COUNT][8])
 	
 	for(uint8_t i = 0; i < 32; i++)
 	{
-		if(eepromReadBlock(i, &log) != 0)
+		if((eepromReadBlock(i, &log) != 0) && (eepromReadBlock(i, &log) != EEPROM_INVALID_SECOND_BLOCK))
 		{
-			printf("read block error\n");
-			
 			return 1; // error: block error
 		}
 	
@@ -137,8 +129,6 @@ int logsTaskCreate(void)
 		
 		return 1;
 	}
-	
-	printf("log task created\n");
 	
 	return 0;
 }
@@ -172,7 +162,7 @@ static void log_task(void *params)
 			__enable_irq();					
 		}	
 		
-		vTaskDelay(1000);	
+		vTaskDelay(500);	
 	}
 }
 

@@ -1,4 +1,5 @@
-./objects/socket_queue.o: socket_queue.c ..\project_v3\socket_queue.h \
+./objects/socket_queue.o: ..\project_v3\socket_queue.c \
+  ..\project_v3\socket_queue.h \
   C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \

@@ -21,9 +21,7 @@ int i2cInit(void)
 {
 	
 	if(eepromCtx.isInit == INITIALIZED)
-	{
-		printf("i2c is init\n");
-		
+	{		
 		return 1; // error: i2c is init
 	}
 	
@@ -61,6 +59,7 @@ int i2cInit(void)
 
 int i2cWriteData(uint8_t addr, uint8_t *data, uint8_t length)
 {
+	__disable_irq();
 	
 	  // start
     I2C1->CR1 |= I2C_CR1_START;
@@ -86,12 +85,16 @@ int i2cWriteData(uint8_t addr, uint8_t *data, uint8_t length)
 		for(volatile int i = 0; i < 0xFF; i++); //temporary
 		
 		eepromCtx.isInit = INITIALIZED;
+		
+	__enable_irq();
 	
 	return 0;
 }
 
 int i2cReadData(uint8_t addr, uint8_t *data, uint8_t length)
 {
+	__disable_irq();
+	
 	//start
 	I2C1->CR1 |= I2C_CR1_START;
 	while(!(I2C1->SR1 & I2C_SR1_SB));
@@ -102,21 +105,25 @@ int i2cReadData(uint8_t addr, uint8_t *data, uint8_t length)
 	while (!(I2C1->SR1 & I2C_SR1_ADDR));
 	// dummy read to clear flags
 	(void)I2C1->SR2; // clear addr condition
-	
-	
 
 	for(uint32_t i = 0; i < length; i++)
 	{  
+		if(i < (length - 1)) // don' send ACK after last byte
+		{		
+			I2C1->CR1 |= I2C_CR1_ACK; // send ACK on byte reception
+		}
+		else
+		{
+			I2C1->CR1 &= ~I2C_CR1_ACK;
+		}
+		
 		// wait until receive buffer is not empty
 		while (!(I2C1->SR1 & I2C_SR1_RXNE));
 		// read content
 		data[i] = (uint8_t)I2C1->DR;
 		//I2C1->SR1 &= ~I2C_SR1_RXNE; // tempoerary clear flag
 		
-		if(i < (length - 1)) // don' send ACK after last byte
-		{		
-			I2C1->CR1 |= I2C_CR1_ACK; // send ACK on byte reception
-		}
+
 	}
 	// stop
 	I2C1->CR1 |= I2C_CR1_STOP;
@@ -124,12 +131,14 @@ int i2cReadData(uint8_t addr, uint8_t *data, uint8_t length)
 	
 	for(volatile int i = 0; i < 0xFF; i++); //temporary	
 	
+	__enable_irq();
+	
 	return 0;
 }
 
 int i2cReadRegister(uint8_t addr, uint8_t reg_addr, uint8_t *data, uint8_t length)
 {	
-	
+		__disable_irq();
 	  // start
     I2C1->CR1 |= I2C_CR1_START;
     while(!(I2C1->SR1 & I2C_SR1_SB));
@@ -154,11 +163,15 @@ int i2cReadRegister(uint8_t addr, uint8_t reg_addr, uint8_t *data, uint8_t lengt
 		for(uint32_t i = 0; i < length; i++)
 		{ 
 			
-			if(i < (length - 1)) // don't send ACK after last byte
+			if(i < (length - 1)) // don' send ACK after last byte
 			{		
 				I2C1->CR1 |= I2C_CR1_ACK; // send ACK on byte reception
 			}
-			
+			else
+			{
+				I2C1->CR1 &= ~I2C_CR1_ACK;
+			}
+		
 			// wait until receive buffer is not empty
 			while (!(I2C1->SR1 & I2C_SR1_RXNE));		
 			
@@ -171,6 +184,8 @@ int i2cReadRegister(uint8_t addr, uint8_t reg_addr, uint8_t *data, uint8_t lengt
     while(!(I2C1->SR2 & I2C_SR2_BUSY));
 		
 		for(volatile int i = 0; i < 0xFF; i++); //temporary
+		
+		__enable_irq();
 		
 	return 0;
 }

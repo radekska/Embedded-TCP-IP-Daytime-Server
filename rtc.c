@@ -90,9 +90,7 @@ int rtcSetDate(struct date_struct *date)
 int rtcPrintDate(void)
 {
 	struct date_struct date;
-	
-	printf("read date\n");
-	
+		
 	rtcReadDate(&date);	
 	
 	printf("time: %d : %d : %d \n", date.hour, date.min, date.sec);

@@ -22,9 +22,7 @@ int linkedListCreate(struct node **list)
 int linkedListAdd(struct node *list, struct logStruct *log)
 {
 	if((list == NULL) || (log == NULL))
-	{
-		printf("linkedListAdd failed0\n");
-		
+	{		
 		return -1; // error: incorrect arguments
 	}
 	
@@ -32,9 +30,7 @@ int linkedListAdd(struct node *list, struct logStruct *log)
 	{	
 		list->data = malloc(sizeof(struct logStruct));		
 		if(list->data == NULL)
-		{
-			printf("linkedListAdd failed1\n");
-			
+		{			
 			return -1; // error: mallock failed
 		}
 		
@@ -54,17 +50,13 @@ int linkedListAdd(struct node *list, struct logStruct *log)
 	
 		element.next = malloc(sizeof(struct node)); // create new element	
 	if(element.next == NULL)
-	{
-		printf("linkedListAdd failed2\n");
-		
+	{		
 		return -1; // error: mallock failed
 	}
 	
 	element.next->data = malloc(sizeof(struct logStruct));	
 	if(element.next->data == NULL)
-	{
-		printf("linkedListAdd failed2\n");
-		
+	{		
 		return -1; // error: mallock failed
 	}
 		

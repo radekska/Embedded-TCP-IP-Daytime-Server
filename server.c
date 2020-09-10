@@ -15,6 +15,7 @@
 #include "rtc.h"
 #include "server_utils.h"
 #include "queue.h"
+#include "logs.h"
 
 /* Requested stack size when server listening task creates connection */
 static uint16_t usedStackSize = 0;
@@ -70,7 +71,10 @@ static void listeningForConnectionTask(void *params)
 								
                 if (acceptTCPServerSocket(serverSocket, &clientAddr) == SOCK_OK)
                 {
-                    // log to eeprom the clientAddr
+										if(logsAddLog(MODULE_SERVER, 0) != 0) // log: server connected
+                    {
+                        printf("add log failed\n");
+                    }
                     
                     if (xQueueReceive(socketQueue, &childSocket, 10000) == pdTRUE)
                     {						
@@ -83,10 +87,18 @@ static void listeningForConnectionTask(void *params)
 
                         if (pdPASS != xTaskCreate(redirectConnectionToChildSocket, taskName, usedStackSize, (void *)&childSocket, childTaskPriority, NULL))
                         {
-                            // log to eeprom
+                            if(logsAddLog(MODULE_SERVER, 2) != 0) // log: child not created
+														{
+																printf("add log failed\n");
+														}
                         }
                     } else
                     {
+												if(logsAddLog(MODULE_SERVER, 5) != 0) // log: no available sockets
+												{
+														printf("add log failed\n");
+												}
+											
                         sendTimeoutDisconnectionMessage(serverSocket);
                     }
 										
@@ -166,7 +178,11 @@ static int sendCompleteMessage(Socket_t connectedSocket, char *bufferToSend)
             bytesSentBySocket = send(connectedSocket.sockNumber, bufferToSend, bytesToSend - bytesTotalSentBack);
             if(bytesSentBySocket < 0) // error ocured
             {
-                //Log it or something
+                if(logsAddLog(MODULE_SERVER, 3) != 0) // log: date not sent
+								{
+										printf("add log failed\n");
+								}
+														
                 return SOCKET_FAILED;
             }
             if (hasSentBackDataToSocket(bytesSentBySocket))
@@ -206,6 +222,14 @@ static void redirectConnectionToChildSocket(void *params)
 
                 if (acceptTCPServerSocket(workerSocket, &clientAddr) == SOCK_OK)
                 {
+									
+									printf("connected!\n");
+									
+										if(logsAddLog(MODULE_SERVER, 1) != 0) // log: child connected
+										{
+												printf("add log failed\n");
+										}
+									
                     sendCompleteMessage(workerSocket, "Current time: \n");
                     while(1)
                     {
@@ -214,7 +238,9 @@ static void redirectConnectionToChildSocket(void *params)
                             close(workerSocket.sockNumber);
                             if (xQueueSend(socketQueue, &workerSocket, 100) == pdTRUE)
                             {
-                                vTaskDelete(NULL);
+															printf("disconnected!\n");
+															
+															vTaskDelete(NULL);
                             }
                         }
                         vTaskDelay(1000);

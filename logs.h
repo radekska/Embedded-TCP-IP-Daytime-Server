@@ -12,6 +12,7 @@
 #include "linked_list.h"
 #include "rtc.h"
 #include "semphr.h"
+#include "eeprom.h"
 
 #define LOGS_QUEUE_LENGTH 10
 #define MODULES_COUNT 1

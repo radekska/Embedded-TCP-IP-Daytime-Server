@@ -1,4 +1,4 @@
-./objects/led.o: led.c \
+./objects/led.o: ..\project_v3\led.c \
   C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   RTE\Device\STM32F446RETx\stm32f4xx_hal_conf.h \
   RTE\_default\RTE_Components.h \

@@ -54,20 +54,20 @@ int main(void)
     initHardware();
 
 	printf("SERVER START\n");
+	
+	if (createTCPServerSocket(configMINIMAL_STACK_SIZE, serverTaskPriority) == SOCKET_FAILED) {
+			// log to eeprom that server failed to be created and app needs to be restarted
+			return 1;
+	}
 
-    if (createTCPServerSocket(configMINIMAL_STACK_SIZE, serverTaskPriority) == SOCKET_FAILED) {
-        // log to eeprom that server failed to be created and app needs to be restarted
-        return 1;
-    }
-
-    if (pdPASS != xTaskCreate(taskLED, "led1", configMINIMAL_STACK_SIZE, NULL, ledTaskPriority, NULL)) {
-        printf("ERROR: Unable to create task!\n");
-    }
-    if(logsAddNewModule(MODULE_SERVER) != 0)
+	if (pdPASS != xTaskCreate(taskLED, "led1", configMINIMAL_STACK_SIZE, NULL, ledTaskPriority, NULL)) {
+			printf("ERROR: Unable to create task!\n");
+	}
+	if(logsAddNewModule(MODULE_SERVER) != 0)
 	{
 		printf("logsAddNewModule failed");
 	}
-    eepromTaskCreate();
+	eepromTaskCreate();
 	
 	logsTaskCreate();
 

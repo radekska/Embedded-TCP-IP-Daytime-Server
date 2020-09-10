@@ -16,12 +16,16 @@
 #define EEPROM_I2C_ADDR 0x50
 #define EEPROM_SIZE 128 /* 1 block of 128 bytes */
 
+#define EEPROM_INVALID_FIRST_BLOCK -2
+#define EEPROM_INVALID_SECOND_BLOCK -3
+
 //----------------------------------------
 
 int eepromInit(void);
 int eepromReadPage(uint8_t readAddr, uint8_t *buffer, uint8_t length); //max read length 8 bytes
-int eepromWritePage(uint8_t readAddr, uint8_t *buffer, uint8_t length); //max write length 8 bytes
+int eepromWritePage(uint8_t writeAddr, uint8_t *buffer, uint8_t length); //max write length 8 bytes
 int eepromReadBlock(uint8_t block_number, struct logStruct *log);
+int eepromClear(void);
 
 int eepromTaskCreate(void);
 

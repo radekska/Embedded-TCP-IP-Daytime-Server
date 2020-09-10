@@ -1,4 +1,4 @@
-./objects/server_utils.o: server_utils.c \
+./objects/server_utils.o: ..\project_v3\server_utils.c \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
