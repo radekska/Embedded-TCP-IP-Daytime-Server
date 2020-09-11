@@ -81,52 +81,7 @@ char *Fgets(char *ptr, int n, FILE *stream) {
     return rptr;
 }
 
-/* Write "n" bytes to a descriptor. */
-//ssize_t writen(int fd, const void *vptr, size_t n) {
-//    size_t nleft;
-//    ssize_t nwritten;
-//    const char *ptr;
-//
-//    ptr = vptr;
-//    nleft = n;
-//    while (nleft > 0) {
-//        if ((nwritten = write(fd, ptr, nleft)) <= 0) {
-//            if (nwritten < 0 && errno == EINTR)
-//                nwritten = 0;        /* and call write() again */
-//            else
-//                return (- 1);            /* error */
-//        }
-//
-//        nleft -= nwritten;
-//        ptr += nwritten;
-//    }
-//    return (n);
-//}
-
-/* end writen */
-
-//void Writen(int fd, void *ptr, size_t nbytes) {
-//    if (writen(fd, ptr, nbytes) != nbytes)
-//        perror("writen error");
-//}
-
-void str_cli(FILE *fp, int sockfd) {
-    char sendline[MAXLINE], recvline[MAXLINE];
-
-    //while (Fgets(sendline, MAXLINE, fp) != NULL) {]
-
-    //Writen(sockfd, sendline, strlen(sendline));
-
-    if (Readline(sockfd, recvline, MAXLINE) == 0) {
-        perror("str_cli: server terminated prematurely");
-        exit(0);
-    }
-    //Fputs(recvline, stdout);
-    printf("%s", recvline);
-    printf("%lu", strlen(recvline));
-
-}
-
+/* Handle arguments */
 int args_handler(char *ip_address, long *port_number, char *argv[], int argc, int *debug_mode) {
 
     if (argc == 1) {
@@ -159,6 +114,7 @@ int args_handler(char *ip_address, long *port_number, char *argv[], int argc, in
     }
 }
 
+/* Initialize servaddr stuckture */
 void servaddr_init(struct sockaddr_in *servaddr, long port_number, int debug_mode) {
     if (debug_mode == 1)
         printf("debug: initializing ...\n");
@@ -168,6 +124,7 @@ void servaddr_init(struct sockaddr_in *servaddr, long port_number, int debug_mod
     servaddr->sin_port = htons(port_number);
 }
 
+/* Initialize scoket */
 int socket_init(int debug_mode) {
     int true = 1;
     int sockfd = 0;
@@ -196,6 +153,7 @@ int socket_init(int debug_mode) {
     return sockfd;
 }
 
+/* Convert IP to binary */
 int convert_ip(int err, char *ip_address, struct sockaddr_in *servaddr) {
     if ((err = inet_pton(AF_INET, ip_address, &servaddr->sin_addr)) == - 1) {
         fprintf(stderr, "ERROR: inet_pton error for %s : %s \n", ip_address, strerror(errno));
@@ -207,6 +165,7 @@ int convert_ip(int err, char *ip_address, struct sockaddr_in *servaddr) {
     return 0;
 }
 
+/* Connect to remote socket */
 int socket_connect(int sockfd, struct sockaddr_in servaddr, char *ip_address, long port_number, int debug_mode) {
     if (debug_mode == 1)
         printf("debug: connecting to %s:%ld ...\n", ip_address, port_number);
@@ -223,6 +182,7 @@ int socket_connect(int sockfd, struct sockaddr_in servaddr, char *ip_address, lo
     return 0;
 }
 
+/* Read port from socket */
 void get_new_port(long *new_port_number, int sockfd, int debug_mode) {
     char recvline[MAXLINE];
 
@@ -240,6 +200,7 @@ void get_new_port(long *new_port_number, int sockfd, int debug_mode) {
         printf("debug: new port recieved - %ld\n", *new_port_number);
 }
 
+/* Read datetime from socket */
 int get_date_time(int sockfd, int debug_mode) {
     char recvline[MAXLINE];
 
@@ -263,6 +224,7 @@ int get_date_time(int sockfd, int debug_mode) {
     return 0;
 }
 
+/* Wrapping function */
 int final_connect(struct sockaddr_in servaddr, long port_number, int err, char *ip_address, int *cpy_sockfd,
                   int debug_mode) {
     int sockfd = 0;
