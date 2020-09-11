@@ -46,6 +46,7 @@ static void listeningForConnectionTask(void *params)
     uint8_t serverSocketNumber = 0;
     Sockaddr_t clientAddr;
     Socket_t childSocket;
+    char *taskName;
 	
     volatile Sockaddr_t bindAddress = {
         .port = (uint16_t) DAYTIME_PORT
@@ -82,7 +83,7 @@ static void listeningForConnectionTask(void *params)
                         numberToString(childSocket.sockaddr.port, portAsString);
                         sendCompleteMessage(serverSocket, portAsString);
 
-                        char *taskName = getChildTaskName(childSocket.sockNumber);
+                        taskName = getChildTaskName(childSocket.sockNumber);
                         int childTaskPriority = 3;
 
                         if (pdPASS != xTaskCreate(redirectConnectionToChildSocket, taskName, usedStackSize, (void *)&childSocket, childTaskPriority, NULL))
@@ -111,7 +112,7 @@ static void listeningForConnectionTask(void *params)
                     {
                         printf("save log failed\n");
                     }
-                    
+                    free(taskName);
                     close(serverSocket.sockNumber);											
 										
                 } else
