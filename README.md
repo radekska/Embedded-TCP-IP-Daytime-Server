@@ -1,9 +1,10 @@
 # Embedded TCP/IP Daytime Server
 This is a repository for embedded C application build on top of **STM32 Nucleo-F401RE** with **Wiznet W5100** chip on Arduino Shield. The daytime server is running on port 13 and is scheduled by FreeRTOS to handle multiple clients at the same time.
-For more detailed description see [documentation](https://github.com/radekska/AMK_TCP-IP_SERV/blob/master/TCP_IP_Daytime_Server-Dokumentacja.pdf) (in Polish).
 
 ## Description
 The server opens the *listening socket* in the main thread. When the remote client wishes to connect to the server, it retreives the child socket from the queue of available worker sockets, and it is creating a new FreeRTOS task, which is handling the connection with the peer. The child socket is sending the daytime with one second resolution.
+
+> For more detailed description see [documentation](https://github.com/radekska/AMK_TCP-IP_SERV/blob/master/TCP_IP_Daytime_Server-Dokumentacja.pdf) (in Polish).
 
 ## Built With
 
